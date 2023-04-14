@@ -281,9 +281,32 @@ Avand in vederea toate variantele prin care a evoluat genul Tower Defense, inca 
 
 In marea majoritate a jocurilor create, turnurile de aparare functioneaza independent, fiecare avand propriile sale abilitati si caracteristici. Unele jocuri au introdus mici schimbari, prin care turnurile de aparare pot fi imbunatatite, iar unele din imbunatari fiind in a oferi turnurilor vecine mici bonusuri.
 
-Pentru a dezvolta aceasta arie, exploram urmatoarea idee de mecanica de joc: Fiecare turn de aparare poate creea si consuma un *jeton de actiune* de pe inamicul din raza de aparare a turnului. Un jeton de actiune reprezinta o actiune care poate fi efectuata de unele turnuri de aparare si acesta este purtat de catre inamicii. Un turn de aparare poate crea un jeton de actiune care poate fi consumat de un alt turn de aparare prin intermediul inamicilor.
+Pentru a dezvolta această arie, exploram urmatoarea idee de mecanica de joc: Fiecare turn de aparare poate creea si consuma un *jeton de actiune* de pe inamicul din raza de aparară a turnului. Un jeton de actiune reprezinta o actiune care poate fi efectuata de unele turnuri de aparare si acesta este purtat de catre inamicii. Un turn de aparare poate crea un jeton de actiune care poate fi consumat de un alt turn de aparare prin intermediul inamicilor.
 
-În mod practic, noi construim un mod de comunicare între turnuri, acestea având un comportament diferit asupra unui inamic în funcție de tipurile și numărul de jetoane de acțiune pe care le au.
+În mod practic, noi construim un mod de comunicare între turnuri, acestea având un comportament diferit asupra unui inamic în funcție de tipurile și numărul de jetoane de acțiune pe care le au. Un turn poate crea un jeton de acțiune prin interceptarea unui inamic în raza sa, iar apoi acel jeton poate fi consumat de un alt turn pentru a efectua o acțiune specifică. De exemplu, un turn poate crea un jeton de acțiune care să activeze un atac special. Cu cât un turn are mai multe jetoane de acțiune, cu atât importanța sa este mai mare.
+
+Harta joc are un rol crucial în design, ea este cea care de cele mai multe ori oferă unicitate unui sesiuni de joc. În multe jocuri clasice, dimensiunea mărită a hărții de joc nu oferă prea multe oportunități deoarece de multe ori jucătorul aplică aceiași combinație turnuri, fapt care crează redundanță. Trecănd către acest sistem colaborativ, putem sesiza un nou beneficiu, și anume: hărțile de dimensiune mai mare ne oferă mai mult spațiu pentru a crea mai multe turnuri defensive, fapt care ne permite să creăm mai multe interacțiuni între acestea. 
+
+== Compunerea jetoanelor de acțiune
+
+Flexibilitea jetoanelor de acțiune vine din faptul că acestea pot fi compuse din mai multe tipuri de jetoane. 
+Presupunem că avem următoarele tipuri de jetoane de bază:
+
+- Jeton de bonus atac: turnurile care consumă acest jeton vor avea un bonus de atac adăugat la valoarea lor de bază.
+- Jeton de încetinire: turnurile care consumă acest jeton vor încetini inamicii din raza lor de acțiune.
+- Jeton de dublare efect: turnurile care consumă acest jeton vor dubla efectul unui alt jeton.
+
+Și următoarele jetoane care rezultă din compunerea celor de mai sus:
+
+- Jeton de dublu bonus atac: turnurile care consumă acest jeton vor avea un bonus de atac dublat. Format dintr-un jeton de bonus atac și un jeton de dublare efect.
+- Jeton de dublu încetinire: turnurile care consumă acest jeton vor încetini inamicii din raza lor de acțiune dublat. Format dintr-un jeton de încetinire și un jeton de dublare efect.
+
+Pentru compunere, putem avea mai mult metoda de combinare în funcție de anumite criterii:
+
+- După vechime, jetoanele vechi sau noi create pot avea prioritate.
+- După tip, jetoanele de acțiune pot avea prioritate în funcție de tipul lor.
+
+
 
 #pagebreak()
 
