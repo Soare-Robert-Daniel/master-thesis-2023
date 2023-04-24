@@ -292,21 +292,30 @@ Harta joc are un rol crucial în design, ea este cea care de cele mai multe ori 
 Flexibilitea jetoanelor de acțiune vine din faptul că acestea pot fi compuse din mai multe tipuri de jetoane. 
 Presupunem că avem următoarele tipuri de jetoane de bază:
 
-- Jeton de bonus atac: turnurile care consumă acest jeton vor avea un bonus de atac adăugat la valoarea lor de bază.
-- Jeton de încetinire: turnurile care consumă acest jeton vor încetini inamicii din raza lor de acțiune.
-- Jeton de dublare efect: turnurile care consumă acest jeton vor dubla efectul unui alt jeton.
+- Jeton de bonus atac: turnurile care folosesc acest jeton vor avea un bonus de atac adăugat la valoarea lor de bază.
+- Jeton de încetinire: turnurile care folosesc acest jeton vor încetini inamicii din raza lor de acțiune.
+- Jeton de dublare efect: turnurile care folosesc acest jeton vor dubla efectul unui alt jeton.
 
 Și următoarele jetoane care rezultă din compunerea celor de mai sus:
 
 - Jeton de dublu bonus atac: turnurile care consumă acest jeton vor avea un bonus de atac dublat. Format dintr-un jeton de bonus atac și un jeton de dublare efect.
 - Jeton de dublu încetinire: turnurile care consumă acest jeton vor încetini inamicii din raza lor de acțiune dublat. Format dintr-un jeton de încetinire și un jeton de dublare efect.
 
-Pentru compunere, putem avea mai mult metoda de combinare în funcție de anumite criterii:
+Pentru compunere, putem avea mai multe metode de compunere în funcție de anumite criterii:
 
 - După vechime, jetoanele vechi sau noi create pot avea prioritate.
 - După tip, jetoanele de acțiune pot avea prioritate în funcție de tipul lor.
+- După număr, o anumite cantitate de jetoane pot fi necesare pentru a crea un jeton nou.
 
+Criteriile de compunere pot fi diferite pentru fiecare turn, astfel jucătorul este pus în situația de a alege care dintre turnuri să îi dea prioritate în compunerea jetoanelor de acțiune. Astfel, adaugăm un nou element de strategie în joc.
 
+== Tipurile de turnuri
+
+Pentru a crea un sistem colaborativ între turnuri, trebuie să avem o gamă largă de turnuri care să fie capabile să creeze și să consume jetoane de acțiune. În acest sens, putem avea următoarele tipuri de turnuri:
+
+- Turn de atac normal: turn care atacă inamicii din raza sa de acțiune și folosește jetoane de atac pentru a adauga un bonus de pagube la atacul său.
+- Turn de încetinire: turn care încetinește inamicii din raza sa de acțiune și folosește jetoane de încetinire pentru a încetini inamicii din raza sa de acțiune.
+- Turn de atac 
 
 #pagebreak()
 
