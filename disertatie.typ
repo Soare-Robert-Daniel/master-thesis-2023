@@ -3,6 +3,27 @@
 )
 
 #set heading(numbering: "1.")
+#show heading: it => {
+  v(0.8cm)
+  block[
+    #set align(center)
+    #counter(heading).display()
+    #it.body
+  ]
+  v(0.3cm)
+}
+
+
+#let sectionTitle(term) = {
+  v(1cm)
+  heading(
+    level: 2,
+    term
+  )
+  v(1cm)
+}
+
+
 #set par(first-line-indent: 1em, justify: true)
 #show par: set block(spacing: 0.65em)
 
@@ -80,7 +101,7 @@
 #v(1.5cm)
 
 #align(right, text(12pt)[
-  Aprobat Decan \
+  Aprobat Decan \`
   Prof. Dr. Ing. Mihnea Alexandru Moisescu
 ])
 
@@ -140,7 +161,7 @@
 *Introducere*
 #box(width: 1fr, repeat[.])
 #locate( loc => {
-  let intro = query(<intro>, after: loc)
+  let intro = query(<intro>, loc)
   
   intro.last().location().page()
 })
@@ -150,25 +171,36 @@
 #locate(loc => {
   let elems = query(
     heading,
-    after: loc,
+    loc,
   )
 
   let heading_counter = counter(heading)
 
   for elem in elems {
-    heading_counter.at(elem.location()).map(x => text(12pt)[#x]).join(".")
+    let level = heading_counter.at(elem.location()).len()
+    let boxWidth = 1cm * level
+
+    linebreak()
+    box(
+      width: boxWidth,
+      align(
+        right,
+        heading_counter.at(elem.location()).map(x => text(12pt)[#x]).join(".")
+      )
+    )
     h(0.2cm)
     elem.body
     box(width: 1fr, repeat[.])
     text(12pt)[#elem.location().page()]
-    linebreak()
   }
 })
+
+#v(0.2cm)
 
 *Bibliografie*
 #box(width: 1fr, repeat[.])
 #locate( loc => {
-  let intro = query(<bio>, after: loc)
+  let intro = query(<bio>, loc)
   
   intro.last().location().page()
 })
@@ -243,7 +275,6 @@ Punctele puternice ale acestui gen de joc sunt:
 
 = Design-ul unui joc de Tower Defense
 
-#v(0.5cm)
 Design unui joc de Tower Defense este relativ simplu. În general, jocurile de Tower Defense au următoarele elemente:
 
 - O bază care trebuie apărată de atacurile inamicilor.
@@ -275,13 +306,13 @@ Jocurile de Tower Defense au evoluat și au început să se îmbine cu alte genu
 
 - Cu elemente de joc de puzzle. Acest gen se pliază foarte ușor pe genul Tower Defense, iar introducerea de mici schimbări în mecanica de joc poate duce la crearea unui joc de acest tip. Jocurile de acest tip se concentrează pe crearea unui puzzle care să fie rezolvat de către jucător. Acest puzzle poate consta în găsirea unei anumite combinații de structuri defensive care să oprească valul inamic în anumite condiții. Unele jocuri, introduc acest concept sub form de "challenge mode" care poate fi jucat de către jucători după ce au terminat jocul. Acesta consta în adaugarea de noi constrăngeri pentru jucător, cum ar fi: limitarea numărului de turnuri defensive, limitarea numărului de resurse, creșterea numărului de inamici, etc.
 
-== O noua metoda de extindere a mecanicii de joc
+== O nouă metodă de extindere a mecanicii de joc
 
-Avand in vederea toate variantele prin care a evoluat genul Tower Defense, inca exista arii care nu au fost explorate. Unul dintre acestea este crearea unui sistem colaborativ intre turnurile de aparare.
+Având în vedere toate variantele prin care a evoluat genul Tower Defense, încă există arii care nu au fost explorate. Unul dintre acestea este crearea unui sistem colaborativ între turnurile de apărare.
 
-In marea majoritate a jocurilor create, turnurile de aparare functioneaza independent, fiecare avand propriile sale abilitati si caracteristici. Unele jocuri au introdus mici schimbari, prin care turnurile de aparare pot fi imbunatatite, iar unele din imbunatari fiind in a oferi turnurilor vecine mici bonusuri.
+În mare majoritate a jocurilor create, turnurile de apărare funcționează independent, fiecare având propriile sale abilități și caracteristici. Unele jocuri au introdus mici schimbări, prin care turnurile de apărare pot fi îmbunătățite, iar unele din îmbunătățiri fiind în a oferi turnurilor vecine mici bonusuri.
 
-Pentru a dezvolta această arie, exploram urmatoarea idee de mecanica de joc: Fiecare turn de aparare poate creea si consuma un *jeton de actiune* de pe inamicul din raza de aparară a turnului. Un jeton de actiune reprezinta o actiune care poate fi efectuata de unele turnuri de aparare si acesta este purtat de catre inamicii. Un turn de aparare poate crea un jeton de actiune care poate fi consumat de un alt turn de aparare prin intermediul inamicilor.
+Pentru a dezvolta această arie, explorăm următoarea idee de mecanică de joc: Fiecare turn de apărare poate crea și consuma un *jeton de acțiune* de pe inamicul din raza de apărare a turnului. Un jeton de acțiune reprezintă o acțiune care poate fi efectuată de unele turnuri de apărare și acesta este purtat de către inamicii. Un turn de apărare poate crea un jeton de acțiune care poate fi consumat de un alt turn de apărare prin intermediul inamicilor.
 
 În mod practic, noi construim un mod de comunicare între turnuri, acestea având un comportament diferit asupra unui inamic în funcție de tipurile și numărul de jetoane de acțiune pe care le au. Un turn poate crea un jeton de acțiune prin interceptarea unui inamic în raza sa, iar apoi acel jeton poate fi consumat de un alt turn pentru a efectua o acțiune specifică. De exemplu, un turn poate crea un jeton de acțiune care să activeze un atac special. Cu cât un turn are mai multe jetoane de acțiune, cu atât importanța sa este mai mare.
 
@@ -296,10 +327,11 @@ Presupunem că avem următoarele tipuri de jetoane de bază:
 - Jeton de încetinire: turnurile care folosesc acest jeton vor încetini inamicii din raza lor de acțiune.
 - Jeton de dublare efect: turnurile care folosesc acest jeton vor dubla efectul unui alt jeton.
 
-Și următoarele jetoane care rezultă din compunerea celor de mai sus:
+Rangul unui jeton reprezintă numărul de jetoane de același tip pe care un inamic le deține, fiecare jeton are prestabilit un rang maxim. Jetoanele pot fi combinate pentru a obține noi tipuri. De exemplu, putem avea următoarele tipuri de jetoane compuse:
 
-- Jeton de dublu bonus atac: turnurile care consumă acest jeton vor avea un bonus de atac dublat. Format dintr-un jeton de bonus atac și un jeton de dublare efect.
-- Jeton de dublu încetinire: turnurile care consumă acest jeton vor încetini inamicii din raza lor de acțiune dublat. Format dintr-un jeton de încetinire și un jeton de dublare efect.
+- Jeton de dublu bonus atac: turnurile care consumă acest jeton vor avea un bonus de atac dublat. Format dintr-un jeton de bonus atac (rang 1) și un jeton de dublare efect (rang 1).
+- Jeton de dublu încetinire: turnurile care consumă acest jeton vor încetini inamicii din raza lor de acțiune dublat. Format dintr-un jeton de încetinire (rang 1) și un jeton de dublare efect (rang 1).
+- Jeton de înghețare: turnurile care consumă acest jeton vor îngheța inamicii din raza lor de acțiune. Format dintr-un jeton de încetinire de rang 2.
 
 Pentru compunere, putem avea mai multe metode de compunere în funcție de anumite criterii:
 
