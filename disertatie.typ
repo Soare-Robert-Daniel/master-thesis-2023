@@ -386,6 +386,22 @@ Unele jocuri, introduc noi mecanici de joc pentru inamicii, precum:
 
 Sistemul de jetoane nu prezintă niciun impediment în implementarea acestor mecanici de joc. Chiar putem crea jetoane de acțiune care să contracareze inamicii care prezintă aceste mecanici de joc. De exemplu, putem avea un jeton de acțiune care să reducă armura inamicilor sau un jeton de acțiune care să reducă regenerarea inamicilor.
 
+== Economia de joc
+
+Într-un joc de tip _Tower Defense_, turnurile de apărare sunt construite și îmbunătățite prin intermediul resurselor. Aceste resurse pot fi colectate de către jucător prin intermediul unor structuri speciale sau pot fi obținute prin eliminarea inamicilor. Acest sistem reprezintă economia de joc.
+
+Acest sistem joacă un rol important în partea strategică a jocului. Jucătorul trebuie să ia decizii strategice în ceea ce privește gestionarea resurselor. De exemplu, jucătorul poate alege să construiască mai multe turnuri de apărare de la începutul jocului, sau poate alege să construiască mai puține turnuri de apărare și să-și îmbunătățească structurile existente.
+
+De regulă, pentru a stabili costul resurselor pentru turnurile de apărare, se pot folosii următoarele întrări:
+
+- Câți inamicii trebuie să eliminam pentru a obține resursele necesare pentru a construi un turn de apărare?
+- Câți inamicii trebuie să eliminam pentru a obține resursele necesare pentru a îmbunătăți un turn de apărare?
+- Câte resurse se pot obține în total la eliminarea unui val de inamici?
+- Ce turnuri putem construi cu resursele obținute după ce eliminăm X valuri de inamici?
+- Care este performanța unui turn în raport cu costul său?
+
+Un alt mod în care poate fi folosit acest sistem este cel în generarea de valuri inamice. În loc ca tipurile de inamici să fie prestabilite, acestea pot fi alese în funcție de valoarea valului de inamici. Fiecare inamic având o valoarea, inamicii pot fi aleși aleatoriu până ajungem la valoarea totală de resurse pe care dorim s-o avem pentru valul respectiv.
+
 #pagebreak()
 
 #v(2cm)
