@@ -27,6 +27,14 @@
 #set par(first-line-indent: 1em, justify: true)
 #show par: set block(spacing: 0.65em)
 
+#let left-padding(term) = {
+  stack(
+    dir: ltr,
+    h(0.5cm),
+    term
+  )
+}
+
 // +------------------- Coperta -------------------+
 
 #v(1cm)
@@ -436,11 +444,88 @@ După ce am plasat primele turnuri de apărare, putem apăsa pe butonul de start
 
 Odată terminat valul, e timpul să ne folosim de resursele acumulate pentru a achiziționa noi turnuri de apărare sau pentru a îmbunătăți turnurile existente. Cu fiecare val care trece inamicii devin mai puternici și numărul lor crește, iar noi trebuie să ne adaptăm strategia de joc pentru a face față provocărilor care apar.
 
-În funție de ce turn am ales la început, încercăm să maxizăm potențialul acestuia, dar în același timp să ne gândim cum putem combina turnurile pasive pentru a obține jetoane mai puternice. Dacă am încerca să investim în turnurile pasive de atac bonus și explosiv, ne-ar putea ajuta cu valurile care au mulți inamicii cu viață mică. Dacă am încerca să investim în turnurile pasive de încetinire și îngheț, ne-ar putea ajuta cu valurile care au inamicii cu viață mare. 
-
-
+În funcție de ce turn am ales la început, încercăm să maxizăm potențialul acestuia, dar în același timp să ne gândim cum putem combina turnurile pasive pentru a obține jetoane mai puternice. Dacă am încerca să investim în turnurile pasive de atac bonus și explosiv, ne-ar putea ajuta cu valurile care au mulți inamicii cu viață mică. Dacă am încerca să investim în turnurile pasive de încetinire și îngheț, ne-ar putea ajuta cu valurile care au inamicii cu viață mare. 
 
 == Sistemul de jetoane de acțiune
+
+Acest sistem se ocupă de gestionarea jetoanelor de acțiune. Un jeton de acțiune reprezintă o acțiune care poate fi efectuată de unele turnuri de apărare și acesta este purtat de către inamicii. Un turn de apărare poate crea un jeton de acțiune care poate fi consumat de un alt turn de apărare prin intermediul inamicilor.
+
+Propunem următoare structură pentru definirea unui jeton de acțiune:
+
+#left-padding[
+- Tip efect: reprezintă tipul de efect pe care îl produce jetonul de acțiune.
+- Valoare efect: reprezintă intensitatea efectului.
+- Rang maxim: reprezintă rangul maxim pe care îl poate avea jetonul de acțiune.
+- Rang curent: reprezintă rangul curent pe care îl are jetonul de acțiune.
+- Durată: reprezintă durata de timp pentru care jetonul de acțiune este activ.
+- Durata curentă: reprezintă durata de timp rămasă pentru care jetonul de acțiune este activ.
+- Condiții de creere: reprezintă condițiile care trebuie îndeplinite pentru a crea un jeton de acțiune.
+]
+
+Tipul de efect reprezintă acțiune care se va produce atunci când jetonul de acțiune este consumat. Aceste acțiuni reprezintă funcționalități ale mecanicii de joc. Iată câteva exemple de tipuri de efecte:
+
+#left-padding[
+- Scăderea parțială sau completă a vitezei de mișcare al inamicilor.
+- Scăderea parțială sau completă a vieții inamicilor.
+- Creșterea pagubelor primite de inamici din partea proiectilelor turnurilor.
+]
+
+Valoarea efectului reprezintă intensitatea efectului. Aceasta poate fi un număr întreg sau un procentaj. De exemplu, un jeton de acțiune care scade viteza de mișcare a inamicilor cu 50% are o valoare efect de 50%. Acest valori fie pot fi constante sau calculate prin intermediul unor funcții sau formule matematice. Exemplu:
+
+$ v = r / 10 $, unde $r in [0, 10]$ reprezintă rangul jetonului de acțiune și $v in [0, 1]$ reprezintă valoarea efectului.
+
+Rangul maxim reprezintă numărul maxim de jetoane de acțiune de același tip pe care un inamic le poate deține. Un jeton de acțiune de rang mai mare are un efect mai pronunțat decât unul de rang mai mic. Când un inamic este expus de mai mult ori atacului unui turn de apărare, rangul jetonului de acțiune asociat cu turnul de apărare crește.
+
+Rangul curent reprezintă rangul curent pe care îl are jetonul de acțiune. Acesta poate fi mai mic sau egal cu rangul maxim. Rangul curent crește atunci când un inamic este expus de mai mult ori atacului unui turn de apărare asociat cu jetonul respectiv.
+
+Durata reprezintă durata de timp pentru care jetonul de acțiune este activ. Aceasta poate fi un număr real. De exemplu, un jeton de acțiune care scade viteza de mișcare a inamicilor cu 50% pentru 5 secunde are o durată de 5 secunde. Această valoare poate fi constantă sau calculată prin intermediul unor funcții sau formule matematice.
+
+Durata curentă reprezintă durata de timp rămasă pentru care jetonul de acțiune este activ. Aceasta este un număr real care este actualizat la un interval de timp dat. Când durata curentă ajunge la 0, jetonul de acțiune este eliminat.
+
+Condiții de creere reprezintă condițiile care trebuie îndeplinite pentru a crea un jeton de acțiune. Aceste condiții iau considerare următoarele aspecte: tipul de effect și rangul său curent. De exemplu, un jeton de înghețare poate fi creat doar dacă inamicul are un jeton de încetinire de rang 2.
+
+Cum acest sistem trebuiă să aibă o *implementare concretă într-un limbaj de programare* pentru a fi integrat într-un joc, vom folosii limbajul de programare Rust#cite("rust") pentru a descrie o posibilă implementare. Exemplele pot fi prezentate și sub formă de pseudocod, dar realizarea lor cu un limbaj de programare face ca totul să fie mai tangibil și chiar să facă parte din implementarea jocului.
+
+Un exemplu concret de structură pentru un jeton de acțiune este următoarea:
+
+#left-padding[
+```rust
+struct Token {
+  effect_type: EffectType,
+  effect_value: float,
+  max_rank: int,
+  current_rank: int,
+  duration: float,
+  current_duration: float,
+  creation_conditions: List<Condition>
+}
+```
+]
+
+Pentru tipul de efect putem avea un simplu _enum_ care să conțină toate tipurile de efecte pe care le putem avea:
+
+#left-padding[
+```rust
+enum EffectType {
+  Slow,
+  Freeze,
+  BonusAttack,
+  Explosion
+}
+```
+]
+
+, iar pentru condiția de creere avem următoarea structură:
+
+#left-padding[
+```rust
+struct Condition {
+  effect_type: EffectType,
+  min_rank: int
+}
+```
+]
+
 
 == Sistemul de turnuri de apărare
 
