@@ -240,6 +240,8 @@ Un punct slab al acestui gen de joc este găsirea unui echilibru în relația di
 
 În această lucrare, ne propunem să cercetăm un model semi-interdependent de colaborare pentru turnurile de apărare. Modelul propus va fi implementat într-un joc de tip Tower Defense, care va fi dezvoltat în programul de dezvoltare pentru jocuri video Unity. Acest model va folosii un sistem de comunicare bazat pe mesaje pentru a comunica între turnuri. Iar aceste mesaje vor fi purtate de către inamici cu denumirea de *jetoane de acțiune*.
 
+Așadar, această lucrare va descrie un set de specificații pentru un joc de tip Tower Defense care va implementa un sistemul de colaborare între turnurile de apărare care va urma să fie descris.
+
 #pagebreak()
 
 // +------------------- Lucrare -------------------+
@@ -526,8 +528,84 @@ struct Condition {
 ```
 ]
 
-
 == Sistemul de turnuri de apărare
+
+Acest sistem se ocupă de gestionarea turnurilor de apărare. Un turn de apărare reprezintă o structură care exercită o acțiune aupra inamciilor care duce în mod direct sau indirect la eliminarea acestora. În acest sistem, vom avea două tipuri de turnuri de apărare: turnuri active și turnuri pasive.
+
+Turnurile active au următoarele caracteristici:
+
+#left-padding[
+- Produc proiectile care pot elimina inamicii.
+- Au o rată de atac proprie.
+- Au sistem de țintire.
+- Au rază de atac.
+]
+
+Proiectilele fac parte din mecanismul turnurile active, dar cum pot varia de la un turn la altul, vom avea o structură separată pentru acestea cu următoarele caracteristici:
+
+#left-padding[
+- Viteză de mișcare: reprezintă viteza de deplasare a proiectilului.
+- Pagube: reprezintă pagubele pe care le produce proiectilul.
+- Durată de viață: reprezintă durata de timp pentru care proiectilul este activ.
+- Durată de viață curentă: reprezintă durata de timp rămasă pentru care proiectilul este activ.
+]
+
+Turnurile pasive au următoarele caracteristici:
+
+#left-padding[
+- Produc jetoane de acțiune care pot fi consumate de alte turnuri.
+- Au rază de influență.
+- Jetoanele se aplică la un interval de timp dat tuturor inamicilor din rază de influență.
+]
+
+Codul structurii pentru un turn de apărare activ și proiectil este următorul:
+
+#left-padding[
+```rust
+struct ActiveTower {
+  projectile: Projectile,
+  attack_rate: float,
+  attack_rate_timer: float,
+  range: float,
+}
+
+struct Projectile {
+  speed: float,
+  damage: float,
+  life_time: float,
+  current_life_time: float,
+}
+```
+]
+
+Pentru turnurile pasive avem următoarea structură:
+
+#left-padding[
+```rust
+struct PassiveTower {
+  token: Token,
+  range: float,
+  token_rate: float,
+  token_rate_timer: float,
+}
+```
+]
+
+Acest sistem este simplu de implementat, cea mai complicată partea find partea de țintire a turnurile active. In mod ideal, am dorii să trimitem către inamic un număr minim de proiectile care să-l elimine. Astfel, turnul devine mai eficient prin faptul ca nu pierde timp pentru a elimina un inamic care oricum va fi eliminat de către alt turn sau de proiectilele create precedent.
+
+O exemplu de algoritm de țintire ar fi următorul:
+
+#left-padding[
+1. Alegem ce mai apropiat inamic din raza de acțiune.
+2. Calculăm câte proiectile sunt necesare pentru a-l elimina folosind punctele de viață și pagubele proiectilului.
+3. Calculăm pozițiile inamicilor la momentul când aceștia vor fi loviți de proiectile.
+4. Verificam dacă la pozițiile calculate vor lovii și proiectilele de la alte turnuri.
+5. Dacă exista asemenea caz, recalculăm numărul de proiectile tinănd cont de punctele de viață rămase după ce inamicul este lovit de proiectilele de la alte turnuri.
+]
+
+O problemă care acest algoritm nu o ia in considerare este efectul provocat de jetoanele de acțiune asupra inamicilor. Și anume ca inamicul nu va avea o viteză de mișcare constantă pe traseu, iar acesta poate primii pagube de la inamicii învecinații care au asupra lor jetoane de explozie care îl pot elimina înainte ca proiectilele să ajungă la el. Acest scenariu este prea complex pentru un simplu joc dar reprezintă un caz interesent de cercetare.
+
+Pentru turnurile pasive, nu e nevoie de niciun algortim de țintire, acestea având un efect asupra tuturor inamicilor din rază de influență. Există un timer care la un interval de timp dat, toate turnurile pasive aplică jetoanele de acțiune.
 
 == Sistemul de inamicii 
 
