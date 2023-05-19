@@ -607,9 +607,79 @@ O problemă care acest algoritm nu o ia in considerare este efectul provocat de 
 
 Pentru turnurile pasive, nu e nevoie de niciun algortim de țintire, acestea având un efect asupra tuturor inamicilor din rază de influență. Există un timer care la un interval de timp dat, toate turnurile pasive aplică jetoanele de acțiune.
 
+== Sistemul de economie de joc
+
+Acest sistem se ocupă de gestionarea resurselor. Resursele sunt folosite pentru a construi turnuri de apărare și pentru a le îmbunătăți. Resursele pot fi obținute prin intermediul unor structuri speciale sau pot fi obținute prin eliminarea inamicilor.
+
+În jocuri, acestea au denumiri generice precum: _gold_ (aur), _coins_ (monede), _gems_ (nestemate), etc. Numărul lor variază în funcție de joc, iar unele jocuri pun mai mare accent pe gestionarea resurselor decât altele.
+
+În principal, acest sistem nu are un impact prea mare asupra mecanii de joc la un joc Tower Defense clasic, dar prin combinarea mai multor genuri de jocuri, se poate crea ceva unic. De exemplu, în jocuri populare care se combină cu _Role Play Game_ (RPG), această parte devine fundamentală pentru joc. Un astfel de joc este _Arknight_#cite("arknight") care combină genul Tower Defense cu RPG, unde jucătorul trebuie să colecteze o varietate de resurse pentru a avansa în joc. Si cum este un proces încet, se pot folosii bani reali pentru a cumpăra resurse -- aceasta find și principala sursă de monetizare a jocului.
+
+Un tip de resursă poate fi definit astfel:
+
+#left-padding[
+```rust
+enum ResourceType {
+  Gold,
+  Wood,
+  Stone,
+}
+```
+]
+
+Atunci când eliminăm un inamic, primim o recompensă sub formă de resurse. Această recompensă compusă din tipul de resursă și suma. De exemplu, un inamic poate să ofere 10 aur, 5 lemn și 2 piatră când este eliminat. O structură pentru recompensă poate fi definită astfel:
+
+#left-padding[
+```rust
+struct Reward {
+  resource_type: ResourceType,
+  amount: float,
+}
+```
+]
+
 == Sistemul de inamicii 
 
-== Sistemul de economie de joc
+Inamicii reprezintă entitățile care trebuie să ajungă la obiectivul pe care jucătorul încearcă să-l protejeze. Pentru a ajunge la destinație, acesta trebuie să supraviețuiască atacurilor turnurilor de apărare. Inamicii au o viață și o viteză de mișcare. Viața reprezintă numărul de pagube pe care un inamic le poate suporta înainte de a fi eliminat. Viteza de mișcare reprezintă cât de repede se deplasează inamicul pe traseu.
+
+Un inamic are următoarele caracteristici:
+
+#left-padding[
+- Viață: reprezintă numărul de pagube pe care le poate suporta inamicul înainte de a fi eliminat.
+- Viteză de mișcare: reprezintă cât de repede se deplasează inamicul pe traseu.
+- Jetoane de acțiune: reprezintă jetoanele de acțiune pe care le deține inamicul.
+- Recompensă: reprezintă recompensa pe care o oferă inamicul când este eliminat.
+]
+
+În baza acestor caracteristi putem avea următoarele tipuri de inamicii:
+
+#left-padding[
+- Inamic rapid: acesta are o viață mică și o viteză de mișcare mare.
+- Inamic normal: acesta are o viață medie și o viteză de mișcare medie.
+- Inamic rezistent: acesta are o viață mare și o viteză de mișcare mică.
+]
+
+La primă vedere pare să nu avem prea multe opțiuni de variație pentru inamicii. Unele jocuri de Tower Defense încearcă să crească acest număr prin introducerea unor noi mecanici de joc pentru inamicii, precum:
+
+#left-padding[
+- Rezistență la anumite tipuri de atac. Tunurile de apărare pot avea diferite tipuri de atac, iar inamicii pot avea rezistență la un anumit tip de atac. De exemplu, un inamic poate avea rezistență la atacurile de foc, iar turnurile de apărare pot avea atac de foc.
+- Regenerare viață.
+- Imunitate la anumite efecte date de către turnuri.
+- Abilități speciale. Exemplu: poate devenii invulnerabil pentru o perioadă de timp; poate crește viteze de mișcare a inamicilor din jurul său;
+]
+
+Structura unui inamic poate fi definită astfel:
+
+#left-padding[
+```rust
+struct Enemy {
+  health: float,
+  speed: float,
+  tokens: List<Token>,
+  reward: Reward,
+}
+```
+]
 
 == Interfața de utilizator
 
