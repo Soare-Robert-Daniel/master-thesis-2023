@@ -2,6 +2,8 @@
   paper: "a4"
 )
 
+#set text(lang: "ro")
+
 #set heading(numbering: "1.")
 #show heading: it => {
   v(0.8cm)
@@ -24,16 +26,19 @@
 }
 
 
-#set par(first-line-indent: 1em, justify: true)
+#set par(first-line-indent: 0.5cm, justify: true)
 #show par: set block(spacing: 0.65em)
+#set text(font: "Times New Roman")
 
 #let left-padding(term) = {
   stack(
     dir: ltr,
-    h(0.5cm),
+    h(1cm),
     term
   )
 }
+
+#set figure(supplement: "Figura")
 
 // +------------------- Coperta -------------------+
 
@@ -638,6 +643,14 @@ struct Reward {
 ```
 ]
 
+Stiind câți inamicii avem într-un val și care este valoarea, putem calcula recompensa totală pentru valul respectiv. De exemplu, dacă avem 10 inamicii care oferă 10 aur, 5 lemn și 2 piatră, recompensa totală pentru valul respectiv este de 100 aur, 50 lemn și 20 piatră. Cu această informație putem stabilii costul resurselor pentru turnurile de apărare. De exemplu, un turn de apărare poate costa 20 aur, 10 lemn și 4 piatră. Deci cu resursele pe un întreg val putem achiziționa 5 turnuri de apărare.
+
+În ultimii ani au devenit din în ce mai populare jocurile de tip _base building_, în care scopul jocului e să construiești clădiri care au nevoie de un lanț de aprovizionare complex. Acestea constau dintr-un mare de resurse care trebuie să fie colectate și gestionate. Multe dintre aceste fiind combinații de alte resurse, exemplu: pentru a produce o căramidă avem nevoie o fabrică și o mină de clei care să extraga resursa de bază, și anume cleiul. Practic, avem nevoie de două fabrici și o resursă de bază pentru a produce resursa compusă.
+
+Acest lanț de aprovizionare seamănă foarte mult cu idea noastră de jetoane de acțiune. Pentru a produce un jeton de îngheț trebuie să avem un turn pasiv de înghețare care trebuie să primească un jeton de încetinire de rang 2, produs la rândul său de un turn pasiv de încetinire.
+
+Prin urmare, jocurile de tip _base building_ pot fi considerate repere pentru implementarea sistemului de jetoane de acțiune, având în vedere asimilările.
+
 == Sistemul de inamicii 
 
 Inamicii reprezintă entitățile care trebuie să ajungă la obiectivul pe care jucătorul încearcă să-l protejeze. Pentru a ajunge la destinație, acesta trebuie să supraviețuiască atacurilor turnurilor de apărare. Inamicii au o viață și o viteză de mișcare. Viața reprezintă numărul de pagube pe care un inamic le poate suporta înainte de a fi eliminat. Viteza de mișcare reprezintă cât de repede se deplasează inamicul pe traseu.
@@ -682,6 +695,61 @@ struct Enemy {
 ]
 
 == Interfața de utilizator
+
+Interfața de utilizator joacă un rol critic în experiența de joc, deoarcere sistemul de jetoane de acțiune este un sistem complex, iar jucătorul trebuie să aibă o interfață intuitivă pentru a putea interacționa cu acesta.
+
+Avem următoarele elemente de interfața de utilizator trebuie să le afișeze:
+
+#left-padding[
+- informații despre turnurile de apărare.
+- informații despre inamicii care se află pe hartă.
+- informații despre statusul jucătorului.
+- informații despre statusul inamicilor.
+- informații despre resursele jucătorului.
+- informații despre obiectivul care trebuie protejat.
+- informații despre valul de inamicii.
+- informații despre timpul rămas până la următorul val de inamicii.
+- informații despre turnurile de apărare care se află pe hartă.
+]
+
+Și următoarele reguli pentru construirea interfeței de utilizator #cite("best-ui"), #cite("unity-ui"):
+
+#left-padding[
+- informațiile trebuie să fie afișate într-un mod intuitiv, clar și concis.
+- elementele nu trebuie să distragă atenția de la joc.
+- trebuie să existe o ierarhie a importanței între elemente vizuale.
+- estetica elementelor trebuie să fie în concordanță cu tema jocului.
+]
+
+Magazinul (_shop_) este un element important al interfeței de utilizator. Acesta este locul unde putem cumpăra turnuri de apărare și putem vedea informații despre acestea. Acesta are trei secțiuni: turnuri de apărare active, turnuri de apărare pasive și îmbunătățiri generale.
+
+Pentru turnurile de apărare active, avem următoarele informații:
+
+#left-padding[
+- numele turnului de apărare.
+- imaginea turnului de apărare.
+- descrierea caracteristicilor.
+- costul de achiziție.
+- butonul de cumpărare.
+]
+
+Pentru turnurile de apărare pasive, avem următoarele informații:
+
+#left-padding[
+- numele turnului de apărare.
+- descrierea caracteristicilor.
+- costul de achiziție.
+- butonul de cumpărare.
+- condițiile de creere pentru jeton.
+- jetonul de acțiune creat.
+]
+
+@passive-tower-item-ui reprezintă o schiță pentru un element vizual al unui turn pasiv din magazin.
+
+#figure(
+  image("assets/passive-tower-ui-item.png"),
+  caption: [Schiță pentru un element vizual al unui turn pasiv din magazin.]
+) <passive-tower-item-ui>
 
 #pagebreak()
 
