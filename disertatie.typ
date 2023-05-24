@@ -302,6 +302,14 @@ Design unui joc de Tower Defense este relativ simplu. În general, jocurile de T
 
 - Resurse care trebuie colectate pentru a construi turnurile defensive.
 
+O reprezentare simplificată poate fi observată în @tw-1. 
+
+
+#figure(
+  image("assets/ui-TW-1.png"),
+  caption: [Schiță pentru un element vizual al unui îmbunătățiri din magazin.]
+) <tw-1>
+
 Design-ul jocurilor de Tower Defense a evoluat semnificativ în ultimii ani. Iată câteva exemple de evoluție a design-ului pentru jocurile de Tower Defense:
 
 - Varietate în tipurile de structuri defensive. Creativitatea dezvoltatorilor a fost foarte inovatoare pentru acest aspect. Multe jocuri asemănand turnurile de apărare cu alte structuri, cum ar fi: capcane, arme, aparate sau chiar personaje. Acest lucru a oferit o flexibilitate în dezvoltarea jocurile hibride care se îmbină cu alte genuri de jocuri.
@@ -712,6 +720,8 @@ Avem următoarele elemente de interfața de utilizator trebuie să le afișeze:
 - informații despre turnurile de apărare care se află pe hartă.
 ]
 
+În @hud putem obsera un exemplu pentru creearea unor zone în care putem pune elementele vizuale pentru afișarea informațiilor.
+
 Și următoarele reguli pentru construirea interfeței de utilizator #cite("best-ui"), #cite("unity-ui"):
 
 #left-padding[
@@ -733,23 +743,49 @@ Pentru turnurile de apărare active, avem următoarele informații:
 - butonul de cumpărare.
 ]
 
-Pentru turnurile de apărare pasive, avem următoarele informații:
+@active-tower-item-ui reprezintă o schiță pentru un astfel de element vizual. Pentru turnurile de apărare pasive, avem următoarele informații:
 
 #left-padding[
-- numele turnului de apărare.
-- descrierea caracteristicilor.
-- costul de achiziție.
-- butonul de cumpărare.
-- condițiile de creere pentru jeton.
+- numele turnului de apărare;
+- descrierea caracteristicilor;
+- costul de achiziție;
+- butonul de cumpărare;
+- condițiile de creere pentru jeton;
 - jetonul de acțiune creat.
 ]
 
-@passive-tower-item-ui reprezintă o schiță pentru un element vizual al unui turn pasiv din magazin.
+@passive-tower-item-ui reprezintă o schiță pentru un element vizual al unui turn pasiv din magazin. Iar pentru îmbunătățiri, avem:
+
+#left-padding[
+- numele îmbunătățirii;
+- descrierea;
+- costul de achiziție;
+- butonul de cumpărare;
+- tipul de turn de apărare va fi îmbunătățit;
+- caracteristicile care vor fi îmbunătățite.
+]
+
+@upgrade-tower-item-ui este schița pentru un astfel de element vizual.
 
 #figure(
-  image("assets/passive-tower-ui-item.png"),
+  image("assets/ui-hud.png"),
+  caption: [Schiță pentru interfața de utilizator.]
+) <hud>
+
+#figure(
+  image("assets/ui-Activ.png"),
+  caption: [Schiță pentru un element vizual al unui turn activ din magazin.]
+) <active-tower-item-ui>
+
+#figure(
+  image("assets/ui-Pasiv.png"),
   caption: [Schiță pentru un element vizual al unui turn pasiv din magazin.]
 ) <passive-tower-item-ui>
+
+#figure(
+  image("assets/ui-Upgrade.png"),
+  caption: [Schiță pentru un element vizual al unui îmbunătățiri din magazin.]
+) <upgrade-tower-item-ui>
 
 #pagebreak()
 
