@@ -286,11 +286,15 @@ Punctele puternice ale acestui gen de joc sunt:
 
 - Dungeon Defenders - Acest joc combină elemente de joc de rol și Tower Defense, jucătorii trebuie să-și construiască turnurile defensive și să-și antreneze eroii pentru a învinge inamicii. Jocul oferă o gamă largă de personaje cu abilități unice, iar jucătorii trebuie să le upgradeze și să le echipeze înainte de a se aventura în nivelele următoare. Acesta prezintă o combinație interesantă între strategie și joc de rol. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Trendy Entertainment.
 
+- Factorio - Acest joc este un Tower Defense în care jucătorii trebuie să își construiască o bază și să o apere de atacurile inamicilor. Jocul oferă o gamă largă de structuri defensive, precum și posibilitatea de a le upgrade. Jucătorii trebuie să colecteze resurse și să le folosească pentru a construi structuri defensive. Principală trăsătura a jocului este complexitatea lanțului de aprovizionare pentru clădirile de producție a resurselor complexe. Jocul a fost lansat în anul 2016 și a fost dezvoltat de către Wube Software.
+
 #pagebreak()
 
 = Design-ul unui joc de Tower Defense
 
 Design unui joc de Tower Defense este relativ simplu. În general, jocurile de Tower Defense au următoarele elemente:
+
+#left-padding[
 
 - O bază care trebuie apărată de atacurile inamicilor.
 
@@ -302,6 +306,8 @@ Design unui joc de Tower Defense este relativ simplu. În general, jocurile de T
 
 - Resurse care trebuie colectate pentru a construi turnurile defensive.
 
+]
+
 O reprezentare simplificată poate fi observată în @tw-1. 
 
 
@@ -312,22 +318,32 @@ O reprezentare simplificată poate fi observată în @tw-1.
 
 Design-ul jocurilor de Tower Defense a evoluat semnificativ în ultimii ani. Iată câteva exemple de evoluție a design-ului pentru jocurile de Tower Defense:
 
+#left-padding[
 - Varietate în tipurile de structuri defensive. Creativitatea dezvoltatorilor a fost foarte inovatoare pentru acest aspect. Multe jocuri asemănand turnurile de apărare cu alte structuri, cum ar fi: capcane, arme, aparate sau chiar personaje. Acest lucru a oferit o flexibilitate în dezvoltarea jocurile hibride care se îmbină cu alte genuri de jocuri.
 
 - Inamici pot fi rezistenți la anumite tipuri de atacuri sau pot avea abilități de evitare a atacurilor din partea structurilor defensive. 
 
-- Map design si-a păstrat structura de bază, schimbările au fost mai pronunțate în ceea ce privește tematica și complexitatea treseului pentru inamici.
+- Designul hărții de joc si-a păstrat structura de bază, schimbările au fost mai pronunțate în ceea ce privește tematica și complexitatea treseului pentru inamici. Unele hărță având trăsături unice care influențează modul în care jucătorii își plasează structurile defensive.
 
 - Economia de joc a fost extinsă, introducerea mai multor tipuri de resurse și a unor mecanisme de colectare mai complexe au avut un impact pozitiv în cea privește partea strategică de gestionare a resurselor. Mulți dezvoltatori folosindu-se de acesta pentru a integra elementele din jocurile de tip "resource management". 
 
+]
 
 == Modele hibride de jocuri
 
 Jocurile de Tower Defense au evoluat și au început să se îmbine cu alte genuri de jocuri, ceea ce a dus la apariția unor noi genuri de jocuri. Iată câteva exemple de modele hibride:
 
-- Cu elemente de joc de rol și acțiune. Acestea aduc in prim-plan partea de poveste și acțiune continuă pentru a crea o experiență de joc mai interesantă. Ele se concentrează pe crearea unui univers care să-l captiveze pe jucător. Jocurile de acest tip oferă o varietate de eroi cu abilități și caracteristici unice care se îmbină cu tematica elementara a genului Tower Defense.
+#left-padding[
+- Joc de dezvoltarea a unei base (_base building_). Acesta de bazează pe colectarea de resurse și crearea de unui lanț de aprovizionare pentru clădirile de producție. Este o situație destul de comună ca aceste tipuri să jocuri să includă o parte de Tower Defense. Accentul se pune pe partea economică, obiectivul jucătorului fiind deplocarea unor clădri speciale care au nevoie de resurse complexe pentru a fi construite. Sistemul de jetoane de acțiunea se folosește aceiași idee, număi că în loc să creăm un lanț de aprovizionare, jucătorii trebuie să creeze un lanț de acțiuni care să fie executate într-o anumită ordine pentru a obține un rezultat dorit.
 
-- Cu elemente de joc de puzzle. Acest gen se pliază foarte ușor pe genul Tower Defense, iar introducerea de mici schimbări în mecanica de joc poate duce la crearea unui joc de acest tip. Jocurile de acest tip se concentrează pe crearea unui puzzle care să fie rezolvat de către jucător. Acest puzzle poate consta în găsirea unei anumite combinații de structuri defensive care să oprească valul inamic în anumite condiții. Unele jocuri, introduc acest concept sub form de "challenge mode" care poate fi jucat de către jucători după ce au terminat jocul. Acesta consta în adaugarea de noi constrăngeri pentru jucător, cum ar fi: limitarea numărului de turnuri defensive, limitarea numărului de resurse, creșterea numărului de inamici, etc.
+- Joc de rol și acțiune (_action role-playing game_). Acestea aduc in prim-plan partea de poveste și acțiune continuă pentru a crea o experiență de joc mai interesantă. Ele se concentrează pe crearea unui univers care să-l captiveze pe jucător. Jocurile de acest tip oferă o varietate de eroi cu abilități și caracteristici unice care se îmbină cu tematica elementara a genului Tower Defense.
+
+- Puzzle. Acest gen se pliază foarte ușor pe genul Tower Defense, iar introducerea de mici schimbări în mecanica de joc poate duce la crearea unui joc de acest tip. Acestea concentrează pe crearea unui puzzle care să fie rezolvat de către jucător. Acest puzzle poate consta în găsirea unei anumite combinații de structuri defensive care să oprească valul inamic în anumite condiții. Unele jocuri, introduc acest concept sub form de "challenge mode" care poate fi jucat de către jucători după ce au terminat jocul. Acesta consta în adaugarea de noi constrăngeri pentru jucător, cum ar fi: limitarea numărului de turnuri defensive, limitarea numărului de resurse, creșterea numărului de inamici, etc.
+
+- Joc de strategie în timp real (_real-time strategy_). Acest gen de jocuri se concentrează pe crearea unei strategii de joc care să fie executată în timp real. O mare partea din aceastea au o parte competitivă dezvoltată unde fie care greseală poate fi exploatată. Mai toate jocurile de acest timp conțin turnuri de apărare care rolul de a încetinii atacul oponentului.
+]
+
+
 
 == O nouă metodă de extindere a mecanicii de joc
 
@@ -346,17 +362,22 @@ Harta joc are un rol crucial în design, ea este cea care de cele mai multe ori 
 Flexibilitea jetoanelor de acțiune vine din faptul că acestea pot fi compuse din mai multe tipuri de jetoane. 
 Presupunem că avem următoarele tipuri de jetoane de bază:
 
+#left-padding[
 - Jeton de bonus atac: inamciii primesc daune bonus de la proiectilele turnurilor.
 - Jeton de încetinire: inamicii au viteză de mișcare redusă.
 - Jeton de explozie: proiectilele turnurilor au un efect de explozie asupra inamicului și vecinilor săi.
+]
 
 Rangul unui jeton reprezintă numărul de jetoane de același tip pe care un inamic le deține, fiecare jeton are prestabilit un rang maxim. Un jeton de rang mai mare are un efect mai pronunțat decât unul de rang mai mic. Jetoanele pot fi combinate pentru a obține noi tipuri. De exemplu, putem avea următoarele tipuri de jetoane compuse:
 
+#left-padding[
 - Jeton de înghețare: inamicii vor fi inghețați (viteză de mișcare 0) atăta timp căt jetonul este activ. Format dintr-un jeton de încetinire de rang 2.
 - Jeton de daune de-a lungul timpului: inamicii care dețin acest jeton vor primi daune atâta timp cât jetonul este activ. Format dintr-un jeton de bonus atac de rang 3.
 - Jeton de explozie la eliminare: inamicii care dețin acest jeton vor crea o explozie când sunt eliminați. Format dintr-un jeton de explozie de rang 2.
 - Jeton de explozie la încetinire: inamicii care dețin acest jeton vor crea o explozie când sunt încetiniți. Format dintr-un jeton de explozie de rang 2 și un jeton de încetinire de rang 2.
 - Jeton de explozie pulsantă: inamicii care dețin acest jeton vor crea o explozie în jurul lor la fiecare 3 secunde. Format dintr-un jeton de explozie de rang 2 și un jeton de bonus atack de rang 3.
+]
+
 
 Putem observa marele avantaj al acestui sistem de jetoane de acțiune, și anume: flexibilitatea. Acest sistem ne permite să creăm o varietate de jetoane de acțiune, iar acestea pot fi combinate pentru a crea noi tipuri de jetoane.
 
@@ -371,12 +392,14 @@ Proiectilele pot fi create doar de către turnurile active și acestea reprezint
 
 Această relație de interdependență între turnuri este un aspect important în design-ul jocului, el fiind forma de coloborare care este create de acest sistem de jetoane.
 
-În acest sens, putem avea următoarele tipuri de turnuri pasive:
+În acest sens, putem avea următoarele tipuri de turnuri pasive din @turnuri-pasive-tabel:
 
+#left-padding[
 - Turn pasiv de atac bonus: crează un jeton de bonus atac pentru fiecare inamic din raza sa de acțiune.
 - Turn pasiv de încetinire: crează un jeton de încetinire pentru fiecare inamic din raza sa de acțiune.
 - Turn pasiv de înghețare: crează un jeton de înghețare pentru fiecare inamic din raza sa de acțiune care are un jeton de încetinire de rang 2.
 - Turn pasiv de explozie pulsantă: crează un jeton de explozie pulsantă pentru fiecare inamic din raza sa de acțiune care are un jeton de explozie de rang 2.
+]
 
 Turnurile active se aseamână cu turnurile clasice de apărare, acestea având rolul de a elimina inamicii. Dacă turnurile pasive variază prin tipul de jeton pe care îl produc, turnurile active se vor diferenția prin modelul de proiectil create și rata de atac. Iată câteva exemple de turnuri active:
 
@@ -389,6 +412,22 @@ Având în vedere exemple de mai sus, putem observa diferite cum fiecare turn î
 - Pentru ca turnul activ să fie eficient, ar avea nevoie de niște turnuri pasive care să încetinească inamicii.
 - Turnul de tip mortar ar fi mai bun dacă inamicii ar fi mult mai încetiniți astfel încât aceștia să fie mai grupați astfel încât explozia să fie mai eficientă.
 - Turnul cu proiectil inteligent nu ar avea probleme cu țintirea inamicilor așă că ar beneficia mai mult dacă inamicii ar avea un jeton de explozie pulsantă care să le reducă viața cât mai repede.
+
+#figure(
+  table(
+    columns: (auto, auto, auto),
+    inset: 10pt,
+    align: center,
+    [Denumire turn pasiv], [Condiție (jetoane de acțiune)], [Jeton generat],
+    [Atac bonus], [-], [Bonus atac (rang 1)],
+    [Încetinire], [-], [Încetinire (rang 1)],
+    [Înghețare], [Încetinire (rang 2)], [Înghețare (rang 1)],
+    [Explozie], [-], [Explozie (rang 2)],
+    [Explozie pulsantă], [Explozie (rang 2)], [Explozie pulsantă (rang 1)],
+  ),
+  caption: "Exemple de turnuri pasive",
+  supplement: "Tabelul",
+) <turnuri-pasive-tabel>
 
 == Valul de inamici
 
@@ -409,6 +448,23 @@ Unele jocuri, introduc noi mecanici de joc pentru inamicii, precum:
 
 Sistemul de jetoane nu prezintă niciun impediment în implementarea acestor mecanici de joc. Chiar putem crea jetoane de acțiune care să contracareze inamicii care prezintă aceste mecanici de joc. De exemplu, putem avea un jeton de acțiune care să reducă armura inamicilor sau un jeton de acțiune care să reducă regenerarea inamicilor.
 
+Fiecare rundă de joc are un număr de inamicii care compun valul de inamicii (@val-inamici-tabel). Acest număr crește pe măsură ce jocul avansează. De exemplu, în primele 10 runde, valul de inamicii este format din 10 inamicii, în următoarele 10 runde, valul de inamicii este format din 25 inamicii.
+
+#figure(
+  table(
+    columns: (auto, auto),
+    inset: 10pt,
+    align: center,
+    [Interval runde],[Număr inamici per rundă],
+    [1-10],[10],
+    [11-20],[25],
+    [21-30],[40],
+    [31-40],[60]
+  ),
+  caption: "Numărul de inamicii care compun un val per rundă",
+  supplement: "Tabelul",
+) <val-inamici-tabel>
+
 == Economia de joc
 
 Într-un joc de tip _Tower Defense_, turnurile de apărare sunt construite și îmbunătățite prin intermediul resurselor. Aceste resurse pot fi colectate de către jucător prin intermediul unor structuri speciale sau pot fi obținute prin eliminarea inamicilor. Acest sistem reprezintă economia de joc.
@@ -424,6 +480,38 @@ De regulă, pentru a stabili costul resurselor pentru turnurile de apărare, se 
 - Care este performanța unui turn în raport cu costul său?
 
 Un alt mod în care poate fi folosit acest sistem este cel în generarea de valuri inamice. În loc ca tipurile de inamici să fie prestabilite, acestea pot fi alese în funcție de valoarea valului de inamici. Fiecare inamic având o valoarea, inamicii pot fi aleși aleatoriu până ajungem la valoarea totală de resurse pe care dorim s-o avem pentru valul respectiv.
+
+Presupunem că avem următoare costuri pentru turnurile de apărare din @cost-turnuri-tabel și următoarele recompense pentru eliminarea inamicilor din @recompensa-inamici-tabel.
+
+#figure(
+  table(
+    columns: (auto, auto),
+    inset: 10pt,
+    align: center,
+    [Turn de apărare pasiv],[Cost construire],
+    [Atac bonus],[100],
+    [Încetinire],[50],
+    [Îngheț],[300],
+  ),
+  caption: "Costul turnurilor de apărare pasive",
+  supplement: "Tabelul",
+) <cost-turnuri-tabel>
+
+#figure(
+  table(
+    columns: (auto, auto),
+    inset: 10pt,
+    align: center,
+    [Tip inamic],[Recompensă],
+    [Simplu],[10],
+    [Rapid],[5],
+    [Durabil],[30],
+  ),
+  caption: "Recompensă eliminare inamici",
+  supplement: "Tabelul",
+) <recompensa-inamici-tabel>
+
+Daca valul 1 de inamici conține următoarea compoziție: 7 inamicii simpli, 2 rapizi și un durabil, atunci costul total al valului este de 7 \* 10 + 2 \* 5 + 1 \* 30 \= 115. Dacă jucătorul elimină acest val de inamici, atunci va primi 115 resurse. Cu suma aceast el si-ar permite să construiască un turn pasiv de tipul _Atac bonus_ sau două turnnuri pasive de tipul _Încetinire_. Pentru a construi un turn de tipul _Îngheț_ ar mai avea nevoie de 185 resurse. Aceastea pot fi obținute din următoarele două valuri.
 
 = Implementarea sistemelor
 
