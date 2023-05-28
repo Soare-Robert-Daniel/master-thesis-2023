@@ -33,7 +33,7 @@
 #let left-padding(term) = {
   stack(
     dir: ltr,
-    h(0.7cm),
+    h(0.5cm),
     term
   )
 }
@@ -307,7 +307,6 @@ Alte motivații pot fi #cite("tw-principales"):
 - Dungeon Defenders - Acest joc combină elemente de joc de rol și Tower Defense, jucătorii trebuie să-și construiască turnurile defensive și să-și antreneze eroii pentru a învinge inamicii. Jocul oferă o gamă largă de personaje cu abilități unice, iar jucătorii trebuie să le upgradeze și să le echipeze înainte de a se aventura în nivelele următoare. Acesta prezintă o combinație interesantă între strategie și joc de rol. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Trendy Entertainment.
 
 - Factorio - Acest joc este un Tower Defense în care jucătorii trebuie să își construiască o bază și să o apere de atacurile inamicilor. Jocul oferă o gamă largă de structuri defensive, precum și posibilitatea de a le upgrade. Jucătorii trebuie să colecteze resurse și să le folosească pentru a construi structuri defensive. Principală trăsătura a jocului este complexitatea lanțului de aprovizionare pentru clădirile de producție a resurselor complexe. Jocul a fost lansat în anul 2016 și a fost dezvoltat de către Wube Software.
-
 ]
 
 #pagebreak()
@@ -327,7 +326,6 @@ Design unui joc de Tower Defense este relativ simplu. În general, jocurile de T
 - Turnuri defensive care trebuie plasate strategic pentru a opri inamicii înainte ca aceștia să ajungă la baza jucătorului.
 
 - Resurse care trebuie colectate pentru a construi turnurile defensive.
-
 ]
 
 O reprezentare simplificată poate fi observată în @tw-1. 
@@ -342,15 +340,10 @@ Alte aspecte care pot fi luate în considerare în design-ul unui joc de Tower D
 
 #left-padding[
   - Pagubele cauzate de turnuri asupra inamicilor - fiecare inamic are un anumit număr de puncte de viață, iar turnurile au un anumit număr de puncte de atac. Atunci când un inamic este atacat de un turn, acesta pierde puncte de viață. Atunci când punctele de viață ale unui inamic ajung la 0, acesta este eliminat din joc. Trebuie să avem în vedere acest lucru atunci când proiectăm turnurile de apărare, deoarece acestea trebuie să fie suficient de capabile să elimine inamicii înainte ca aceștia să ajungă la obiectiv.
-
   - Modul de tințire - uneori dorim ca tunurile să atace anumiți inamicii înaintea altora. Acest lucru poate fi realizat prin intermediul unui sistem de prioritizare a inamicilor. De exemplu, un turn poate fi configurat să atace întotdeauna inamicul cel mai apropiat de baza jucătorului, sau poate fi configurat să atace întotdeauna inamicul cu cele mai multe puncte de viață.
-
   - Optimizarea cheltuielilor de resurse - fiecare rundă de joc oferă o anumită cantitate de resurse. Costul turnurilor trebuie să țină cont de această voloare întrucât jucătorii trebuie să poată construi turnuri în fiecare rundă. Prea multe resurse pot duce la un joc prea ușor, iar prea puține resurse pot duce la un joc prea dificil.
-
   - Particularități are hărții de joc - unele hărți de joc pot avea particularități care pot influența modul în care jucătorii își construiesc turnurile de apărare. De exemplu, o hartă de joc poate avea un traseu care se împarte în două, iar jucătorii trebuie să își construiască turnurile de apărare în așa fel încât să poată apăra ambele trasee.
-
   - Efecte de control a mulțimii - unele turnuri pot avea efecte de control a mulțimii asupra inamicilor. De exemplu, un turn poate încetini inamicii, sau poate îngheța inamicii pentru o perioadă de timp. Aceste efecte pot fi foarte utile în anumite situații, de exemplu, atunci când un inamic este foarte aproape de obiectiv.
-
   - Armura inamiciilor - un sistem prin care inamicii pot diminua efectele produse de la anumite tipuri de atacuri. De exemplu, un inamic poate fi rezistent la atacurile de foc, dar poate fi vulnerabil la atacurile de gheață. Acest sistem este de multe ori introdus pentru a încuraja jucătorii să își construiască turnuri defensive de diferite tipuri.
 ]
 
@@ -398,15 +391,10 @@ Harta joc are un rol crucial în design, ea este cea care de cele mai multe ori 
 Următoarele întrebări apar în urma acestei idei de mecanică de joc:
 #left-padding[
 - Cum putem echilibra macanica de joc? Dacă un jeton este mult mai bun decât celalte, cum le putem face pe celelalte mai atractive?
-
 - Cum putem crea o varietate de jetoane de acțiune care să fie interesante pentru jucător fără a crea redundanță?
-
 - Care este dimensiunea hărții de joc are să poată susține această mecanică de joc care necesită un număr mare de turnuri de apărare?
-
 - Care este numărul de jetoane optime pentru fiecare tip?
-
 - Cum aratăm acest sistem în interfața de utilizator astfel încăt să fie ușor de înțeles?
-
 - Cum structurăm turnurile de apărare astfel încât să evidențiem acest sistem de jetoane de acțiune?
 
 ]
@@ -439,17 +427,24 @@ Așadar, un joc care urmează acest design poate fi extins foarte ușor fără s
 Însă, acest sistem de jetoane de acțiune nu este fără dezavantaje. Următoarele probleme pot apărea:
 
 #left-padding[
-
-  
+- Conflicte la compunere: presupunem ca inamicul se află în raza a doua turnuri care folosesc același tip de jeton (@conflict). Se pune problema care dintre cele două va avea prioritate la procesarea jetonului. 
+- Redundanță: este destul de dificil să avem o multitudine de jetoane fără să existe unele care fac aproximativ același lucru preacum altele.
+- Logică complexă: toate aceste interacțiunii au nevoie să fie procesate iar construirea unui sistem care să facă acest lucru poate fi destul de dificilă avănd în vedere că efectele trebuie să fie aplicate într-o anumită ordine.
 ]
+
+#figure(
+  image("assets/ui-conflict.png"),
+  caption: "Conflict la compunere",
+) <conflict>
 
 == Tipurile de turnuri
 
 Pentru sistemul de jetoane de acțiune trebuie să avem o gamă largă de turnuri care să fie capabile să creeze și să consume jetoanele de acțiune. Vom împărți turnurile în două categorii: _active_ și _pasive_.
 
-Proiectilele pot fi create doar de către turnurile active și acestea reprezintă principalul mod a elimina inamicii. Dar turnurile active nu pot crea jetoane de acțiune, ele pot doar consuma jetoanele de acțiune pentru a-și îmbunătăți atacul. Turnurile pasive nu pot crea proiectile, însă acestea pot crea jetoane de acțiune care pot fi consumate de către turnurile active sau de alte tunuri pasive.
+Proiectilele pot fi create doar de către turnurile active și acestea reprezintă principalul mod a elimina inamicii. Dar turnurile active nu pot crea jetoane de acțiune, ele pot doar consuma jetoanele de acțiune pentru a-și îmbunătăți atacul. Turnurile pasive nu pot crea proiectile, însă acestea pot crea jetoane de acțiune care pot fi consumate de către turnurile active sau de alte turnuri pasive.
 
-Această relație de interdependență între turnuri este un aspect important în design-ul jocului, el fiind forma de coloborare care este create de acest sistem de jetoane.
+Această diviziune între turnurile active și turnurile pasive aduce o dimensiune suplimentară strategiei jocului de _Tower Defense_. Jucătorul trebuie să decidă cum să își aloce resursele și să plaseze turnurile în mod strategic pentru a crea un echilibru între puterea ofensivă și capacitatea de a genera jetoane de acțiune. 
+Relație de interdependență între turnuri este un aspect important în design-ul jocului, el fiind forma de coloborare care este create de acest sistem de jetoane.
 
 În acest sens, putem avea următoarele tipuri de turnuri pasive din @turnuri-pasive-tabel:
 
@@ -462,15 +457,22 @@ Această relație de interdependență între turnuri este un aspect important �
 
 Turnurile active se aseamână cu turnurile clasice de apărare, acestea având rolul de a elimina inamicii. Dacă turnurile pasive variază prin tipul de jeton pe care îl produc, turnurile active se vor diferenția prin modelul de proiectil create și rata de atac. Iată câteva exemple de turnuri active:
 
+#left-padding[
 - Turn activ cu proiectil simplu: acesta crează un proiectil simplu care aplică pagube primului inamic cu care intră în contact. Acesta atacă la o rată medie și aplică pagube medii.
 - Turn activ de tip mortar: acesta crează un proiectil care explodează la impact și aplică pagube tuturor inamicilor din raza de acțiune a exploziei. Proiectilul explodează cănd ajunge la destiniție, acesta ignorănd inamicii din cale.
 - Turn activ cu atac rapid: acesta crează un proiectil simplu care aplică pagube primului inamic cu care intră în contact. Acesta are o rată de atac ridicată, dar care provoaacă pagube mici.
 - Turn activ cu proiectil inteligent: acesta crează un proiectil simplu care urmărește inamicul cel mai apropiat din raza sa de acțiune.
+- Turn activ cu proiectil penetrant: Acest tip de turn creează proiectile care pot străpunge inamicii și pot atinge și dauna mai mulți inamici în linie. Proiectilele penetranți sunt deosebit de eficiente împotriva inamicilor cu armură sau a grupurilor de inamici care avansează într-o linie.
+]
+
 
 Având în vedere exemple de mai sus, putem observa diferite cum fiecare turn îl completează pe celălalt:
+
+#left-padding[
 - Pentru ca turnul activ să fie eficient, ar avea nevoie de niște turnuri pasive care să încetinească inamicii.
 - Turnul de tip mortar ar fi mai bun dacă inamicii ar fi mult mai încetiniți astfel încât aceștia să fie mai grupați astfel încât explozia să fie mai eficientă.
 - Turnul cu proiectil inteligent nu ar avea probleme cu țintirea inamicilor așă că ar beneficia mai mult dacă inamicii ar avea un jeton de explozie pulsantă care să le reducă viața cât mai repede.
+]
 
 #figure(
   table(
@@ -496,14 +498,19 @@ Ca un inamic să ajungă la obiectiv, viața lui trebuie să fie mai mare decât
 
 Proiectarea corectă a inamicilor este un aspect important în design-ul jocului. Inamicii trebuie să fie echilibrați astfel încât să ofere o provocare jucătorului și să fie în armonie cu sistemul de jetoane. Pentru inamicii nu avem un anumit tip ci un set de recomandări de design de care trebuie ținut cont:
 
+#left-padding[
 - Un inamic nu poate fi eliminat doar prin intermediul turnurilor active -- ne dorim să existe o coloborare între turnuri, așadar turnurile pasive trebuie să aibă și ele o contribuție.
 - Caracteristicile inamicului (precum: viață, viteză de mișcare) trebuie să fie în concordanță cu evoluția jocului. Inamicii devin mai puternici pe măsură ce jocul avansează.
 - Generarea valului de inamici trebuie să fie consistent. În loc să generăm aleatoriu pozițiile de start al inamiciilor, putem folosi un algoritm de generare care să producă un traseu de la punctul de start la punctul final. Acest lucru ne permite să controlăm mai bine dificultatea jocului.
+]
 
 Unele jocuri, introduc noi mecanici de joc pentru inamicii, precum:
+
+#left-padding[
 - Armură: atacurile de un anumit tip au un efect redus  asupra inamicilor care au armură (exemplu: -50% pagube primite de la proiectil). Aceasta, poate să introducă la rândul său noțiune de _tipuri de atac_ (exemplu: atac de foc, atac magic) unde fiecare tip de armură acționează diferit.
 - Regenerare: inamicii își pot regenera viața în timpul jocului.
 - Abilități speciale: inamicii care oferă un bonus altor inamici din jurul lor (exemplu: +50% viață pentru inamicii din jurul său) sau care produc o acțiune care le oferă avantaj (exemplu: crearea de noi inamicii de-a lungul traseului).
+]
 
 Sistemul de jetoane nu prezintă niciun impediment în implementarea acestor mecanici de joc. Chiar putem crea jetoane de acțiune care să contracareze inamicii care prezintă aceste mecanici de joc. De exemplu, putem avea un jeton de acțiune care să reducă armura inamicilor sau un jeton de acțiune care să reducă regenerarea inamicilor.
 
@@ -526,17 +533,31 @@ Fiecare rundă de joc are un număr de inamicii care compun valul de inamicii (@
 
 == Economia de joc
 
-Într-un joc de tip _Tower Defense_, turnurile de apărare sunt construite și îmbunătățite prin intermediul resurselor. Aceste resurse pot fi colectate de către jucător prin intermediul unor structuri speciale sau pot fi obținute prin eliminarea inamicilor. Acest sistem reprezintă economia de joc.
+Într-un joc de tip _Tower Defense_, turnurile de apărare sunt construite și îmbunătățite prin intermediul resurselor. Se utilizează diverse tipuri de resurse pentru a conferi jucătorului un control strategic asupra _gameplay_-ului. Un astfel de element esențial este moneda, reprezentând o unitate de valoare în cadrul jocului, utilizată pentru achiziționarea și îmbunătățirea turnurilor de apărare. Aceasta poate fi obținută prin intermediul unor mecanici specifice, cum ar fi distrugerea inamicilor sau îndeplinirea cu succes a anumitor provocări.
 
-Acest sistem joacă un rol important în partea strategică a jocului. Jucătorul trebuie să ia decizii strategice în ceea ce privește gestionarea resurselor. De exemplu, jucătorul poate alege să construiască mai multe turnuri de apărare de la începutul jocului, sau poate alege să construiască mai puține turnuri de apărare și să-și îmbunătățească structurile existente.
+Acest sistem joacă un rol important în partea strategică a jocului. Gestionarea atentă a resurselor reprezintă aspecte cheie în dezvoltarea unui joc de _Tower Defense_, oferind jucătorului posibilitatea de a-și construi și adapta strategia în funcție de disponibilitatea și utilizarea eficientă a resurselor disponibile. De exemplu, jucătorul poate alege să construiască mai multe turnuri de apărare de la începutul jocului, sau poate alege să construiască mai puține turnuri de apărare și să-și îmbunătățească structurile existente.
 
 De regulă, pentru a stabili costul resurselor pentru turnurile de apărare, se pot folosii următoarele întrebări:
 
+#left-padding[
 - Câți inamicii trebuie să eliminam pentru a obține resursele necesare pentru a construi un turn de apărare?
 - Câți inamicii trebuie să eliminam pentru a obține resursele necesare pentru a îmbunătăți un turn de apărare?
 - Câte resurse se pot obține în total la eliminarea unui val de inamici?
 - Ce turnuri putem construi cu resursele obținute după ce eliminăm X valuri de inamici?
 - Care este performanța unui turn în raport cu costul său?
+]
+
+Alte sugestii pentru a stabili costul resurselor pentru turnurile de apărare:
+
+#left-padding[
+- Evaluați abilitățile și caracteristicile unice ale turnului în raport cu eficacitatea sa în respingerea inamicilor. Cu cât un turn oferă mai multe avantaje tactice și are un impact mai mare asupra valurilor de inamici, cu atât ar trebui să aibă un cost mai ridicat.
+
+- Luați în considerare structura de dificultate a jocului și identificați momentele cheie în care jucătorul va avea nevoie de un anumit tip de turn de apărare. Dacă turnul este necesar pentru a face față unui val de inamici puternici sau pentru a rezolva anumite provocări speciale, costul său ar trebui să reflecte această importanță strategică.
+
+- Monitorizați și analizați datele de joc, cum ar fi rata de utilizare a turnurilor, performanța acestora și comportamentul jucătorilor. Aceste informații pot oferi indicii despre ajustările necesare în costurile turnurilor.
+
+- Includeți mecanisme de risc și recompensă în economie pentru a stimula luarea de decizii strategice. Oferiți oportunități jucătorilor de a investi resurse și de a obține recompense mai mari sau de a suporta pierderi în cazul unor alegeri nepotrivite.
+]  
 
 Un alt mod în care poate fi folosit acest sistem este cel în generarea de valuri inamice. În loc ca tipurile de inamici să fie prestabilite, acestea pot fi alese în funcție de valoarea valului de inamici. Fiecare inamic având o valoarea, inamicii pot fi aleși aleatoriu până ajungem la valoarea totală de resurse pe care dorim s-o avem pentru valul respectiv.
 
@@ -576,6 +597,78 @@ Daca valul 1 de inamici conține următoarea compoziție: 7 inamicii simpli, 2 r
 
 O parte importantă al oricărei idei de joc este implementarea acesteia. În capitolele următoare vom descrie implementarea sistemelor principale din care va fi compus jocul care se folosește de sistemul de jetoane de acțiune.
 
+Pentru partea de implementare într-un motor de joc, vom ține cont de următoarele aspecte:
+
+#left-padding[
+  - Modularitate: dorim ca sistemele să nu fie foate cuplate între ele, astfel încât să putem schimba un sistem fără a afecta alte sisteme.
+  - Extensibilitate: dorim ca sistemele să fie ușor de extins, adaugarea sau eliminarea unei noi functionalități să nu afecteze în mod critic celelalte componente.
+  - Performanță: dorim ca jocul să ruleze la o rată de cadre pe secundă cât mai mare -- de preferat cel puțin 60 FPS.
+  - Integrare: componentele trebuie să fie ușor de integrat fără a necesita modificări majore în codul existent.
+]
+
+Pentru modularitate și extensibilitate este recomandată o arhitectură bazată pe entități indentificabile prin etichete și controlate de sisteme centrale: fiecare turn de apărare, inamic și proiectil va avea o etichetă prin care va fi identificat, iar acestea vor fi coordonate de un sistem pentru turnuri, proiectile și altul pentru inamicii. 
+
+Acestea funcționează astfel: un inamic cu eticheta `e-1` trece pe langă un turn de apărare cu etichetă `t-1`; sistemul de detecție pentru turn înregistrarează inamicul `e-1` ca fiind in proximitate. `e-1` devină noua țintă pentru `t-1`. `t-1` preia coordonatele lui `e-1` din sistemul central care coordonează toți inamicii. Odată preluate datele, `t-1` comunică cu sistemul de turnuri central să crează două proiectile cu etichetele `p-1` și `p-1`. Odată create, aceastea sunt înregistrate în sistemul de coordonare al proiectilelor. Aceastea se îndreaptă spre `e-1`, iar la coliziune se întamplă doua lucruri: `e-1` raportează sistemului central că acesta s-a lovit de proiectilul `p-1`, sistemul central preia datele proiectilului (în acest caz valoarea pagubei) și actualizează viața lui `e-1`. Proiectilul `p-1` raportează sistemului central de proiectile că s-a ciocinit de un inamic, prin urmare proiectilul trebuie să fie eliminat. Sistemul central de proiectile elimină proiectilul `p-1` din lista de proiectile active.
+
+Dupa cum putem observa, avem multe indirecții. Entitățile nu comunică direct între ele, ci prin intermediul sistemelor centrale. Acesta se aseamănă cu un sistem de evenimente unde entitățile sunt emițători de evenimente, iar sistemele centrale sunt ascultători de evenimente  #cite("walcherevent"). Acest lucru ne permite să avem o arhitectură modulară, unde sistemele centrale pot fi schimbate fără a afecta entitățile.
+
+Dacă folosim un motor de joc precum Unity, avem la dispoziție obiectele de tip `ScriptableObjects` #cite("unity-so") care ne permite schimbarea de module și sistem într-un mod foarte convenabil întrucât nu necesită recompilarea codului și totul poate fi făcut din interfața de utilizator a motorului de joc.
+
+Problema integrării componetelor (din punct de vedere al codului) poate fi rezolvată prin folosirea de _design patterns_ -- aceastea sunt o serie recomandări pentru structura codului astfel încât să fie ușor de înțeles și de extins. De exemplu, în cazul nostru, vom folosii _design pattern_-ul _Observer_ #cite("gamma1995design") pentru a implementa sistemul de evenimente. Inamicii, proiectilele și turnurile vor fi subiecte, iar sistemele centrale vor fi observatori.
+
+Alte astfel de _design patterns_ #cite("gamma1995design") #cite("nystrom2014game") care pot fi folosite în implementarea jocului sunt:
+
+#left-padding[
+- _Singleton_: pentru sistemele centrale, avem nevoie de o singură instanță a acestora;
+- _Factory_: pentru crearea de entități simple;
+- _Builder_: pentru crearea de entități complexe;
+- _State_: pentru a gestiona starea entităților;
+- _Strategy_: pentru a gestiona comportamentul entităților;
+- _Command_: pentru a gestiona comenzile utilizatorului;
+- _Decorator_: pentru a adăuga noi comportamente entităților;
+- _Flyweight_: pentru a reduce memoria folosită de entități;
+- _Prototype_: pentru a clona entități;
+- _Adapter_: pentru a adapta interfețe;
+- _Facade_: pentru a ascunde detalii de implementare;
+- _Mediator_: pentru a gestiona comunicarea între entități;
+- _Memento_: pentru a salva starea entităților;
+- _Proxy_: pentru a gestiona accesul la entități;
+- _Iterator_: pentru a itera prin entități;
+- _Visitor_: pentru a itera prin entități și a le modifica;
+- _Composite_: pentru a crea structuri de date complexe;
+- _Observer_: pentru a gestiona evenimente;
+- _Chain of responsibility_: pentru a gestiona evenimente;
+]
+
+Toate tehniciile enumerate anterior ne ajută la pastrarea unui cod curat și ușor de înțeles. Dar acestea nu rezolvă și problema performanței.
+
+Performanța depinde foarte mult de modul cum gestionăm memoria și procesorul. Mereu vom dorii să minimizăm memoria folosită și să reducem timpul de procesare. În funcție de problema întâmpinată, uneori este mai bine să folosim mai multe memorie pentru a salva timp de procesare (unele calcule se pot memora și refolosii pe viitor), alteori este mai bine să folosim mai puțină memorie și să folosim mai mult timp de procesare (unele structuri de date pot ocupa foarte mult spațiu și este mai eficient să calculăm de fiecare dată).
+
+O arhitectură recomandată pentru acest gen de jocuri este cea bazată pe _Entity Component System_ (ECS) #cite("harkonen2019advantages"). Aceasta este o arhitectură care se bazează pe următoarele principii:
+
+#left-padding[
+- Entități (_Entities_): sunt obiecte care nu au niciun comportament, acestea sunt doar un identificator unic.
+- Componente (_Components_): sunt obiecte care conțin date, acestea nu au niciun comportament.
+- Sisteme (_Sistems_): sunt obiecte care conțin comportament.
+]
+
+Entitatea este un obiect virtual care reprezintă un element distinct și autonom din joc sau aplicație. Aceasta poate fi orice entitate interactivă sau obiect în lumea virtuală, cum ar fi un personaj, un inamic sau un obiect de mediu. Entitatea în sine nu conține logica specifică, ci funcționează ca un container pentru componente.
+
+Componentele reprezintă caracteristicile și comportamentul specific asociate unei entități. Ele conțin date și funcționalități care definesc aspecte specifice ale entității, cum ar fi aspectul vizual, fizica, inteligența artificială sau orice alt aspect al jocului. De exemplu, o entitate de tip "Jucător" poate avea componente precum "Randare" pentru afișarea grafică, "Fizica" pentru interacțiunea fizică sau "ComenziJucator" pentru gestionarea intrărilor de la jucător.
+
+Sistemele sunt entități specializate care preiau entitățile care îndeplinesc anumite criterii și aplică logica specifică asupra componentelor acestora. Această separare permite o gestionare și o extensibilitate mai ușoară a logicii jocului.
+
+Cu această tehnică avem următoarele beneficii:
+
+#left-padding[
+- Alinierea memoriei: Prin stocarea entităților și componentelor într-un mod continuu în memorie, ECS optimizează alinierea datelor, ceea ce duce la acces mai rapid și mai eficient la acestea. Acest aspect este important în jocurile de Tower Defense, unde există un număr mare de entități și componente care trebuie accesate în mod constant.
+- Procesare paralelă: faciliterea procesarea paralelă a entităților și componentelor pe mai multe nuclee de procesor. Aceasta permite jocului să beneficieze de puterea de calcul a sistemului în mod eficient, accelerând logica jocului și reducând posibilele blocaje sau întârzieri.
+- Modularitate și optimizare specifică: împărțirea logică a jocului în sisteme specializate care gestionează diferite aspecte, cum ar fi inteligența inamicilor, detectarea coliziunilor sau afișarea graficii. Acest lucru facilitează optimizarea specifică a fiecărui sistem, concentrându-se pe partea relevantă.
+- Reutilizarea componentelor: reducerea consumul de memorie și costurilor asociate cu crearea și distrugerea constantă a obiectelor, permițând jocului să ruleze mai eficient.
+- Gestionarea dinamică a entităților: adăugarea, eliminarea și modificarea entităților și componentelor în timp real. Acest aspect este util în jocurile de Tower Defense, unde numărul și tipurile de entități pot varia pe parcursul jocului -- adaptabilitatea și scalabilitatea în funcție de necesități, fără a afecta în mod semnificativ performanța.
+]
+
+Un dezavantaj la această arhitectură este că este destul de dificil de înțeles și de implementat. În plus, organizarea și gestionarea entităților și componentelor implică un overhead care poate afecta complexitatea și costurile dezvoltării. O implementare incorectă poate duce la o scădere a performanței. Motorul de joc Unity oferă suport pentru ECS prin pachetul _DOTS_ #cite("unity-dots"). 
 
 == Primele minute de joc
 
@@ -583,24 +676,29 @@ Inainte de a intra în detalii despre implementarea sistemului de jetoane de ac�
 
 Prima dată când pornim jocul vom vedea meniul principal. În acest meniu avem următoarele opțiuni:
 
+#left-padding[ 
 - _New Game_: începe un joc nou.
 - _Load Game_: încarcă un joc salvat.
 - _Options_: setările jocului.
 - _Exit_: închide jocul.
-
+]
 Când apăsăm pe butonul _New Game_ se va încărca scena de joc. În această scenă avem următoarele elemente:
 
+#left-padding[ 
 - Harta de joc: reprezintă zona de joc, aici se vor desfășura toate acțiunile jocului.
 - Interfața pentru magazin: reprezintă meniul de unde putem cumpăra turnuri de apărare și putem vedea informații despre acestea.
 - Interfața pentru statusul jucătorului: elemente vizuale care arată informații despre resursele acumulate, viața obiectivului care trebuie protejat, numărul valului de inamicii, timpul rămas până la următorul val de inamicii, etc.
 - Interfața pentru statusul inamiciilor: elemente vizuale care arată informații despre inamicii care se află pe hartă, cum ar fi: viața, tipul de jetoane de acțiune deținute, armura, abilități, etc.
 - Turnurile de apărare: elemente vizuale care reprezintă turnurile de apărare care au fost construite pe hartă și elementele conexe acestora, cum ar fi: raza de acțiune, proiectilele, etc.
 - Inamicii: elemente vizuale care reprezintă inamicii care se află pe hartă.
+]
 
 Inainte să apăsăm pe butonul de start al sesiunii, trebuie să amplasăm primele turnuri de apărare. Avem mai multe opțiuni de plasare, de exemplu:
 
+#left-padding[ 
 1. Începem cu un turn activ care are un proiectil simplu și o rată de atac medie. Iar ca să ne asigurăm că acesta va fi eficient, vom folosii turnurile pasive de încetinire și îngheț. În acest fel, vom încetini inamicii și vom îngheța inamicii care au un jeton de încetinire de rang 2. Acest lucru ne va permite să ne asigurăm că proiectilele turnului activ vor lovi inamicii înghețați.
 2. Începem cu un turn activ cu rată mare atac si proiectil rapid. Ca să-l folosim la potențialul său maxim, vom folosii turnurile pasive de atac bonus și încetinire. Ne vom asigura că inamicii vor fi încetiniți înainte de a intra în raza de acțiune a turnului de atac bonus, astfel încât inamicul să ajungă să aibă un jeton de atac bonus de rang înalt. Astfel, proiectilele turnului activ vor avea un efect mai mare asupra inamicilor.
+]
 
 După ce am plasat primele turnuri de apărare, putem apăsa pe butonul de start al sesiunii. În acest moment, primul val de inamici va fi generat și va începe să se deplaseze pe traseu. În acest moment, putem observa dacă amplasarea turnurilor a fost corectă sau nu. Dacă inamicii sunt eliminați înainte de a ajunge la obiectiv, este un semn că am facut decizia corectă. Dacă inamicii ajung la obiectiv, atunci trebuie să ne gândim la o altă strategie.
 
