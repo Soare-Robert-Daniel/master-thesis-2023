@@ -244,8 +244,9 @@ Acest gen de joc este tot mai întâlnit pe platformele de jocuri mobile, precum
 - Joc de strategie care îi oferă jucătorului satisfacția de a reuși să reziste valurilor de inamici prin prisma deciziilor strategice pe care le ia.
 ]
 
-
 Un punct slab al acestui gen de joc este găsirea unui echilibru în relația dintre turnurile de apărare. In marea majoritate a jocurilor de aceste gen care au avut succes, turnurile de apărare sunt independente și nu au nevoie de ajutorul unui alt turn pentru a funcționa. Acest lucru simplifică mecanica jocului, însă poate duce la o experiență de joc monotonă. Implementarea unui sistem interdependent aduce un grad de complexitate ridicat atăt pentru jucător cât și pentru dezvoltator. Cea mai mare problemă fiind design hărții de joc care trebuie să fie concepută astfel încât să pună în evidență interdependența turnurilor de apărare.
+
+Un punct de insipirație sunt jocurile de cărți (poker). În acestea, cartea individuală nu are un mare impact asupra jocului, cea ce contează este combinație/secvența de cărți. Punem aduce această idee și în jocurile de Tower Defense, unde turnurile de apărare nu au un impact major asupra jocului, ci combinația de turnuri de apărare.
 
 În această lucrare, ne propunem să cercetăm un model semi-interdependent de colaborare pentru turnurile de apărare. Acest model va folosii un sistem de comunicare bazat pe mesaje pentru a comunica între turnuri. Iar aceste mesaje vor fi purtate de către inamici cu denumirea de *jetoane de acțiune*. Astfel, turnurile vor avea acțiuni care vor fi declanșate de aceste jetoane, iar sarcina jucătorului este să se asigure că aceste jetoane ajung la turnurile potrivite pentru a declanșa acțiunea dorită.
 
@@ -274,9 +275,7 @@ Punctele puternice ale acestui gen de joc sunt:
 
 #left-padding[
 - Gameplay-ul relativ simplu și ușor de înțeles, ceea ce le face accesibile pentru toți jucătorii, indiferent de nivelul lor de experiență.
-
 - Sesiuni scurte de joc împărțite în niveluri relativ scurte, ceea ce le face perfecte pentru a fi jucate în timpul pauzelor de la muncă, în transportul public sau în orice moment liber.
-
 - Implică planificarea, gestionarea resurselor și luarea deciziilor strategice pentru a proteja o anumită zonă de atacurile inamicilor.
 ]
 
@@ -284,9 +283,7 @@ Alte motivații pot fi #cite("tw-principales"):
 
 #left-padding[
 - Creativitatea - Fiecare jucător își decide propriul mod a aborda jocul.
-
 - Complexitatea - Dorința de a depăși obstacolele impuse de mecanisme de joc complexe.
-
 - Bucuria procesului - Procesul de rezolvarea a jocului este satisfăcător în sine.
 ]
 
@@ -316,20 +313,14 @@ Alte motivații pot fi #cite("tw-principales"):
 Design unui joc de Tower Defense este relativ simplu. În general, jocurile de Tower Defense au următoarele elemente:
 
 #left-padding[
-
 - O bază care trebuie apărată de atacurile inamicilor.
-
 - O hartă cu un traseu pe care inamicii încearcă să avanseze.
-
 - Inamici care atacă baza jucătorului.
-
 - Turnuri defensive care trebuie plasate strategic pentru a opri inamicii înainte ca aceștia să ajungă la baza jucătorului.
-
 - Resurse care trebuie colectate pentru a construi turnurile defensive.
 ]
 
-O reprezentare simplificată poate fi observată în @tw-1. 
-
+O reprezentare simplificată poate fi observată în @tw-1. Toate aceste componente trebuie să creeze experiența de joc caracteristică acestui gen de joc: crearea unui sistem de apărare care să poată rezista invadatorilor.
 
 #figure(
   image("assets/ui-TW-1.png"),
@@ -351,11 +342,8 @@ Design-ul jocurilor de Tower Defense a evoluat semnificativ în ultimii ani. Iat
 
 #left-padding[
 - Varietate în tipurile de structuri defensive. Creativitatea dezvoltatorilor a fost foarte inovatoare pentru acest aspect. Multe jocuri asemănand turnurile de apărare cu alte structuri, cum ar fi: capcane, arme, aparate sau chiar personaje. Acest lucru a oferit o flexibilitate în dezvoltarea jocurile hibride care se îmbină cu alte genuri de jocuri.
-
 - Inamici pot fi rezistenți la anumite tipuri de atacuri sau pot avea abilități de evitare a atacurilor din partea structurilor defensive. 
-
 - Designul hărții de joc si-a păstrat structura de bază, schimbările au fost mai pronunțate în ceea ce privește tematica și complexitatea treseului pentru inamici. Unele hărță având trăsături unice care influențează modul în care jucătorii își plasează structurile defensive.
-
 - Economia de joc a fost extinsă, introducerea mai multor tipuri de resurse și a unor mecanisme de colectare mai complexe au avut un impact pozitiv în cea privește partea strategică de gestionare a resurselor. Mulți dezvoltatori folosindu-se de acesta pentru a integra elementele din jocurile de tip "resource management". 
 
 ]
@@ -366,11 +354,8 @@ Jocurile de Tower Defense au evoluat și au început să se îmbine cu alte genu
 
 #left-padding[
 - Joc de dezvoltarea a unei base (_base building_). Acesta de bazează pe colectarea de resurse și crearea de unui lanț de aprovizionare pentru clădirile de producție. Este o situație destul de comună ca aceste tipuri să jocuri să includă o parte de Tower Defense. Accentul se pune pe partea economică, obiectivul jucătorului fiind deplocarea unor clădri speciale care au nevoie de resurse complexe pentru a fi construite. Sistemul de jetoane de acțiunea se folosește aceiași idee, număi că în loc să creăm un lanț de aprovizionare, jucătorii trebuie să creeze un lanț de acțiuni care să fie executate într-o anumită ordine pentru a obține un rezultat dorit.
-
 - Joc de rol și acțiune (_action role-playing game_). Acestea aduc in prim-plan partea de poveste și acțiune continuă pentru a crea o experiență de joc mai interesantă. Ele se concentrează pe crearea unui univers care să-l captiveze pe jucător. Jocurile de acest tip oferă o varietate de eroi cu abilități și caracteristici unice care se îmbină cu tematica elementara a genului Tower Defense.
-
 - Puzzle. Acest gen se pliază foarte ușor pe genul Tower Defense, iar introducerea de mici schimbări în mecanica de joc poate duce la crearea unui joc de acest tip. Acestea concentrează pe crearea unui puzzle care să fie rezolvat de către jucător. Acest puzzle poate consta în găsirea unei anumite combinații de structuri defensive care să oprească valul inamic în anumite condiții. Unele jocuri, introduc acest concept sub form de "challenge mode" care poate fi jucat de către jucători după ce au terminat jocul. Acesta consta în adaugarea de noi constrăngeri pentru jucător, cum ar fi: limitarea numărului de turnuri defensive, limitarea numărului de resurse, creșterea numărului de inamici, etc.
-
 - Joc de strategie în timp real (_real-time strategy_). Acest gen de jocuri se concentrează pe crearea unei strategii de joc care să fie executată în timp real. O mare partea din aceastea au o parte competitivă dezvoltată unde fie care greseală poate fi exploatată. Mai toate jocurile de acest timp conțin turnuri de apărare care rolul de a încetinii atacul oponentului.
 ]
 
@@ -530,6 +515,8 @@ Fiecare rundă de joc are un număr de inamicii care compun valul de inamicii (@
   caption: "Numărul de inamicii care compun un val per rundă",
   supplement: "Tabelul",
 ) <val-inamici-tabel>
+
+
 
 == Economia de joc
 
