@@ -230,7 +230,9 @@
 
 #v(1cm)
 
-Genul "tower defense" (sau "apărare prin turnuri") este un gen de joc video în care jucătorul are rolul de a construi și de a upgrada turnuri defensive pentru a împiedica invazia inamicilor și a proteja o anumită zonă sau resurse. Jucătorul trebuie să plaseze strategic turnuri cu diferite abilități și funcții, cum ar fi turnuri de tragere, turnuri de aruncare a proiectilelor sau turnuri magice, pentru a opri inamicii să ajungă la punctele cheie ale hărții sau să distrugă baza jucătorului. Pe măsură ce jocul avansează, inamicii devin tot mai puternici, iar jucătorul trebuie să-și îmbunătățească strategiile de apărare și să facă alegeri strategice pentru a reuși să reziste valurilor de inamici. 
+Genul _Tower Defense_ (sau "apărare prin turnuri") este un gen de joc video din categoria jocurilor de strategie în care jucătorul are rolul de a construi și de a îmbunătății turnuri de apărare pentru a împiedica invazia inamicilor și a proteja un obiectiv. Jucătorul trebuie să plaseze strategic turnuri cu diferite abilități și funcții, cum ar fi turnuri de tragere, turnuri de aruncare a proiectilelor sau turnuri magice, pentru a opri inamicii să ajungă la punctele cheie ale hărții sau să ajungă la obiectiv. Pe măsură ce jocul avansează, inamicii devin tot mai puternici, iar jucătorul trebuie să-și îmbunătățească strategiile de apărare și să facă alegeri strategice pentru a reuși să reziste valurilor de inamici.
+
+Jocurile moderne de _Tower Defense_ au început să apară în anii 1990, iar popularitatea lor a crescut odată cu apariția modurilor de joc pentru jocul _Warcraft 3: The Frozen Throne_ #cite("tower-history"). Perioada 2007-2012 a fost perioada de aur a acestui gen de joc, în care au fost lansate multe jocuri de succes, cum ar fi: _Plants vs. Zombies_, _Kingdom Rush_, _Bloons TD 6_, _Orcs Must Die!_, _Dungeon Defenders_ și _Factorio_. Aceste jocuri au fost lansate pe diferite platforme, cum ar fi: PC, console și dispozitive mobile. În ultimii ani, popularitatea acestui gen de joc a scăzut, iar dezvoltatorii au început să se îndrepte către alte genuri de jocuri.
 
 De-a lungul anilor, genul de joc Tower Defense a evoluat și a rămas unul dintre cele mai populare genuri de jocuri în rândul jucătorilor din întreaga lume. Cu toate acestea, odată cu creșterea continuă a pieței jocurilor video, există nevoia de a inova și de a oferi jucătorilor o experiență de joc nouă și interesantă. Iar această experiență poate varia de la o valoarea educativă #cite("hernandez2015mathematics") la una pur distractivă.
 
@@ -244,9 +246,15 @@ Acest gen de joc este tot mai întâlnit pe platformele de jocuri mobile, precum
 - Joc de strategie care îi oferă jucătorului satisfacția de a reuși să reziste valurilor de inamici prin prisma deciziilor strategice pe care le ia.
 ]
 
-Un punct slab al acestui gen de joc este găsirea unui echilibru în relația dintre turnurile de apărare. In marea majoritate a jocurilor de aceste gen care au avut succes, turnurile de apărare sunt independente și nu au nevoie de ajutorul unui alt turn pentru a funcționa. Acest lucru simplifică mecanica jocului, însă poate duce la o experiență de joc monotonă. Implementarea unui sistem interdependent aduce un grad de complexitate ridicat atăt pentru jucător cât și pentru dezvoltator. Cea mai mare problemă fiind design hărții de joc care trebuie să fie concepută astfel încât să pună în evidență interdependența turnurilor de apărare.
+Un punct slab al acestui gen de joc este găsirea unui echilibru în relația dintre turnurile de apărare. In marea majoritate a jocurilor de aceste gen care au avut succes, turnurile de apărare sunt independente și nu au nevoie de ajutorul unui alt turn pentru a funcționa. 
 
-Un punct de insipirație sunt jocurile de cărți (poker). În acestea, cartea individuală nu are un mare impact asupra jocului, cea ce contează este combinație/secvența de cărți. Punem aduce această idee și în jocurile de Tower Defense, unde turnurile de apărare nu au un impact major asupra jocului, ci combinația de turnuri de apărare.
+Deoarece mecanica de joc moștenită este similară cu cea a modurilor din jocul _Warcraft 3: The Frozen Throne_, (moduri precum: _Element TD_), putem consideră _Tower Defense_ ca find un subgen al jocurilor de strategie în timp real. Dar față de un joc de strategie în timp real, _Tower Defense_ îi lipsește partea de competitivitate din prisma faptului ca nu avem oponenți umanii și unitățile inamice nu au o strategie de joc.
+
+Această lipsă a laturii competitive face ca mecanica de joc să fie monotonă și să nu ofere o experiență de joc variată pe o perioadă lungă de timp. Mulți dezvoltatori încearcă să rezolve această problemă prin combinarea cu un alt gen de joc, cum ar fi: jocuri de rol, jocuri de acțiune. Dar toate acestea nu schimbă mecanica moștenită a jocului, ci doar o extind. Pentru a scăpa de această monotonie trebuie să reimaginăm mecanica de joc, dar ca să facem acest lucru trebuie să înțelegem mai bine mecanica de joc a jocurilor de _Tower Defense_.
+
+Jocurile de strategie pot catalogate în funcție de modul în care jucătorii interacționează cu jocul. În general, jocurile de strategie se împart în două categorii: jocuri de strategie în timp real și jocuri de strategie pe ture. Cele în timp real se bazează pe reflexe rapide în a lua decizii strategice, iar cele pe ture se bazează pe planificare și analiză. Jocurile de _Tower Defense_ au istorie în a fi derivate din jocurile de strategie în timp real, dar cum mecanica de joc nu necesită reflexe rapide, acestea se aseamană cu cele din categoria jocurilor de strategie pe ture. Ca un punct de plecare, ne puteam orienta să schimbam mecanica de joc actuală cu una care seamană mai mult cu cea a jocurilor de strategie pe ture.
+
+Un punct de insipirație sunt jocurile de cărți (poker, Război, _Uno_, _Magic: The Gathering_, _Yu-Gi-Oh!_, _HearthStone_) și șah, care au un arbore de joc (_game-tree complexity_) foarte mare -- șahul are o complexitate de $10^123$#cite("chess"). În acestea, cartea sau piesa de joc individuală nu are un mare impact asupra jocului, cea ce contează este combinație/secvența de cărți/piese. Putem aduce această idee și în jocurile de Tower Defense, unde turnurile de apărare nu au un impact major asupra jocului în mod independent, ci combinația de turnuri de apărare este care contează.
 
 În această lucrare, ne propunem să cercetăm un model semi-interdependent de colaborare pentru turnurile de apărare. Acest model va folosii un sistem de comunicare bazat pe mesaje pentru a comunica între turnuri. Iar aceste mesaje vor fi purtate de către inamici cu denumirea de *jetoane de acțiune*. Astfel, turnurile vor avea acțiuni care vor fi declanșate de aceste jetoane, iar sarcina jucătorului este să se asigure că aceste jetoane ajung la turnurile potrivite pentru a declanșa acțiunea dorită.
 
@@ -659,7 +667,7 @@ Un dezavantaj la această arhitectură este că este destul de dificil de înțe
 
 == Primele minute de joc
 
-Inainte de a intra în detalii despre implementarea sistemului de jetoane de acțiune, vom descrie primele minute de joc. Acest lucru ne va ajuta să înțelegem mai bine cum funcționează jocul și cum trebuie jucătorul să interacționeze cu acesta.
+Inainte de a intra în detalii despre implementarea sistemului de jetoane de acțiune, vom descrie cum ar arăta primele minute de joc. Acest lucru ne va ajuta să înțelegem mai bine cum funcționează jocul și cum trebuie jucătorul să interacționeze cu acesta.
 
 Prima dată când pornim jocul vom vedea meniul principal. În acest meniu avem următoarele opțiuni:
 
@@ -691,7 +699,9 @@ După ce am plasat primele turnuri de apărare, putem apăsa pe butonul de start
 
 Odată terminat valul, e timpul să ne folosim de resursele acumulate pentru a achiziționa noi turnuri de apărare sau pentru a îmbunătăți turnurile existente. Cu fiecare val care trece inamicii devin mai puternici și numărul lor crește, iar noi trebuie să ne adaptăm strategia de joc pentru a face față provocărilor care apar.
 
-În funcție de ce turn am ales la început, încercăm să maxizăm potențialul acestuia, dar în același timp să ne gândim cum putem combina turnurile pasive pentru a obține jetoane mai puternice. Dacă am încerca să investim în turnurile pasive de atac bonus și explosiv, ne-ar putea ajuta cu valurile care au mulți inamicii cu viață mică. Dacă am încerca să investim în turnurile pasive de încetinire și îngheț, ne-ar putea ajuta cu valurile care au inamicii cu viață mare. 
+În funcție de ce turn am ales la început, încercăm să maxizăm potențialul acestuia, dar în același timp să ne gândim cum putem combina turnurile pasive pentru a obține jetoane mai puternice. Dacă am încerca să investim în turnurile pasive de atac bonus și explosiv, ne-ar putea ajuta cu valurile care au mulți inamicii cu viață mică. Dacă am încerca să investim în turnurile pasive de încetinire și îngheț, ne-ar putea ajuta cu valurile care au inamicii cu viață mare.
+
+
 
 == Sistemul de jetoane de acțiune
 
@@ -717,9 +727,7 @@ Tipul de efect reprezintă acțiune care se va produce atunci când jetonul de a
 - Creșterea pagubelor primite de inamici din partea proiectilelor turnurilor.
 ]
 
-Valoarea efectului reprezintă intensitatea efectului. Aceasta poate fi un număr întreg sau un procentaj. De exemplu, un jeton de acțiune care scade viteza de mișcare a inamicilor cu 50% are o valoare efect de 50%. Acest valori fie pot fi constante sau calculate prin intermediul unor funcții sau formule matematice. Exemplu:
-
-$ v = r / 10 $, unde $r in [0, 10]$ reprezintă rangul jetonului de acțiune și $v in [0, 1]$ reprezintă valoarea efectului.
+Valoarea efectului reprezintă intensitatea efectului. Aceasta poate fi un număr întreg sau un procentaj. De exemplu, un jeton de acțiune care scade viteza de mișcare a inamicilor cu 50% are o valoare efect de 50%. Acest valori fie pot fi constante sau calculate prin intermediul unor funcții sau formule matematice. Exemplu: $v = r / 10$, unde $r in [0, 10]$ reprezintă rangul jetonului de acțiune și $v in [0, 1]$ reprezintă valoarea efectului.
 
 Rangul maxim reprezintă numărul maxim de jetoane de acțiune de același tip pe care un inamic le poate deține. Un jeton de acțiune de rang mai mare are un efect mai pronunțat decât unul de rang mai mic. Când un inamic este expus de mai mult ori atacului unui turn de apărare, rangul jetonului de acțiune asociat cu turnul de apărare crește.
 
@@ -736,8 +744,8 @@ Cum acest sistem trebuiă să aibă o *implementare concretă într-un limbaj de
 Un exemplu concret de structură pentru un jeton de acțiune este următoarea:
 
 #left-padding[
-```rust
-struct Token {
+```typescript
+type Token = {
   effect_type: EffectType,
   effect_value: float,
   max_rank: int,
@@ -746,13 +754,14 @@ struct Token {
   current_duration: float,
   creation_conditions: List<Condition>
 }
+
 ```
 ]
 
 Pentru tipul de efect putem avea un simplu _enum_ care să conțină toate tipurile de efecte pe care le putem avea:
 
 #left-padding[
-```rust
+```javascript
 enum EffectType {
   Slow,
   Freeze,
