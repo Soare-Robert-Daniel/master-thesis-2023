@@ -1,5 +1,5 @@
 #set page(
-  paper: "a4"
+  paper: "a4",
 )
 
 #set text(lang: "ro")
@@ -231,6 +231,11 @@
 #pagebreak()
 
 // +------------------- Introducere -------------------+
+
+#set page(
+  paper: "a4",
+  numbering: "1 / 1",
+)
 
 #v(2cm)
 
