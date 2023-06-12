@@ -673,6 +673,9 @@ Daca valul 1 de inamici conține următoarea compoziție: 7 inamicii simpli, 2 r
 
 Un joc care prezintă o sistem simplu de economie și care stă la baza mecanicii de joc este _Kingdom: Clasic_ #cite("kingdom-coin") -- în care singura sarcină a jucătorului este distribuirea resurselor între clădirile de apărare și cele de producție. Chiar și cu această sarcină singulară, jocul oferă o experiență de joc foarte bună. Iar în versiunea de _Kingdom: Two Crowns_ se adaugă și partea de colaborare cu un alt jucător -- fapt ce arată versatilitatea design-ului de joc #cite("kingdom-coop").
 
+#pagebreak()
+#pagebreak()
+
 = Implementarea sistemelor
 
 
@@ -816,6 +819,39 @@ Odată terminat valul, e timpul să ne folosim de resursele acumulate pentru a a
 
 Deoarece folosim un automat finit în implementarea prototipului putem avea opțiunea de a relua sesiunea de joc. Acest lucru ne permite să analizăm modul cum am jucat și să încercăm să găsim o strategie mai bună. De asemenea, putem să relua runda și să încercăm o nouă tactică, să vedem dacă aceasta este mai bună sau nu.
 
+== Harta de joc
+
+Harta de joc este o zonă în care se desfășoară acțiunea jocului. În jocurile de _Tower Defense_ harta este împărțită în doua tipuri:
+
+#left-padding[
+  - Hartă liberă: nu există un trase prestabilit, iar prin plasarea turnurilor de apărare putem influența traseul inamicilor întrucât aceștia aleg de fiecare dată cel mai scurt drum până la obiectiv.
+  - Hartă cu trase prestabilit: există un traseu prestabilit pe care inamicii îl vor urma. În acest caz, plasarea turnurilor de apărare nu influențează traseul inamicilor, dar forma drumului influențează puternic eficiența turnurilor de apărare.
+]
+
+În multe jocuri harta cu traseu prestabilit este preferată întrucât permite posibilitatea de a creea mai multe nivele de joc întrucât mici diferențe în traseu pot duce la strategii diferite. Un alt avantaj este integrarea mai mult rute de atac, ceea ce poate duce la o experiență de joc mai variată.
+
+Harta liberă are un avantaj prin faptul ca partea de plasare a turnurilor joacă un rol și mai important în special ca ele vor dicta treaseul inamicilor. Un mic impendiment la acest tip de design este faptul că jucătorul va incerca mereu să obțina forma optima a treaseului pentru inamicii, iar această formă nu are multe variații cea ce face ca jucătorul să construiască aceeași hartă de fiecare dată. Acest impediment poate fi rezolvat prin adăugarea de elemente de decor care să dicteze o anumită formă a traseului.
+
+Unele jocuri, precum _Kingdom Rush_ #cite("kingdom-rush-levels"), folosesc o combinație între cele două tipuri de hărți. Acestea au un traseu prestabilit, dar în același timp au și elemente de decor care dispar în timpul jocului pentru a crea rute de atac adiționale astfel mărind dificultatea nivelului.
+
+În prototip vom folosii o hartă cu trase prestabilit întrucât este mai ușor de implementat și ne permite să ne concentrăm pe partea de jetoane de acțiune. Harta va fi o matrice de căsuțe de dimensiune 8 pe 12 (@map). Căsuța verde va reprezenta punctul de start de unde va începe valul de inamicii, iar căsuța roșie va fi finalul traseului. Cășuța galbenă va fi cășuta curent selectată de către jucător. Dacă pe căsuța selectată se află un turn de apărare, atunci raza ei de acțiune va fi vizibilă, iar dacă se află un inamic, atunci informațiile despre acesta vor fi vizibile în panoul din dreapta.
+
+Traseul este dat de căsuțele de culoarea asemănătoare turcoazului. Inamicii vor urma acest traseu de la punctul de start până la obiectiv. În cazul în care un inamic ajunge la obiectiv, viața obiectivului va scădea. Dacă viața obiectivului ajunge la 0, jocul se va termina. Turnurile de apărare pot fi construire doar în afara traseului, și anume pe căsuțele de culoarea asemănătoare a verdelui închis.
+
+Mai mult de atât, forma traseului va influența puternic eficiența turnurilor de apărare. De exemplu, dacă traseul este foarte îndreptat și fără obstacole, turnurile cu raza lungă de acțiune, cum ar fi cele de tip artilerie, vor fi extrem de eficiente. Acestea pot lovi țintele de la distanțe mari și pot cauza daune semnificative înainte ca inamicii să se apropie prea mult. Turnurile care încetinesc inamicii pot fi foarte valoroase, deoarece permit altor turnuri să lanseze mai multe atacuri înainte ca inamicii să treacă.
+
+Pe de altă parte, pe traseele sinuoase sau cu multe curbe, turnurile de scurtă rază de acțiune care pot ataca mai multe ținte simultan vor fi mai eficiente. De asemenea, pe aceste trasee, amplasarea strategică a turnurilor care pot ataca în mai multe direcții va fi esențială. De exemplu, turnuri care pot lansa flăcări sau explozii preferă zone cu curbe strânse, unde inamicii tind să se adune.
+
+În plus, amplasarea turnurilor în apropierea locurilor în care traseul se intersectează cu sinele are un efect major, deoarece acestea pot ataca inamicii care trec de mai multe ori. Acest lucru poate fi valabil și pentru traseele cu mai multe ramificații, unde turnurile cu rază mare de acțiune pot acoperi mai multe căi simultan.
+
+În @map putem observa că traseul are o formă sinuoasă la început și spre sfârșit, ideal pentru turnuri cu rază scurtă și atac rapid. De asemenea, putem observa că există două locuri în care traseul este lung și drept, tocmai bun pentru turnuri cu rază lunga.
+
+#figure(
+  image("assets/map.png", width: 80%),
+  caption: [Reprezentarea hărții de joc.]
+) <map>
+
+
 == Sistemul de jetoane de acțiune
 
 Acest sistem se ocupă de gestionarea jetoanelor de acțiune. Un jeton de acțiune reprezintă o acțiune care poate fi efectuată de unele turnuri de apărare și acesta este purtat de către inamicii. Un turn de apărare poate crea un jeton de acțiune care poate fi consumat de un alt turn de apărare prin intermediul inamicilor.
@@ -894,6 +930,20 @@ type Condition = {
 }
 ```
 ]
+
+În prototip fiecare jeton de acțiune este reprezentat de câtre o iconiță unică care este afișată de către inamic. Aceasta este o reprezentare vizuală a jetonului de acțiune care ne ajută să vedem ce jetoane de acțiune are inamicul și ce rang au acestea (@mob-with-tokens).
+
+#figure(
+  image("assets/mob-with-tokens.png", width: 17%),
+  caption: [Reprezentarea jetoanelor de acțiune pe inamic.]
+) <mob-with-tokens>
+
+În magazin avem posibilitatea să cumpărăm îmbunătățiri pentru jetoane de acțiune (@tokens-shop). Acestea includ îmbunătățiri pentru valoarea efectului sau duratei de timp. Fiecare variază în funcție de preț și de efectul pe care îl îmbunătățește. 
+
+#figure(
+  image("assets/tokens-shop.png", width: 35%),
+  caption: [Reprezentarea îmbunătățirilor pentru jetoane de acțiune în magazin.]
+) <tokens-shop>
 
 == Sistemul de turnuri de apărare
 
@@ -981,6 +1031,30 @@ O problemă care acest algoritm nu o ia in considerare este efectul provocat de 
 
 Dacă nu folosim proiectile și atacul din partea turnului este instant, atunci devine mult mai ușor să stabilim viața inamicului la momentul în turnul este pregătit să tragă prin faptul ca putem verifica instant viața curenta a inamicului. Tot ce trebuie să stabilim e un sistem de priorități în cadrul turnurilor de apărare. Putem folosii o metodă de tip _greedy_ #cite("cormen2022introduction") (aceasta implică selectarea, în fiecare pas, a opțiunii care pare cea mai bună la acel moment, fără a lua în considerare consecințele pe termen lung sau efectele pe care decizia respectivă le-ar putea avea asupra soluției finale) prin care stabilim care sunt turnurile necesare pentru a elimina inamicul folosind un număr minim de turnuri. Astfel, putem stabili o ordine de tragere a turnurilor în funcție de prioritatea lor.
 
+În prototip tunurile vor fi reprezentate de imaginii sugestive aflate pe harta de joc (@towers). În casuța turnului, pe colțul din stânga jos este un simbol care arată dacă turnul este pregătit să tragă sau nu. Dacă nu, va arată timpul rămas până la următorul atac. De asemenea, la selectarea turnului de apărare, raza de atac va fi vizibilă prin schimbarea culorii din căsuțele învecinate turnului (@tower-range).
+
+#figure(
+  image("assets/towers.png", width: 35%),
+  caption: [Reprezentarea turnurilor de apărare pe harta de joc.]
+) <towers>
+
+#figure(
+  image("assets/tower-range.png", width: 35%),
+  caption: [Reprezentarea razei de atac a turnurlui de apărare.]
+) <tower-range>
+
+În magazin avem reprezentarea turnurilor (@towers-shop) și îmbunătățirilor disponibile pentru achiziționare (@upgrades). Fiecare reprezentare are un număr care arată costul acestora, iconița indicând imaginea turnului care este vizat și o descriere a turnului sau îmbunătățirii. Pentru turnuri avem iconițe care indică puterea de atac, raza de acțiune, rată de atac și modul de atac (dacă este cazul - exemplu: _Bomb Tower_), pe langă acestea avem și tipurile de jetoane de acțiune pe care le poate crea sau utiliza. Pentru îmbunătățiri avem iconițe care indică ce trasătură îmbunătățește și cu cât.
+
+#figure(
+  image("assets/towers-shop.png", width: 35%),
+  caption: [Reprezentarea turnurile de apărare în magazin.]
+) <towers-shop>
+
+#figure(
+  image("assets/upgrades.png", width: 35%),
+  caption: [Reprezentarea îmbunătățirilor în magazin.]
+) <upgrades>
+
 == Sistemul de economie de joc
 
 Acest sistem se ocupă de gestionarea resurselor. Resursele sunt folosite pentru a construi turnuri de apărare și pentru a le îmbunătăți. Resursele pot fi obținute prin intermediul unor structuri speciale sau pot fi obținute prin eliminarea inamicilor.
@@ -1019,6 +1093,13 @@ Stiind câți inamicii avem într-un val și care este valoarea, putem calcula r
 Acest lanț de aprovizionare seamănă foarte mult cu idea noastră de jetoane de acțiune. Pentru a produce un jeton de îngheț trebuie să avem un turn pasiv de înghețare care trebuie să primească un jeton de încetinire de rang 2, produs la rândul său de un turn pasiv de încetinire.
 
 Prin urmare, jocurile de tip _base building_ pot fi considerate repere pentru implementarea sistemului de jetoane de acțiune, având în vedere asimilările.
+
+Prototipul prezintă o variantă simplificată cu o singură resursă numită _monedă_. Prin eliminarea inamicilor, jucătorul primește o recompensă sub formă de monezi. Monezile poate fi folosită pentru a achiziționa turnuri de apărare și îmbunătățiri pentru acestea prin intermediul magazinului. @shop este reprezentarea vizuală a magazinului -- în colțul din dreapta sus avem numărul de monezi pe care le deținem, iar în partea de jos avem turnurile de apărare și îmbunătățirile disponibile pentru achiziționare și fiecare având un cost de achiziție.
+
+#figure(
+  image("assets/shop.png", height: 30%),
+  caption: [Reprezentarea vizuală a unui magazin pentru achiziționarea de turnuri de apărare și îmbunătățiri.]
+) <shop>
 
 == Sistemul de inamicii 
 
@@ -1065,7 +1146,7 @@ type Enemy = {
 
 Un val de inamicii este o listă de inamicii care trebuie să ajungă la obiectivul care trebuie protejat de-a lungul unui runde joc. Această listă variază în funcție de progresului jucătorului în joc. De exemplu, la începutul jocului avem un val de 10 inamicii, iar la finalul jocului avem un val de 100 inamicii. Tipurile de inamicii variază de asemenea de val la val. De exemplu, la începutul jocului avem 10 inamicii normali, iar la finalul jocului avem 20 inamicii rezistenți, 30 rapizi și 50 normali.
 
-Un val (_wave_) poate fi descries de următoarea structură:
+Un val (_wave_) poate fi descris de următoarea structură:
 
 #left-padding[
   #columns(2)[
@@ -1089,6 +1170,18 @@ Un val (_wave_) poate fi descries de următoarea structură:
 O chestie importantă este intervalul de generare al inamicilor în cadrul valului. Dacă intervalul este mic se poate crea un grup de inamicii care să ajungă la obiectiv înainte ca turnurile de apărare să poată să-i elimine. Dacă intervalul este mare, atunci turnurile de apărare pot să elimine inamicii înainte ca aceștia să ajungă la obiectiv. Deci, trebuie să găsim un echilibru între aceste două extreme. 
 
 Jocuri precum _Kingdom Rush_ variază acest interval în cadrul rundei de joc pentru crea grupuri de inamicii mai mici sau mai mari pentru a oferi o provocare jucătorului prin prisma faptului că inamicii mai rezistenți pot distrate turnurile de apărare, iar inamicii mai rapizi pot ajunge la obiectiv înainte ca turnurile de apărare să-i elimine.
+
+În @enemy-wave putem observa implementarea valului de inamicii din prototip. Punctul de start este pătratul verde, iar punctul de final este pătratul roșu. Inamicii sunt reprezentați de imagini care prezintă niște creaturi ficționale de culoare roșie, iar în colțul din dreapta sus este un număr care reprezintă punctele de viață. Inamicii se deplasează de la punctul de start la punctul de final. Inamicii care ajung la punctul de final sunt retrași de pa hartă, iar jucătorul primește o penalizare. Inamicii care sunt eliminați de către turnurile de apărare (@enemy-in-range) oferă o recompensă jucătorului.
+
+#figure(
+  image("assets/enemy-wave.png", width: 70%),
+  caption: [Reprezentarea vizuală a unui val de inamici.]
+) <enemy-wave>
+
+#figure(
+  image("assets/enemy-in-range.png", width: 50%),
+  caption: [Inamic în raza de acțiune a unui turn de apărare.]
+) <enemy-in-range>
 
 == Interfața de utilizator
 
@@ -1175,6 +1268,54 @@ Pentru turnurile de apărare active, avem următoarele informații:
   caption: [Schiță pentru un element vizual al unui îmbunătățiri din magazin.]
 ) <upgrade-tower-item-ui>
 
+În protip, interfața a fost creată folosind tehnologii _Web_ precum _HTML_, _CSS_ și _Javascript_. Acestea sunt tehnologii care sunt folosite pentru a crea interfețe de utilizator pentru aplicații web. Pe langă acestea, folosim și biblioteca _SolidJs_ care ne ajută să creăm interfețe de utilizator reactive. Aceasta este o bibliotecă care se bazează pe conceptul de _reactive programming_ #cite("xie2014reactive") care ne ajută să creăm interfețe de utilizator care se actualizează automat atunci când datele se schimbă. Aceasta este o bibliotecă care este inspirată de biblioteca _React_ #cite("react") care este foarte populară în comunitatea de dezvoltare de aplicații web.
+
+@overview este o reprezentare vizuală a interfeței de utilizator din prototip.  În partea din stânga avem magazinul, iar în partea din dreapta avem informații despre valul de inamicii și rundă. În partea centrală se află hart de joc reprezentată sub forma unei matrici de căsuțe.
+
+#figure(
+  image("assets/overview.png"),
+  caption: [Vedere de ansamblu al interfeței de utilizator din prototip.]
+) <overview>
+
+
+Căsuța de culoare verde indici punctul de start al valului de inamici, iar căsuța de culoare roșie este obiectivul la care aceștie trebuie să ajungă. Căsuțele de culoare asemănatoare turcuazului reprezintă calea pe care inamicii trebuie să meargă. Căsuțele de culoarea asemănătoare verdului închis reprezintă zonele în care putem construi turnuri de apărare.
+
+În partea de jos avem controale pentru sesiunea de joc. Pe partea stăngă avem controlul pentru redarea pașilor pe care îl putem folosii să analizăm mai în detaliu modul cum a decurs runda de joc. Pe partea dreaptă avem controlul pentru pauză care ne ajută să oprim jocul și opțiunile de viteză în caz că dorim ca desfășurarea rundei să fie mai rapidă.
+
+În panoul din dreaptă avem mici opțiuni precum _Hide Tooltip_  -- care activează sau dezactivează mesajele ajutătoare (@tooltip) -- și _Start wave after 10s_ care pornește automat următorul val de inamicii după 10 secunde de la terminarea valului precedent.
+
+În @games-stats avem informații despre statusul jocului. Avem următoarele informații:
+
+#left-padding[
+- numărul valului de inamici curent (_Wave_);  
+- numărul de inamicii rămași (incluzând și pe cei care urmează să fie generați) în valul curent (_Mobs_).
+- numărul de puncte de viață rămase pentru obiectivul care trebuie protejat (_HP_).
+- numărul total de pași de joc care au fost executați (_Steps_).
+]
+
+
+#figure(
+  image("assets/time-tick.png", width: 50%),
+  caption: [Menu de control al pasului de joc.]
+) <time-tick>
+
+#figure(
+  image("assets/game-stats.png", width: 35%),
+  caption: [Statutul jocului.]
+) <games-stats>
+
+#figure(
+  image("assets/tooltip.png", width: 65%),
+  caption: [Mesaj ajutătoar care explică un elemente din joc.]
+) <tooltip>
+
+Un avantaj pe care îl prezintă tehnologiile web este usurința cu care putem crea documente menite să prezinte informația într-un mod clar și concis. Documentația despre mecanica de joc este inclusa în prototip și poate fi accesată cu usurință chiar și în timpul sesiunii de joc (@tokens-tutorial).
+
+#figure(
+  image("assets/tokens-tutorial.png", width: 80%),
+  caption: [Instrucțiuni de joc despre mecanismul de jetoane de acțiune.]
+) <tokens-tutorial>
+
 #pagebreak()
 
 #align(left, text(22pt)[
@@ -1207,9 +1348,11 @@ Această lucrare este însoțită de un prototip care are rolul de a testa ideea
 
 Așa cum a fost prezentat în lucrare, design-ul flexibil oferă o varietate de opțiuni pentru a crea un joc. Dar un dezavantaj este că uneori nu avem nevoie de atât de multe opțiuni întrucât aceste pot complica în mod intenționat experiența de joc. De aceea, este important să avem un scop bine definit pentru jocul pe care îl creăm și să ne concentrăm pe acele aspecte care ne ajută să atingem acel scop.
 
-Este foarte important să cunoaștem publicul tință întrucât acesta este care ne dictează cât de complex și cât de simplu trebuie să fie părțile din joc.
+Cu cât cunoaștem mai bine publicul nostru, cu atât putem crea un joc care să se potrivească preferințelor și așteptărilor acestuia. În cazul genului Tower Defense, publicul poate varia foarte mult în funcție de complexitatea jocului, de tematica acestuia, de platforma pe care este lansat, și așa mai departe.
 
+Atunci când vine vorba de monetizare, trebuie să avem în vedere cât de dispus este publicul nostru să plătească pentru a juca jocul nostru. Monetizarea poate fi realizată prin mai multe modalități, cum ar fi achizițiile în aplicație, abonamentele, publicitatea sau vânzarea jocului la un preț fix. Monetizarea trebuie gândită în așa fel încât să nu împiedice experiența de joc și să fie în acord cu așteptările publicului nostru. Natura extensibilă a sistemului de jetoane de acțiune permite cu usurință implementarea unui sistem de monetizare întrucât putem avea module de joc care pot fi achiziționate separat de către jucători.
 
+În încheiere, putem spune că designul de jocuri este un proces complex care necesită multă gândire strategică și creativă. Ideea de design de joc prezentată în această lucrare este doar un punct de plecare. Este important să fim deschiși la noi opinii și să fim pregătiți să adaptăm și să îmbunătățim ideile noastre pe măsură ce testăm prototipul și primim răspunsuri constructive de la publicul nostru.
 
 
 #pagebreak()
