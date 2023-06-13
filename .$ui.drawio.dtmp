@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-06-13T16:00:19.882Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.3.7 Chrome/112.0.5615.204 Electron/24.5.0 Safari/537.36" etag="rCBBvnUyiv5dxBIeRTMx" version="21.3.7" type="device" pages="8">
+<mxfile host="Electron" modified="2023-06-13T16:00:32.186Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.3.7 Chrome/112.0.5615.204 Electron/24.5.0 Safari/537.36" etag="gMHBepPwMxo1QgwcmSod" version="21.3.7" type="device" pages="8">
   <diagram name="Pasiv" id="jc4o6tuWXbmoItbEEhrw">
     <mxGraphModel dx="885" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -455,7 +455,7 @@
             <mxPoint x="270" y="405" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ynCJsq51uKdTDCA-ifLI-3" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;b&gt;Jetoane de baza&lt;/b&gt;&lt;br&gt;&lt;br&gt;Jeton de încetinire&lt;br&gt;Jeton de explozie&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;align=center;" vertex="1" parent="1">
+        <mxCell id="ynCJsq51uKdTDCA-ifLI-3" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;b&gt;Jetoane de bază&lt;/b&gt;&lt;br&gt;&lt;br&gt;Jeton de încetinire&lt;br&gt;Jeton de explozie&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;align=center;" vertex="1" parent="1">
           <mxGeometry x="-130" y="290" width="230" height="230" as="geometry" />
         </mxCell>
         <mxCell id="ynCJsq51uKdTDCA-ifLI-4" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;b&gt;Jetoane compuse&lt;/b&gt;&lt;br&gt;&lt;br&gt;Jeton de îngheț&lt;br&gt;Jeton de explozie pulsantă&amp;nbsp;&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">

@@ -114,7 +114,7 @@
 #v(1.5cm)
 
 #align(right, text(12pt)[
-  Aprobat Decan \`
+  Aprobat Decan \
   Prof. Dr. Ing. Mihnea Alexandru Moisescu
 ])
 
@@ -129,7 +129,7 @@
 #v(1cm)
 
 #align(center, text(17pt)[
-  *Design extensibil pentru Tower Defense*
+  *Design pentru genul de jocuri Tower Defense*
 ])
 
 #v(5cm)
@@ -238,7 +238,7 @@
 )
 
 #v(2cm)
-
+ 
 #align(left, text(22pt)[
   *Introducere*
 ]) <intro>
@@ -273,7 +273,7 @@ Un punct de insipirație sunt jocurile de cărți (poker, Război, _Uno_, _Magic
 
 În această lucrare, ne propunem să cercetăm un model semi-interdependent de colaborare pentru turnurile de apărare. Acest model va folosii un sistem de comunicare bazat pe mesaje pentru a comunica între turnuri. Iar aceste mesaje vor fi purtate de către inamici cu denumirea de *jetoane de acțiune*. Astfel, turnurile vor avea acțiuni care vor fi declanșate de aceste jetoane, iar sarcina jucătorului este să se asigure că aceste jetoane ajung la turnurile potrivite pentru a declanșa acțiunea dorită.
 
-Așadar, această lucrare va descrie un set de specificații pentru un joc de tip Tower Defense care va implementa un sistemul de colaborare între turnurile de apărare care va urma să fie descris. Pe langă design-ul jocului, vom prezenta și cum această idee poate fi structurată și implementată într-un motor de joc.
+Așadar, această lucrare va descrie un set de specificații pentru un joc de tip Tower Defense care va implementa un sistemul de colaborare între turnurile de apărare care va urma să fie descris.
 
 #pagebreak()
 
@@ -336,11 +336,11 @@ Alte motivații pot fi #cite("tw-principales"):
 Design unui joc de Tower Defense este relativ simplu. În general, jocurile de Tower Defense au următoarele elemente:
 
 #left-padding[
-- O bază care trebuie apărată de atacurile inamicilor.
-- O hartă cu un traseu pe care inamicii încearcă să avanseze.
-- Inamici care atacă baza jucătorului.
-- Turnuri defensive care trebuie plasate strategic pentru a opri inamicii înainte ca aceștia să ajungă la baza jucătorului.
-- Resurse care trebuie colectate pentru a construi turnurile defensive.
+- Obiective care trebuie apărate de atacurile inamicilor.
+- O hartă de joc cu un traseu liber sau prestabilit.
+- Inamici care încearcă să ajungă la obiective care trebuiesc protejate.
+- Turnuri defensive care trebuie plasate strategic pentru a opri inamicii înainte ca aceștia să ajungă la obiective.
+- Resurse care pot fi colectate pentru a construi turnurile defensive.
 ]
 
 O reprezentare simplificată poate fi observată în @tw-1. Toate aceste componente trebuie să creeze experiența de joc caracteristică acestui gen de joc: crearea unui sistem de apărare care să poată rezista invadatorilor.
@@ -367,10 +367,10 @@ Alte aspecte care pot fi luate în considerare în design-ul unui joc de Tower D
 - Varietate în tipurile de structuri defensive. Creativitatea dezvoltatorilor a fost foarte inovatoare pentru acest aspect. Multe jocuri asemănand turnurile de apărare cu alte structuri, cum ar fi: capcane, arme, aparate sau chiar personaje. Acest lucru a oferit o flexibilitate în dezvoltarea jocurile hibride care se îmbină cu alte genuri de jocuri.
 - Inamici pot fi rezistenți la anumite tipuri de atacuri sau pot avea abilități de evitare a atacurilor din partea structurilor defensive. 
 - Designul hărții de joc si-a păstrat structura de bază, schimbările au fost mai pronunțate în ceea ce privește tematica și complexitatea treseului pentru inamici. Unele hărță având trăsături unice care influențează modul în care jucătorii își plasează structurile defensive.
-- Economia de joc a fost extinsă, introducerea mai multor tipuri de resurse și a unor mecanisme de colectare mai complexe au avut un impact pozitiv în cea privește partea strategică de gestionare a resurselor. Mulți dezvoltatori folosindu-se de acesta pentru a integra elementele din jocurile de tip "resource management".
+- Economia de joc a fost extinsă, introducerea mai multor tipuri de resurse și a unor mecanisme de colectare mai complexe au avut un impact pozitiv în cea privește partea strategică de gestionare a resurselor. Mulți dezvoltatori folosindu-se de acesta pentru a integra elementele din jocurile de gestionare a resurselor (_resource management game_).
 - O altă tendință în design-ul jocurilor de Tower Defense este implementarea de elemente RPG. Turnurile pot acum câștiga experiență și evolua, oferind jucătorilor un sentiment de progresie și un motiv să continue să joace.
 - În ceea ce privește designul inamicilor, o evoluție importantă a fost introducerea de „șefi” sau inamici speciali care au capacitatea de a schimba dinamica jocului. Acești inamici puternici nu numai că oferă un nivel mai mare de dificultate, dar încurajează și diversitatea în plasarea și tipul turnurilor folosite de jucători.
-- Mecanica de poveste sau narațiunea încorporată în jocurile de Tower Defense a devenit tot mai complexă. Prin introducerea de poveste și personaje, jucătorii pot fi mai angajați și investiți emoțional în joc, aducând un plus de valoare gameplay-ului. 
+- Mecanica de poveste sau narațiunea încorporată în jocurile de Tower Defense a devenit tot mai complexă. Prin introducerea de poveste și personaje, jucătorii pot fi mai angajați și investiți emoțional în joc, aducând un plus de valoare sesiunilor de joc. 
 ]
 
 Evoluțiile menționate reprezintă doar câteva din direcțiile în care acest gen de jocuri s-a dezvoltat. Chiar și cu aceste schimbări, esența jocului de Tower Defense rămâne aceeași: construirea unei defensive puternice pentru a împiedica avansarea inamicilor. Însă, noile elemente de gameplay și varietatea de opțiuni disponibile pentru jucători adaugă complexitate și oferă un grad mai mare de libertate în strategie, asigurând în același timp că fiecare experiență de joc este unică și provocatoare.
@@ -388,7 +388,7 @@ Unul din scopurile secundare al noilor idee de design care vor fi discutate în 
 - Joc de strategie în timp real (_real-time strategy_). Acest gen se concentrează pe elaborarea și implementarea unei strategii în timp real. De cele mai multe ori, aceste jocuri au un component competitiv bine definit, unde orice greșeală poate fi exploatată. Majoritatea jocurilor din acest gen includ turnuri de apărare ce au rolul de a încetini avansul adversarilor.
 ]
 
-Modelele hibride de Tower Defense imbogatesc experienta jucatorilor prin combinarea elementelor caracteristice altor genuri de jocuri. Astfel, jucatorii pot descoperi noi abordari strategice, pot experimenta diverse scenarii si sunt provocati sa gandeasca in mod creativ pentru a-și asigura victoria. Modelul de jetoane de acțiune nu împiedică implementarea acestor modele hibride, ci dimpotrivă, îi oferă un plus de valoare prin introducerea unui nou element de strategie. Provocarea dezvoltatorilor este de a crea un sistem de jetoane de acțiune care să fie flexibil și să poată fi adaptat la orice model hibrid de joc fără a crea redundanță sau conflicte în experiența de joc. 
+Modelele hibride de Tower Defense îmbogățesc experiența jucatorilor prin combinarea elementelor caracteristice altor genuri de jocuri. Astfel, jucătorii pot descoperi noi abordări strategice, pot experimenta diverse scenarii și sunt provocați să găndeasca în mod creativ pentru a-și asigura victoria. Modelul de jetoane de acțiune nu împiedică implementarea acestor modele hibride, ci dimpotrivă, îi oferă un plus de valoare prin introducerea unui nou element de strategie. Provocarea dezvoltatorilorde jocuri este de a crea un sistem de jetoane de acțiune care să fie flexibil și să poată fi adaptat la orice model hibrid de joc fără a crea redundanță sau conflicte în experiența de joc. 
 
 De asemenea, este important de menționat că, în timp ce introducerea de noi elemente și modele hibride poate adăuga un grad de complexitate, acest lucru nu trebuie să fie văzut neapărat ca un dezavantaj. Dimpotrivă, un nivel adecvat de complexitate poate stimula gândirea strategică a jucătorilor și poate asigura o durată de viață mai lungă a jocului. Totuși, este crucial ca acest nivel de complexitate să fie gestionat cu atenție, pentru a evita crearea unui joc care să fie perceput ca fiind prea greu sau confuz.
 
@@ -397,7 +397,7 @@ Așadar trebuie să avem în vedere următoarele aspecte când dorim să integra
 #left-padding[
   - Echilibrul _gameplay_-ului: Orice element nou trebuie evaluat pentru a preveni perturbarea armoniei în joc. Componente supra sau subevaluate pot dăuna experienței utilizatorului.
   - Progresia jucătorului: Dacă adăugăm elemente noi, acestea ar trebui introduse treptat, permițând jucătorului să învețe și să se adapteze. Evităm să încărcăm jucătorul cu prea multe concepte noi simultan.
-  - Testare și feedback: Înainte de a finaliza orice nouă implementare, este esențial să testăm intensiv și să solicităm păreri de la jucători. Acest proces ne ajută să identificăm potențialele probleme și să îmbunătățim experiența de joc înainte de lansarea finală.
+  - Testare și _feedback_: Înainte de a finaliza orice nouă implementare, este esențial să testăm intensiv și să solicităm păreri de la jucători. Acest proces ne ajută să identificăm potențialele probleme și să îmbunătățim experiența de joc înainte de lansarea finală.
   - Coerența în design: Importul elementelor din alte genuri trebuie făcut într-un mod care să păstreze esența originală a jocului de Tower Defense. De pildă, dacă adăugăm componente din jocurile RPG, trebuie să ne asigurăm că acestea nu minimalizează importanța turnurilor de apărare.
 ]
 
@@ -420,13 +420,13 @@ Pentru a dezvolta această arie, explorăm următoarea idee de mecanică de joc:
 
 Practic, dezvoltăm un sistem de comunicare între turnuri, care reacționează diferit la prezența unui inamic în funcție de tipul și numărul de jetoane de acțiune pe care le dețin. Fiecare turn are capacitatea de a genera un jeton de acțiune atunci când interceptează un inamic în raza sa, iar acest jeton poate fi ulterior utilizat de un alt turn pentru a efectua o acțiune specifică. De exemplu, un turn poate produce un jeton de acțiune care declanșează un atac special.
 
-In majoritatea jocurilor, aceste sistem este prezent sub forma mecanismului de _buff_ și _debuff_. Prin intermediul mecanismului de _buff_, un turn de apărare poate acorda beneficii suplimentare turnurilor vecine sau aliaților din jurul său. Acest lucru poate include creșterea puterii de atac, extinderea razei de acțiune, îmbunătățirea vitezei de tragere sau alte abilități speciale. Astfel, turnurile de apărare devin capabile să-și sprijine reciproc și să creeze sinergii puternice. Pe de altă parte, mecanismul de _debuff_ implică capacitatea unui turn de apărare de a slăbi inamicii sau de a reduce eficacitatea atacurilor lor. De exemplu, un turn ar putea încetini inamicii din raza sa de acțiune, scăzându-le viteza de deplasare și facilitând astfel capturarea lor de către alte turnuri. Aceasta poate deschide noi strategii de joc, permițând jucătorilor să controleze și să direcționeze mișcarea inamicilor într-un mod strategic.
+În majoritatea jocurilor, aceste sistem este prezent sub forma mecanismului de _buff_ și _debuff_. Prin intermediul mecanismului de _buff_, un turn de apărare poate acorda beneficii suplimentare turnurilor vecine sau aliaților din jurul său. Acest lucru poate include creșterea puterii de atac, extinderea razei de acțiune, îmbunătățirea vitezei de tragere sau alte abilități speciale. Astfel, turnurile de apărare devin capabile să-și sprijine reciproc și să creeze sinergii puternice. Pe de altă parte, mecanismul de _debuff_ implică capacitatea unui turn de apărare de a slăbi inamicii sau de a reduce eficacitatea atacurilor lor. De exemplu, un turn ar putea încetini inamicii din raza sa de acțiune, scăzându-le viteza de deplasare și facilitând astfel eliminarea lor de către alte turnuri. Aceasta poate deschide noi strategii de joc, permițând jucătorilor să controleze și să direcționeze mișcarea inamicilor într-un mod strategic.
 
-Cea ce vom adauga nou la această idee este funcționalitatea de compunere. Această compunere crează noi jetoane cu un efect mai puternic, dar ca aceasta să se întâmple trebuie ca turnurile să fie plasate astfel încât inamicul să treacă prin raza de acțiune lor de acțiune și să primească jetoanele respective.
+Cea ce vom adauga nou la această idee este funcționalitatea de compunere. Această compunere crează noi jetoane cu un efect mai puternic, dar ca aceasta să se întâmple trebuie ca turnurile să fie plasate astfel încât inamicul să treacă prin raza lor de acțiune și să primească jetoanele respective.
 
 Această tehnică de compunere este evidențiată în jocurile de tip _merge_ -- un gen de joc video care implică combinarea sau unirea elementelor sau obiectelor similare pentru a crea elemente noi și mai valoroase. Mecanica jocului se învârte în jurul potrivirii și unirii de obiecte identice sau similare pe o tablă sau o grilă de joc, rezultând crearea de obiecte îmbunătățite sau avansate. Exemple de astfel de jocuri: _NecroMerge_, _2048_, _Top War_, _Rush Royal_, _Gold & Goblins_ #cite("merge").
 
-Harta joc are un rol crucial în design, ea este cea care de cele mai multe ori oferă unicitate unui sesiuni de joc. În multe jocuri clasice, dimensiunea mărită a hărții de joc nu oferă prea multe oportunități deoarece de multe ori jucătorul aplică aceiași combinație turnuri, fapt care crează redundanță. Trecănd către acest sistem colaborativ, putem sesiza un nou beneficiu, și anume: hărțile de dimensiune mai mare ne oferă mai mult spațiu pentru a crea mai multe turnuri defensive, fapt care ne permite să creăm mai multe interacțiuni între acestea. 
+Harta joc are un rol crucial în design, ea este cea care de cele mai multe ori oferă unicitate unui sesiuni de joc. În multe jocuri clasice, dimensiunea mărită a hărții de joc nu oferă prea multe oportunități deoarece de multe ori jucătorul aplică aceiași combinație de turnuri, fapt care crează redundanță. Trecănd către acest sistem colaborativ, putem sesiza un nou beneficiu, și anume: jucătorul are mai multe oportunițăți să creeze noi energii și să experimenteze cu diferite combinații de turnuri având în vedere spațiul generos disponibil.
 
 Următoarele întrebări apar în urma acestei idei de mecanică de joc:
 #left-padding[
@@ -445,7 +445,7 @@ Răspunsurile la aceste întrebări variază de la joc la joc, dar trebuie luate
 
 == Compunerea jetoanelor de acțiune
 
-În acest capitol vom explora ideea de compunere a jetoanelor de acțiune. Aceasta reprezentănd și partea unica a acestei lucrări. Vom descrie cum ideile de mecanii descrise în capitolul anterior (_buff_,_debuff_, _merge_) se pot combina și integra în jocul de _Tower Defense_ sub forma unui sistem de jetoane de acțiune.
+În acest capitol vom explora ideea de compunere a jetoanelor de acțiune. Aceasta reprezentănd și partea unică a acestei lucrări. Vom descrie cum ideile de mecanii descrise în capitolul anterior (_buff_,_debuff_, _merge_) se pot combina și integra în jocul de _Tower Defense_ sub forma unui sistem de jetoane de acțiune.
 
 Presupunem că avem următoarele tipuri de jetoane de bază:
 
@@ -455,7 +455,7 @@ Presupunem că avem următoarele tipuri de jetoane de bază:
 - Jeton de explozie: proiectilele turnurilor au un efect de explozie asupra inamicului și vecinilor săi.
 ]
 
-Rangul unui jeton reprezintă numărul de jetoane de același tip pe care un inamic le deține, fiecare jeton are prestabilit un rang maxim. Un jeton de rang mai mare are un efect mai pronunțat decât unul de rang mai mic. Jetoanele pot fi combinate pentru a obține noi tipuri. De exemplu, putem avea următoarele tipuri de jetoane compuse:
+Rangul unui jeton reprezintă numărul de jetoane de același tip pe care un inamic le deține, fiecare jeton are prestabilit un rang maxim. Un jeton de rang mai mare are un efect mai pronunțat decât unul de rang mai mic. Jetoanele pot fi combinate pentru a obține noi tipuri (@compunere). De exemplu, putem avea următoarele tipuri de jetoane compuse:
 
 #left-padding[
 - Jeton de înghețare: inamicii vor fi inghețați (viteză de mișcare 0) atăta timp căt jetonul este activ. Format dintr-un jeton de încetinire de rang 2.
@@ -465,7 +465,17 @@ Rangul unui jeton reprezintă numărul de jetoane de același tip pe care un ina
 - Jeton de explozie pulsantă: inamicii care dețin acest jeton vor crea o explozie în jurul lor la fiecare 3 secunde. Format dintr-un jeton de explozie de rang 2 și un jeton de bonus atack de rang 3.
 ]
 
-Putem observa marele avantaj al acestui sistem de jetoane de acțiune, și anume: flexibilitatea. Acest sistem ne permite să creăm o varietate de jetoane de acțiune, iar acestea pot fi combinate pentru a crea noi tipuri de jetoane.
+Putem observa marele avantaj al acestui sistem de jetoane de acțiune, și anume: flexibilitatea. Acest sistem ne permite să creăm o varietate de jetoane de acțiune, iar acestea pot fi combinate pentru a crea noi tipuri de jetoane (@compunere-cerc).
+
+#figure(
+  image("assets/ui-jetoane.png", width: 50%),
+  caption: "Formarea unui jeton compus.",
+) <compunere>
+
+#figure(
+  image("assets/ui-jetoane-cerc.png", width: 80%),
+  caption: "Extinderea jetoanelor de bază în cele compuse.",
+) <compunere-cerc>
 
 Așadar, un joc care urmează acest design poate fi extins foarte ușor fără schimbări majore în mecanica de joc. Această flexibilitate poate fi observată în jocurile de tip cărți de joc precum: _Hearthstone_ sau _Magic: The Gathering_ care se bazează pe extensii pentru a varia experiența de joc. Aceste extensii aduc noi tipuri de cărți care pot fi combinate cu cele existente pentru a crea noi strategii de joc.
 
@@ -481,9 +491,12 @@ Așadar, un joc care urmează acest design poate fi extins foarte ușor fără s
 - Moduri de joc alternative: uneori de dorim să avem și mici provocări care să ne testeze abilitățile de joc. Acestea pot fi introduse sub forma unor moduri de joc alternative care să ofere o experiență de joc diferită. Ca acest lucru să fie posibil trebuie să revaluam din nou sistemul implementat.
 ]
 
+Toate aceste probleme trebuie abordate înainte de a începe dezvoltarea unui joc. O planificare atentă și o analiză aprofundată a acestor probleme ne poate ajuta să evităm multe probleme pe parcursul dezvoltării jocului. O metodă bună a sesiza aceste problem este construirea unui mic prototip care să evidențieze mecanica de joc și să ne ajute să înțelegem mai bine cum funcționează acest sistem de jetoane de acțiune.
+
+
 #figure(
   image("assets/ui-conflict.png"),
-  caption: "Conflict la compunere",
+  caption: "Conflict la compunere.",
 ) <conflict>
 
 == Tipurile de turnuri
@@ -679,11 +692,8 @@ Daca valul 1 de inamici conține următoarea compoziție: 7 inamicii simpli, 2 r
 Un joc care prezintă o sistem simplu de economie și care stă la baza mecanicii de joc este _Kingdom: Clasic_ #cite("kingdom-coin") -- în care singura sarcină a jucătorului este distribuirea resurselor între clădirile de apărare și cele de producție. Chiar și cu această sarcină singulară, jocul oferă o experiență de joc foarte bună. Iar în versiunea de _Kingdom: Two Crowns_ se adaugă și partea de colaborare cu un alt jucător -- fapt ce arată versatilitatea design-ului de joc #cite("kingdom-coop").
 
 #pagebreak()
-#pagebreak()
 
 = Implementarea sistemelor
-
-
 
 O parte importantă al oricărei idei de joc este implementarea acesteia. În capitolele următoare vom descrie implementarea sistemelor principale din care va fi compus jocul care se folosește de sistemul de jetoane de acțiune.
 
@@ -893,7 +903,7 @@ Durata curentă reprezintă durata de timp rămasă pentru care jetonul de acți
 
 Condiții de creere reprezintă condițiile care trebuie îndeplinite pentru a crea un jeton de acțiune. Aceste condiții iau considerare următoarele aspecte: tipul de effect și rangul său curent. De exemplu, un jeton de înghețare poate fi creat doar dacă inamicul are un jeton de încetinire de rang 2.
 
-Cum acest sistem trebuiă să aibă o *implementare concretă într-un limbaj de programare* pentru a fi integrat într-un joc, vom folosii limbajul de programare Typescript#cite("rust") pentru a descrie o posibilă implementare. Exemplele pot fi prezentate și sub formă de pseudocod, dar realizarea lor cu un limbaj de programare face ca totul să fie mai tangibil și chiar să facă parte din implementarea jocului.
+Cum acest sistem trebuiă să aibă o *implementare concretă într-un limbaj de programare* pentru a fi integrat într-un joc, vom folosii limbajul de programare Typescript#cite("typescript") pentru a descrie o posibilă implementare. Exemplele pot fi prezentate și sub formă de pseudocod, dar realizarea lor cu un limbaj de programare face ca totul să fie mai tangibil și chiar să facă parte din implementarea jocului.
 
 Un exemplu concret de structură pentru un jeton de acțiune este următoarea:
 
@@ -1320,6 +1330,8 @@ Un avantaj pe care îl prezintă tehnologiile web este usurința cu care putem c
   image("assets/tokens-tutorial.png", width: 80%),
   caption: [Instrucțiuni de joc despre mecanismul de jetoane de acțiune.]
 ) <tokens-tutorial>
+
+Un singur dezavantaj la această tehnologie este faptul că nu este ușor să implementăm animații complexe precum într-un motor de joc dededicat pentru crearea de jocuri. Cu toate acestea, această tehnologie este o soluție elegantă pentru crearea de prototipuri care pot fi împărtășite cu usurință în cadrul comunității.
 
 #pagebreak()
 
