@@ -129,7 +129,7 @@
 #v(1cm)
 
 #align(center, text(17pt)[
-  *Design pentru genul de jocuri Tower Defense*
+  *Design pentru genul de joc Tower Defense*
 ])
 
 #v(5cm)
