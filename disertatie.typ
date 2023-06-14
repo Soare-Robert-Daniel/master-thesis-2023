@@ -1,6 +1,6 @@
 #set page(
   paper: "a4",
-  margin: (x: 2.5cm, y:2cm),
+  margin: (x: 2.54cm, y:2.54cm),
 )
 
 #set text(lang: "ro")
@@ -27,9 +27,10 @@
 }
 
 
-#set par(first-line-indent: 0.5cm, justify: true)
-#show par: set block(spacing: 0.65em)
-#set text(font: "Times New Roman", size: 11pt)
+#set par(justify: true)
+#show par: set block(spacing: 16pt)
+
+#set text(font: "Computer Modern Sans Serif", size: 12pt)
 
 #let left-padding(term) = {
   stack(
@@ -40,6 +41,11 @@
 }
 
 #set figure(supplement: "Figura")
+
+
+
+#show heading.where(level: 1): text.with(size: 14pt)
+#show heading.where(level: 1): upper
 
 // +------------------- Coperta -------------------+
 
@@ -72,7 +78,7 @@
 //   Grafică, Multimedia și Realitate Virtuală
 // ])
 
-#v(3cm)
+#v(4cm)
 
 #upper[
   #align(center, text(24pt)[
@@ -80,7 +86,7 @@
   ])
 ]
 
-#v(5cm)
+#v(4cm)
 
 #grid(
   columns: (1fr, 1fr),
@@ -102,7 +108,7 @@
   ]
 )
 
-#v(6cm)
+#v(5cm)
 #align(center, text(12pt)[
   *Bucuresti \ 2023*
 ])
@@ -110,6 +116,8 @@
 #pagebreak()
 
 // +------------------- Pagina de garda -------------------+
+
+
 
 #upper[
   #align(center, text(16pt)[
@@ -178,7 +186,7 @@
   ]
 )
 
-#v(6cm)
+#v(5cm)
 #align(center, text(12pt)[
   *Bucuresti \ 2023*
 ])
@@ -195,15 +203,21 @@
 
 #v(1cm)
 
-*Introducere*
+*Sinopsis*
 #box(width: 1fr, repeat[.])
 #locate( loc => {
   let intro = query(<intro>, loc)
   
-  intro.last().location().page()
+  intro.last().location().page()-1
 })
 
-#v(0.2cm)
+*Abstract*
+#box(width: 1fr, repeat[.])
+#locate( loc => {
+  let intro = query(<intro>, loc)
+  
+  intro.last().location().page()-1
+})
 
 #locate(loc => {
   let elems = query(
@@ -215,9 +229,11 @@
 
   for elem in elems {
     let level = heading_counter.at(elem.location()).len()
-    let boxWidth = 1cm * level
+    let boxWidth = 1cm * ( level -1)
+    let page = elem.location().page()-1
 
     linebreak()
+    h(0.2cm)
     box(
       width: boxWidth,
       align(
@@ -225,10 +241,11 @@
         heading_counter.at(elem.location()).map(x => text[#x]).join(".")
       )
     )
+  
     h(0.2cm)
     elem.body
     box(width: 1fr, repeat[.])
-    text[#elem.location().page()]
+    text[#page]
   }
 })
 
@@ -239,7 +256,7 @@
 #locate( loc => {
   let intro = query(<concluzie>, loc)
   
-  intro.last().location().page()
+  intro.last().location().page() - 1
 })
 
 #v(0.2cm)
@@ -249,7 +266,7 @@
 #locate( loc => {
   let intro = query(<bio>, loc)
   
-  intro.last().location().page()
+  intro.last().location().page() - 1
 })
 
 #pagebreak()
@@ -258,16 +275,33 @@
 
 #set page(
   paper: "a4",
-  numbering: "1 / 1",
+  numbering: "1",
 )
 
-#v(2cm)
- 
-#align(left, text(22pt)[
-  *Introducere*
-]) <intro>
+#counter(page).update(1)
 
-#v(1cm)
+#align(left, upper[ #text(14pt)[
+  *Sinopsis*
+]]) <intro>
+
+Jocurile sunt una dintre cele mai înalte forme de artă, care combină elemente de design, muzică, grafică și poveste pentru a crea o experiență unică. Jocurile video au devenit o parte importantă a culturii moderne, fiind o formă de divertisment foarte populară în rândul oamenilor de toate vârstele. Popularitatea lor de datorează modului de interactivitate pe care îl oferă, care permite jucătorilor să se implice în poveste și să ia decizii care influențează desfășurarea jocului.
+
+ Crearea unui design de joc presupune multă creativitate și o înțelegere profundă a mecanicilor de joc. Un joc de succes trebuie să fie captivant, să ofere o experiență de joc plăcută și să fie ușor de înțeles pentru cei care îl joacă. În această lucrare ne propunem să creeam un design pentru un joc de tip _Tower Defense_ care să ofere o experiență nouă și interesantă. Exemplificare acestui design va fi realizată prin implementarea unui aplicații interactive care demonstrează mecanica de joc propusă. Această lucrare are rolul de a inspira și de a oferi o bază pentru cei care doresc să creeze jocuri de tip _Tower Defense_.
+
+ #v(6cm)
+
+#align(left, upper[ #text(14pt)[
+  *Abstract*
+]])
+
+Games are one of the highest forms of art, combining elements of design, music, graphics, and story to create a unique experience. Video games have become an important part of modern culture, serving as a highly popular form of entertainment among people of all ages. Their popularity is due to the level of interactivity they offer, allowing players to engage in the story and make decisions that influence the game's progression.
+
+Creating a game design requires a lot of creativity and a deep understanding of game mechanics. A successful game must be captivating, provide an enjoyable gaming experience, and be easy to understand for those who play it. In this work, we aim to create a design for a Tower Defense type game that offers a new and interesting experience. The demonstration of this design will be carried out by implementing an interactive application that demonstrates the proposed game mechanics. This work aims to inspire and provide a basis for those who wish to create Tower Defense type games.
+
+#pagebreak()
+
+
+= Introducere
 
 Genul _Tower Defense_ (sau "apărare prin turnuri") este un gen de joc video din categoria jocurilor de strategie în care jucătorul are rolul de a construi și de a îmbunătății turnuri de apărare pentru a împiedica invazia inamicilor și a proteja un obiectiv. Jucătorul trebuie să plaseze strategic turnuri cu diferite abilități și funcții, cum ar fi turnuri de tragere, turnuri de aruncare a proiectilelor sau turnuri magice, pentru a opri inamicii să ajungă la punctele cheie ale hărții sau să ajungă la obiectiv. Pe măsură ce jocul avansează, inamicii devin tot mai puternici, iar jucătorul trebuie să-și îmbunătățească strategiile de apărare și să facă alegeri strategice pentru a reuși să reziste valurilor de inamici.
 
@@ -291,22 +325,17 @@ Deoarece mecanica de joc moștenită este similară cu cea a modurilor din jocul
 
 Această lipsă a laturii competitive face ca mecanica de joc să fie monotonă și să nu ofere o experiență de joc variată pe o perioadă lungă de timp. Mulți dezvoltatori încearcă să rezolve această problemă prin combinarea cu un alt gen de joc, cum ar fi: jocuri de rol, jocuri de acțiune. Dar toate acestea nu schimbă mecanica moștenită a jocului, ci doar o extind. Pentru a scăpa de această monotonie trebuie să reimaginăm mecanica de joc, dar ca să facem acest lucru trebuie să înțelegem mai bine mecanica de joc a jocurilor de _Tower Defense_.
 
-Jocurile de strategie pot catalogate în funcție de modul în care jucătorii interacționează cu jocul. În general, jocurile de strategie se împart în două categorii: jocuri de strategie în timp real și jocuri de strategie pe ture. Cele în timp real se bazează pe reflexe rapide în a lua decizii strategice, iar cele pe ture se bazează pe planificare și analiză. Jocurile de _Tower Defense_ au istorie în a fi derivate din jocurile de strategie în timp real, dar cum mecanica de joc nu necesită reflexe rapide, acestea se aseamană cu cele din categoria jocurilor de strategie pe ture. Ca un punct de plecare, ne puteam orienta să schimbam mecanica de joc actuală cu una care seamană mai mult cu cea a jocurilor de strategie pe ture.
+Jocurile de strategie pot fi catalogate în funcție de modul în care jucătorii interacționează cu jocul. În general, jocurile de strategie se împart în două categorii: jocuri de strategie în timp real și jocuri de strategie pe ture. Cele în timp real se bazează pe reflexe rapide în a lua decizii strategice, iar cele pe ture se bazează pe planificare și analiză. Jocurile de _Tower Defense_ au istorie în a fi derivate din jocurile de strategie în timp real, dar cum mecanica de joc nu necesită reflexe rapide, acestea se aseamană cu cele din categoria jocurilor de strategie pe ture. Ca un punct de plecare, ne puteam orienta să schimbam mecanica de joc actuală cu una care seamană mai mult cu cea a jocurilor de strategie pe ture.
 
 Un punct de insipirație sunt jocurile de cărți (poker, Război, _Uno_, _Magic: The Gathering_, _Yu-Gi-Oh!_, _HearthStone_) și șah, care au un arbore de joc (_game-tree complexity_) foarte mare -- șahul are o complexitate de $10^123$#cite("chess"). În acestea, cartea sau piesa de joc individuală nu are un mare impact asupra jocului, cea ce contează este combinație/secvența de cărți/piese. Putem aduce această idee și în jocurile de Tower Defense, unde turnurile de apărare nu au un impact major asupra jocului în mod independent, ci combinația de turnuri de apărare este cea care contează.
 
 În această lucrare, ne propunem să cercetăm un model semi-interdependent de colaborare pentru turnurile de apărare. Acest model va folosii un sistem de comunicare bazat pe mesaje pentru a comunica între turnuri. Iar aceste mesaje vor fi purtate de către inamici cu denumirea de *jetoane de acțiune*. Astfel, turnurile vor avea acțiuni care vor fi declanșate de aceste jetoane, iar sarcina jucătorului este să se asigure că aceste jetoane ajung la turnurile potrivite pentru a declanșa acțiunea dorită.
 
-Așadar, această lucrare va descrie un set de specificații pentru un joc de tip Tower Defense care va implementa un sistemul de colaborare între turnurile de apărare care va urma să fie descris.
+Așadar, această lucrare va descrie un set de specificații pentru un joc de tip Tower Defense care va implementa un sistemul de colaborare între turnurile de apărare care va urma să fie descris. Scopul principal al acestor specificații este să motiveze dezvoltatorii de jocuri în a explora noi posibilități în mecanica de joc.
 
 #pagebreak()
 
 // +------------------- Lucrare -------------------+
-
-// #align(left, text(22pt)[
-//   Capitolul 1 \
-//   Tower Defense
-// ])
 
 #v(1cm)
 = Genul de joc Tower Defense
@@ -1127,7 +1156,7 @@ Atunci când eliminăm un inamic, primim o recompensă sub formă de resurse. Ac
   ]
 ]
 
-Stiind câți inamicii avem într-un val și care este valoarea, putem calcula recompensa totală pentru valul respectiv. De exemplu, dacă avem 10 inamicii care oferă 10 aur, 5 lemn și 2 piatră, recompensa totală pentru valul respectiv este de 100 aur, 50 lemn și 20 piatră. Cu această informație putem stabilii costul resurselor pentru turnurile de apărare. De exemplu, un turn de apărare poate costa 20 aur, 10 lemn și 4 piatră. Deci cu resursele pe un întreg val putem achiziționa 5 turnuri de apărare.
+Știind câți inamicii avem într-un val și care este valoarea lor totală, putem calcula recompensa totală pentru valul respectiv. De exemplu, dacă avem 10 inamicii care oferă 10 aur, 5 lemn și 2 piatră, recompensa totală pentru valul respectiv este de 100 aur, 50 lemn și 20 piatră. Cu această informație putem stabilii costul resurselor pentru turnurile de apărare. De exemplu, un turn de apărare poate costa 20 aur, 10 lemn și 4 piatră. Deci cu resursele pe un întreg val putem achiziționa 5 turnuri de apărare.
 
 În ultimii ani au devenit din în ce mai populare jocurile de tip _base building_, în care scopul jocului e să construiești clădiri care au nevoie de un lanț de aprovizionare complex. Acestea constau dintr-un mare de resurse care trebuie să fie colectate și gestionate. Multe dintre aceste fiind combinații de alte resurse, exemplu: pentru a produce o căramidă avem nevoie o fabrică și o mină de clei care să extraga resursa de bază, și anume cleiul. Practic, avem nevoie de două fabrici și o resursă de bază pentru a produce resursa compusă.
 
@@ -1352,13 +1381,52 @@ Căsuța de culoare verde indici punctul de start al valului de inamici, iar că
 
 Un avantaj pe care îl prezintă tehnologiile web este usurința cu care putem crea documente menite să prezinte informația într-un mod clar și concis. Documentația despre mecanica de joc este inclusă în aplicație și poate fi accesată cu usurință chiar și în timpul sesiunii de joc (@tokens-tutorial).
 
-
 Un singur dezavantaj la această tehnologie este faptul că nu este ușor să implementăm animații complexe precum într-un motor de joc dededicat pentru crearea de jocuri. Cu toate acestea, această tehnologie este o soluție elegantă pentru crearea de prototipuri care pot fi împărtășite cu usurință în cadrul comunității.
 
 #figure(
   image("assets/tokens-tutorial.png", width: 80%),
   caption: [Instrucțiuni de joc despre mecanismul de jetoane de acțiune.]
 ) <tokens-tutorial>
+
+== Unelte pentru analiza jocului
+
+Datorită faptului ca mediul interactiv din cadrul aplicației este modelat ca un automat finit, putem analiza jocul prin schimbările de stare al acestuia. Fiecare turn cumpărat sau mutat, fiecare îmbunătățire achiziționată este înregistrat sub forma unui eveniment. Aceste evenimente pot fi folosite pentru a analiza jocul și pentru a crea statistici despre acesta.
+
+Precum în șah, jocul este descris de o secvență de mutări. Mutările sunt codate folosind un sistem de notații algebrice #cite("algebraic-notation") care ne ajută să descriem o mutare într-un mod concis. De exemplu, mutarea de start _Nf3_ descrie mutarea unui cal de pe poziția _g1_ pe poziția _f3_. Mutarea _Bb5_ descrie mutarea unui nebun de pe poziția _c1_ pe poziția _b5_ (fiind prima mutare a piesei). 
+
+Mutările sunt înregistrate într-un jurnal de joc (_game log_) care este folosit pentru a analiza jocul. Acest jurnal poate fi interpretat ca o istorie a stărilor prin care a trecut jocul. Utilizând acest jurnal, putem recrea orice stare de joc la orice moment dat în timp. Acest lucru este deosebit de util pentru analiza ulterioară a jocului, deoarece ne permite să analizăm diferite scenarii și să identificăm unde un jucător a greșit sau a făcut o mișcare strălucită. De asemenea, putem folosi această istorie pentru a înțelege mai bine cum a evoluat strategia jucătorilor de-a lungul jocului.
+
+Pe lângă înregistrarea mutărilor, în jurnalul de joc putem include și alte informații relevante, cum ar fi momentul în care a fost achiziționată o anumită îmbunătățire sau numărul de turnuri cumpărate. Acest tip de date poate ajuta la crearea unor modele predictive mai precise care pot informa despre deciziile viitoare ale jucătorilor. Mai mult de atât, prin analiza secvențelor de mutări și a deciziilor luate în cadrul jocului, putem folosi tehnici de învățare automată pentru a dezvolta strategii de joc mai eficiente. 
+
+În cazul nostru notația pentru un eveniment creat de jucător poate fi descris de următoarea structură:
+
+#left-padding[
+  - Numărul pasului la care a fost creat evenimentul.
+  - Tipul evenimentului (exemplu: cumpărare/mutare turn).
+  - Detalii despre eveniment (exemplu: tipul turnului, poziția).
+]
+
+Toate lista de evenimente va fi disponibilă în jurnalul de joc prezent în aplicație (@game-log). Iată câteva exemple de evenimente însoțite de explicații care pot fi înregistrate în jurnalul de joc:
+
+Exemplu 1: ```#1 buy-tower a-crossbow@1 (2,0)``` -- la pasul 1, jucătorul a cumpărat un turn de apărare de tipul _crossbow_ (turn activ prin prefixul _a-_) care a fost plasat pe poziția (2,0). Sufixul _\@1_ este identificatorul unic al turnului de apărare.
+
+Exemplu 2: ```#90 move-tower a-crossbow@1 (2,1)``` -- la pasul 90, jucătorul a mutat turnul de apărare de tipul _crossbow_ de pe poziția (2,0) pe poziția (2,1). Poziția anterioră o deducem din evenimentele precedente.
+
+Exemplu 3: ```#150 buy-upgrade slow1``` -- la pasul 100, jucătorul a cumpărat îmbunătățirea pentru jetonul de încetinire (_slow_). Sufixul _\@1_ este identificatorul unic al îmbunătățirii în cadrul tipului de jeton.
+
+Pe langă funcția de afișare avem și posibilitatea de a descărca jurnalul de joc în format _CSV (comma-separated values)_ sau text simplu pentru a putea fi analizat în afara aplicației. Iar această analiză poate fi realizată și cu tehnicii moderne de analiză a datelor precum _Python_ sau _R_.
+
+O funcționalitate care ar putea schimba complet modul cum abordăm echilibrarea mecanicii de joc este folosirea de tehnici de învățare automată pentru a crea modele predictive care să dezvolte strategii de joc. Aceste modele pot fi folosite pentru a crea agenți inteligenți care să joace jocul în locul jucătorului. Acești agenți pot fi folosiți pentru a testa echilibrarea mecanicii de joc de câtre designerul jocului. Mai mult de atât, acești agenți pot fi folosiți pentru a crea un sistem de asistență pentru jucători care să-i ajute să ia decizii mai bune în cadrul jocului -- precum în șah prin intermediul unui motor de șah.
+
+Având în vedere ultime avansuri tehnologice, putem merge și mai departe cu ideea prin crearea unui asistent virtual care să poată fi folosit pentru a înțelege mai bine mecanica de joc implementată. Folosind tehnologii precum _GTP-4_ #cite("OpenAI2023GPT4TR") putem crea un asistent virtual care să poată răspunde la întrebări despre joc. De exemplu, putem întreba asistentul virtual despre cea mai bună strategie de joc pentru un anumit nivel, sau putem întreba despre cea mai bună strategie de joc pentru un anumit tip de inamic.
+
+Într-un joc posibilitățile sunt nelimitate și depind doar de creativitatea creatorului, iar prin aceste unelte putem explora mai multe posibilități și a alege cea mai bună soluție pentru jocul nostru. 
+
+#figure(
+  image("assets/game-log.png", width: 50%),
+  caption: [Jurnal e joc.]
+) <game-log>
+
 
 #pagebreak()
 
@@ -1388,7 +1456,7 @@ Crearea de jocuri este un proces creativ care necesită multă experiență și 
 
 Rolul unui prototip este de a ne ajuta să testăm ideile de design de joc într-un mod rapid și ieftin. Acesta ne ajută să ne dăm seama dacă ideile noastre sunt viabile sau nu. De asemenea, ne ajută să ne dăm seama dacă ideile noastre sunt interesante sau nu. Un prototip nu trebuie să fie perfect, ci trebuie să fie suficient de bun pentru a ne ajuta să testăm ideile de design de joc.
 
-Această lucrare este însoțită de o aplicație care conține un mic prototip care are rolul de a testa ideea de design de joc prezentată în această lucrare. Acesta este un prototip simplu care nu are o grafică complexă, dar care ne ajută să ne dăm seama dacă ideea de design de joc este viabilă sau nu. Mai mult de atât, acesta poate fi împărtășit în cadrul comunității pentru a primii feedback de la alți designeri de jocuri.
+Aplicația dezvoltată în cadrul acestei lucrări prezintă un medium bun de prototipare a noilor jocuri bazate pe sistemul de jetoane de acțiune și oferă la rândul său unelte de analiză care facitilitează procesul de testare șă înțelegere a acestor noi idei.
 
 Așa cum a fost prezentat în lucrare, design-ul flexibil oferă o varietate de opțiuni pentru a crea un joc. Dar un dezavantaj este că uneori nu avem nevoie de atât de multe opțiuni întrucât aceste pot complica în mod intenționat experiența de joc. De aceea, este important să avem un scop bine definit pentru jocul pe care îl creăm și să ne concentrăm pe acele aspecte care ne ajută să atingem acel scop.
 
@@ -1396,7 +1464,7 @@ Cu cât cunoaștem mai bine publicul nostru, cu atât putem crea un joc care să
 
 Atunci când vine vorba de monetizare, trebuie să avem în vedere cât de dispus este publicul nostru să plătească pentru a juca jocul nostru. Monetizarea poate fi realizată prin mai multe modalități, cum ar fi achizițiile în aplicație, abonamentele, publicitatea sau vânzarea jocului la un preț fix. Monetizarea trebuie gândită în așa fel încât să nu împiedice experiența de joc și să fie în acord cu așteptările publicului nostru. Natura extensibilă a sistemului de jetoane de acțiune permite cu usurință implementarea unui sistem de monetizare întrucât putem avea module de joc care pot fi achiziționate separat de către jucători.
 
-În încheiere, putem spune că designul de jocuri este un proces complex care necesită multă gândire strategică și creativă. Ideea de design de joc prezentată în această lucrare este doar un punct de plecare. Este important să fim deschiși la noi opinii și să fim pregătiți să adaptăm și să îmbunătățim ideile noastre pe măsură ce testăm prototipul și primim răspunsuri constructive de la publicul nostru.
+În încheiere, putem spune că designul unui joc este un proces complex care necesită multă creativitate și pragmatism. Ideea de design de joc prezentată în această lucrare este doar un punct de plecare. Este important să fim deschiși la noi opinii și să fim pregătiți să adaptăm și să îmbunătățim ideile noastre pe măsură ce testăm prototipul și primim răspunsuri constructive de la publicul nostru.
 
 
 #pagebreak()
