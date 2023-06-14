@@ -1,5 +1,6 @@
 #set page(
   paper: "a4",
+  margin: (x: 2.5cm, y:2cm),
 )
 
 #set text(lang: "ro")
@@ -28,7 +29,7 @@
 
 #set par(first-line-indent: 0.5cm, justify: true)
 #show par: set block(spacing: 0.65em)
-#set text(font: "Times New Roman")
+#set text(font: "Times New Roman", size: 11pt)
 
 #let left-padding(term) = {
   stack(
@@ -47,22 +48,35 @@
 #upper[
   #align(center, text(16pt)[
     Universitatea Politehnica din București \
-    Facultatea de Automatică și Calculatoare
+    Facultatea de Automatică și Calculatoare \
+    DEPARTAMENTUL DE CALCULATOARE 
   ])
 ]
 
 
-#v(0.5cm)
+#v(1cm)
 
-#align(center, text(12pt)[
-  Grafică, Multimedia și Realitate Virtuală
-])
+#align(center)[
+  #columns(2)[
+    #image("assets/upb-logo.jpg", width: 40%)
 
-#v(6cm)
+    #colbreak()
+    #v(0.5cm)
+    #image("assets/cs-logo.png", width: 60%)
+  ]
+]
+
+
+
+// #align(center, text(12pt)[
+//   Grafică, Multimedia și Realitate Virtuală
+// ])
+
+#v(3cm)
 
 #upper[
   #align(center, text(24pt)[
-    *Proiect de diploma*
+    *Proiect de disertație*
   ])
 ]
 
@@ -90,7 +104,7 @@
 
 #v(6cm)
 #align(center, text(12pt)[
-  *Bucuresti, 2023*
+  *Bucuresti \ 2023*
 ])
 
 #pagebreak()
@@ -107,22 +121,32 @@
 
 #v(0.5cm)
 
-#align(center, text(12pt)[
-  Grafică, Multimedia și Realitate Virtuală
-])
+// #align(center, text(12pt)[
+//   Grafică, Multimedia și Realitate Virtuală
+// ])
 
 #v(1.5cm)
 
-#align(right, text(12pt)[
-  Aprobat Decan \
-  Prof. Dr. Ing. Mihnea Alexandru Moisescu
-])
+// #align(right, text(12pt)[
+//  Aprobat Decan \
+//  Prof. Dr. Ing. Mihnea Alexandru Moisescu
+// ])
 
-#v(4cm)
+#align(center)[
+  #columns(2)[
+    #image("assets/upb-logo.jpg", width: 40%)
+
+    #colbreak()
+    #v(0.5cm)
+    #image("assets/cs-logo.png", width: 60%)
+  ]
+]
+
+#v(3cm)
 
 #upper[
   #align(center, text(24pt)[
-    *Proiect de diploma*
+    *Proiect de disertație*
   ])
 ]
 
@@ -132,7 +156,7 @@
   *Design pentru genul de joc Tower Defense*
 ])
 
-#v(5cm)
+#v(4cm)
 
 #grid(
   columns: (1fr, 1fr),
@@ -156,7 +180,7 @@
 
 #v(6cm)
 #align(center, text(12pt)[
-  *Bucuresti, 2023*
+  *Bucuresti \ 2023*
 ])
 
 #pagebreak()
@@ -269,7 +293,7 @@ Această lipsă a laturii competitive face ca mecanica de joc să fie monotonă 
 
 Jocurile de strategie pot catalogate în funcție de modul în care jucătorii interacționează cu jocul. În general, jocurile de strategie se împart în două categorii: jocuri de strategie în timp real și jocuri de strategie pe ture. Cele în timp real se bazează pe reflexe rapide în a lua decizii strategice, iar cele pe ture se bazează pe planificare și analiză. Jocurile de _Tower Defense_ au istorie în a fi derivate din jocurile de strategie în timp real, dar cum mecanica de joc nu necesită reflexe rapide, acestea se aseamană cu cele din categoria jocurilor de strategie pe ture. Ca un punct de plecare, ne puteam orienta să schimbam mecanica de joc actuală cu una care seamană mai mult cu cea a jocurilor de strategie pe ture.
 
-Un punct de insipirație sunt jocurile de cărți (poker, Război, _Uno_, _Magic: The Gathering_, _Yu-Gi-Oh!_, _HearthStone_) și șah, care au un arbore de joc (_game-tree complexity_) foarte mare -- șahul are o complexitate de $10^123$#cite("chess"). În acestea, cartea sau piesa de joc individuală nu are un mare impact asupra jocului, cea ce contează este combinație/secvența de cărți/piese. Putem aduce această idee și în jocurile de Tower Defense, unde turnurile de apărare nu au un impact major asupra jocului în mod independent, ci combinația de turnuri de apărare este care contează.
+Un punct de insipirație sunt jocurile de cărți (poker, Război, _Uno_, _Magic: The Gathering_, _Yu-Gi-Oh!_, _HearthStone_) și șah, care au un arbore de joc (_game-tree complexity_) foarte mare -- șahul are o complexitate de $10^123$#cite("chess"). În acestea, cartea sau piesa de joc individuală nu are un mare impact asupra jocului, cea ce contează este combinație/secvența de cărți/piese. Putem aduce această idee și în jocurile de Tower Defense, unde turnurile de apărare nu au un impact major asupra jocului în mod independent, ci combinația de turnuri de apărare este cea care contează.
 
 În această lucrare, ne propunem să cercetăm un model semi-interdependent de colaborare pentru turnurile de apărare. Acest model va folosii un sistem de comunicare bazat pe mesaje pentru a comunica între turnuri. Iar aceste mesaje vor fi purtate de către inamici cu denumirea de *jetoane de acțiune*. Astfel, turnurile vor avea acțiuni care vor fi declanșate de aceste jetoane, iar sarcina jucătorului este să se asigure că aceste jetoane ajung la turnurile potrivite pentru a declanșa acțiunea dorită.
 
@@ -310,24 +334,26 @@ Alte motivații pot fi #cite("tw-principales"):
 - Bucuria procesului - Procesul de rezolvarea a jocului este satisfăcător în sine.
 ]
 
-
-
 În următoarea listă avem exemple de jocuri populare și emblematice ale acestui gen de joc care au aparut de-a lung timpului:
 
 #left-padding[
 
-- Plants vs. Zombies - În acest joc, jucătorii trebuie să își planteze flori și alte plante pentru a împiedica zombii să ajungă la casa lor. Plantele au rol de turn de apărare, iar fiecare are abilități unice. Jucătorii trebuie să le plaseze strategic pentru a opri zombii înainte ca aceștia să ajungă la locuințele lor. Jocul oferă o varietate de niveluri și moduri de joc. Acest a fost dezvoltat de către PopCap Games și a fost lansat în anul 2009.
+- Plants vs. Zombies - În acest joc, jucătorii trebuie să își planteze flori și alte plante pentru a împiedica zombii să ajungă la casa lor. Plantele au rol de turn de apărare, iar fiecare are moduri unici de a ataca. Jucătorii trebuie să le plaseze strategic pentru a opri zombii înainte ca aceștia să ajungă la locuințele lor. Jocul oferă o varietate de niveluri și moduri de joc. Acest a fost dezvoltat de către PopCap Games și a fost lansat în anul 2009.
 
-- Kingdom Rush - Acest joc are loc într-o lume de basm, unde jucătorii trebuie să își construiască turnuri defensive și să își organizeze trupele pentru a învinge hoardele de creaturi mitice. Jocul oferă o gamă largă de turnuri și trupe, fiecare cu abilități și caracteristici unice. De asemenea, aceste este unul dintre cele mai emblematice jocuri ale genului de joc Tower Defense. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Ironhide Game Studio. Au mai fost lansate și alte versiuni ale jocului, cum ar fi Kingdom Rush: Frontiers, Kingdom Rush: Origins și Kingdom Rush: Vengeance care s-au bucurat de un succes imens.
+- Kingdom Rush - Acest joc strategic în timp real plasează jucătorii într-o lume de basm unde aceștia își construiesc și își organizează turnurile defensive și trupele pentru a opune rezistență și a învinge hoardele de creaturi mitice. Fiecare turn și trupă dispune de abilități și caracteristici unice, creând o gamă variată de strategii pe care jucătorii le pot utiliza. De asemenea, jucătorii au la dispoziție o serie de abilități speciale, care pot fi folosite pentru a influența în mod direct desfășurarea luptei. Jocul oferă o varietate de niveluri, fiecare cu propriile provocări și scenarii, cerând astfel o adaptare continuă a strategiilor de joc. Acesta este unul dintre cele mai emblematice jocuri ale genului de joc Tower Defense. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Ironhide Game Studio. Au mai fost lansate și alte versiuni ale jocului, cum ar fi _Kingdom Rush: Frontiers_, _Kingdom Rush: Origins_ și _Kingdom Rush: Vengeance_ care s-au bucurat de un succes imens.
 
-- Bloons TD 6 - Jocul este centrat pe o tematica simple in care trebuie sa apare baza de baloane, jucătorii trebuie să își plaseze turnurile defensive (care au forma unor maimute) și să își upgradeze abilitățile pentru a împiedica baloanele să ajungă la final. Jocul oferă o mulțime de turnuri și abilități, precum și niveluri diferite cu diverse provocări. Jocul a avut parte de mai multe versiuni de-a lungul anilor. Versiunea 6 este ultima lansată și care este îmbunătățită în continuare. Acest a fost dezvoltat de către Ninja Kiwi și a fost lansat în anul 2018.
+- Bloons TD 6 - Jocul este centrat pe o tematica simplă in care trebuie sa apare baza de baloane, jucătorii trebuie să își plaseze turnurile defensive (care au forma unor maimuțe) și să își upgradeze abilitățile pentru a împiedica baloanele să ajungă la final. Acesta dispune de un număr mare de hărți de joc care prezintă diverse provocări prin prisma formei lor. Acest a fost dezvoltat de către Ninja Kiwi și a fost lansat în anul 2018.
 
-- Orcs Must Die! - O combinație interesantă între jocuri de strategie și jocuri de acțiune. Jucatorul are posibilitatea să participe în mod activ la oprirea valului de inamici prin intermediul unui personaj. Jocul oferă o gamă largă de arme și abilități pentru personaje, iar jucătorii trebuie să le folosească strategic pentru a supraviețui nivelelor și a învinge inamicii. Harta de joc se aseamană unui tunel, iar partea creativă constă în faptul cu turnurile de aparare (care apar sub forma unor capcane) pot fi poziționate pe podea, pereți și tavan. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Robot Entertainment.
+- Orcs Must Die! - O combinație interesantă între jocuri de strategie și jocuri de acțiune. Jucatorul are posibilitatea să participe în mod activ la oprirea valului de inamici prin intermediul unui personaj. Acesta oferă o gamă largă de arme și abilități pentru personaje, iar jucătorii trebuie să le folosească strategic pentru a supraviețui nivelelor și a învinge inamicii. Harta de joc se aseamană unui tunel, iar partea creativă constă în faptul că turnurile de aparare (care apar sub forma unor capcane) pot fi poziționate pe podea, pereți și tavan. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Robot Entertainment.
 
-- Dungeon Defenders - Acest joc combină elemente de joc de rol și Tower Defense, jucătorii trebuie să-și construiască turnurile defensive și să-și antreneze eroii pentru a învinge inamicii. Jocul oferă o gamă largă de personaje cu abilități unice, iar jucătorii trebuie să le upgradeze și să le echipeze înainte de a se aventura în nivelele următoare. Acesta prezintă o combinație interesantă între strategie și joc de rol. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Trendy Entertainment.
+- Dungeon Defenders -În acest joc hibrid de tipul Tower Defense și RPG (_Role-playing game_), jucătorii trebuie să își asume roluri de diferite clase de caractere, fiecare cu abilități și puncte forte unice, pentru a proteja cristalul Eternia de hoardele de inamici. Fiecare clasă de personaj poate construi și îmbunătăți turnuri de apărare, capcane și bariere, pentru a opri inamicii înainte ca aceștia să ajungă la cristal. De asemenea, jocul permite și implicarea directă a personajelor în luptă. Acesta oferă o gamă largă de niveluri și moduri de joc, având o componentă de progresie puternică care permite îmbunătățirea și personalizarea abilităților personajelor și a echipamentelor. _Dungeon Defenders_ poate fi jucat atât în mod _single player_ (un singur jucător) cât și _multiplayer_ (mai mulți jucători), introducând astfel un element de colaborare și strategie de echipă. . Jocul a fost lansat în anul 2010 și a fost dezvoltat de către Trendy Entertainment.
 
-- Factorio - Acest joc este un Tower Defense în care jucătorii trebuie să își construiască o bază și să o apere de atacurile inamicilor. Jocul oferă o gamă largă de structuri defensive, precum și posibilitatea de a le upgrade. Jucătorii trebuie să colecteze resurse și să le folosească pentru a construi structuri defensive. Principală trăsătura a jocului este complexitatea lanțului de aprovizionare pentru clădirile de producție a resurselor complexe. Jocul a fost lansat în anul 2016 și a fost dezvoltat de către Wube Software.
+- Factorio - Joc de strategie în timp real, jucătorii trebuie să construiască și să mențină automate industriale într-o planetă extraterestră. Resursele sunt esențiale și jucătorii trebuie să colecteze și să le proceseze pentru a construi mașinării industriale complexe și eficiente. Un alt element central al jocului este rețeaua logistică sofisticată, în care fiecare piesă este interconectată și trebuie să fie bine gândită pentru a fi eficientă. Jucătorii trebuie, de asemenea, să se apere de creaturile ostile ale planetei. Jocul a fost lansat în anul 2016 și a fost dezvoltat de către Wube Software.
 ]
+
+
+
+
 
 #pagebreak()
 
@@ -491,7 +517,7 @@ Așadar, un joc care urmează acest design poate fi extins foarte ușor fără s
 - Moduri de joc alternative: uneori de dorim să avem și mici provocări care să ne testeze abilitățile de joc. Acestea pot fi introduse sub forma unor moduri de joc alternative care să ofere o experiență de joc diferită. Ca acest lucru să fie posibil trebuie să revaluam din nou sistemul implementat.
 ]
 
-Toate aceste probleme trebuie abordate înainte de a începe dezvoltarea unui joc. O planificare atentă și o analiză aprofundată a acestor probleme ne poate ajuta să evităm multe probleme pe parcursul dezvoltării jocului. O metodă bună a sesiza aceste problem este construirea unui mic prototip care să evidențieze mecanica de joc și să ne ajute să înțelegem mai bine cum funcționează acest sistem de jetoane de acțiune.
+Toate aceste probleme trebuie abordate înainte de a începe dezvoltarea unui joc. O planificare atentă și o analiză aprofundată a acestor probleme ne poate ajuta să evităm multe probleme pe parcursul dezvoltării jocului. O metodă bună a sesiza aceste problem este construirea o aplicație interactivă care să evidențieze mecanica de joc și să ne ajute să înțelegem mai bine cum funcționează acest sistem de jetoane de acțiune.
 
 
 #figure(
@@ -785,7 +811,7 @@ Un dezavantaj la această arhitectură este că este destul de dificil de înțe
 
 La o primă vedere acest sistem pare a fi foarte complex, dar trebuie să avem în vedere că sistemul de jetoane de acțiune este un sistem cu multe entități și reguli de transformare. Pentru joc de anvergură mică sau medie, nu ar fi necesară folosirea acestui sistem. Dar pentru jocuri de buget mare, acest sistem este foarte util întrucât ne permite să salvam resurse care ar putea fi folosite pentru animații și efecte speciale, acestea fiind mari consumatoare de resurse.
 
-Pentru prototipul de demonstrație vom folosii tehnologiile WEB pentru a crea un document interactivi care să prezinte sistemul de jetoane de acțiune. Pentru partea de implementare vom folosii limbajul de programare Typescript și biblioteca _SolidJs_ pentru implementarea interfeței #cite("solidjs"). Aceasta ne permite să creăm vizualizări complexe și interactive într-un mod foarte ușor.
+Pentru aplicația de demonstrație vom folosii tehnologiile WEB pentru a crea un document interactivi care să prezinte sistemul de jetoane de acțiune. Pentru partea de implementare vom folosii limbajul de programare Typescript și biblioteca _SolidJs_ pentru implementarea interfeței #cite("solidjs"). Aceasta ne permite să creăm vizualizări complexe și interactive într-un mod foarte ușor.
 
 == Primele minute de joc
 
@@ -832,7 +858,7 @@ Odată terminat valul, e timpul să ne folosim de resursele acumulate pentru a a
 
 În funcție de ce turn am ales la început, încercăm să maxizăm potențialul acestuia, dar în același timp să ne gândim cum putem combina turnurile pasive pentru a obține jetoane mai puternice. Dacă am încerca să investim în turnurile pasive de atac bonus și explosiv, ne-ar putea ajuta cu valurile care au mulți inamicii cu viață mică. Dacă am încerca să investim în turnurile pasive de încetinire și îngheț, ne-ar putea ajuta cu valurile care au inamicii cu viață mare.
 
-Deoarece folosim un automat finit în implementarea prototipului putem avea opțiunea de a relua sesiunea de joc. Acest lucru ne permite să analizăm modul cum am jucat și să încercăm să găsim o strategie mai bună. De asemenea, putem să relua runda și să încercăm o nouă tactică, să vedem dacă aceasta este mai bună sau nu.
+Deoarece folosim un automat finit în implementarea sistemului de joc din cadrul aplicației putem avea opțiunea de a relua sesiunea de joc. Acest lucru ne permite să analizăm modul cum am jucat și să încercăm să găsim o strategie mai bună. De asemenea, putem să relua runda și să încercăm o nouă tactică, să vedem dacă aceasta este mai bună sau nu.
 
 == Harta de joc
 
@@ -849,7 +875,7 @@ Harta liberă are un avantaj prin faptul ca partea de plasare a turnurilor joac�
 
 Unele jocuri, precum _Kingdom Rush_ #cite("kingdom-rush-levels"), folosesc o combinație între cele două tipuri de hărți. Acestea au un traseu prestabilit, dar în același timp au și elemente de decor care dispar în timpul jocului pentru a crea rute de atac adiționale astfel mărind dificultatea nivelului.
 
-În prototip vom folosii o hartă cu trase prestabilit întrucât este mai ușor de implementat și ne permite să ne concentrăm pe partea de jetoane de acțiune. Harta va fi o matrice de căsuțe de dimensiune 8 pe 12 (@map). Căsuța verde va reprezenta punctul de start de unde va începe valul de inamicii, iar căsuța roșie va fi finalul traseului. Căsuța galbenă va fi căsuța curent selectată de către jucător. Dacă pe căsuța selectată se află un turn de apărare, atunci raza ei de acțiune va fi vizibilă, iar dacă se află un inamic, atunci informațiile despre acesta vor fi vizibile în panoul din dreapta.
+În aplicație vom folosii o hartă cu trase prestabilit întrucât este mai ușor de implementat și ne permite să ne concentrăm pe partea de jetoane de acțiune. Harta va fi o matrice de căsuțe de dimensiune 8 pe 12 (@map). Căsuța verde va reprezenta punctul de start de unde va începe valul de inamicii, iar căsuța roșie va fi finalul traseului. Căsuța galbenă va fi căsuța curent selectată de către jucător. Dacă pe căsuța selectată se află un turn de apărare, atunci raza ei de acțiune va fi vizibilă, iar dacă se află un inamic, atunci informațiile despre acesta vor fi vizibile în panoul din dreapta.
 
 Traseul este dat de căsuțele de culoarea asemănătoare turcoazului. Inamicii vor urma acest traseu de la punctul de start până la obiectiv. În cazul în care un inamic ajunge la obiectiv, viața obiectivului va scădea. Dacă viața obiectivului ajunge la 0, jocul se va termina. Turnurile de apărare pot fi construire doar în afara traseului, și anume pe căsuțele de culoarea asemănătoare a verdelui închis.
 
@@ -946,7 +972,7 @@ type Condition = {
 ```
 ]
 
-În prototip fiecare jeton de acțiune este reprezentat de câtre o iconiță unică care este afișată de către inamic. Aceasta este o reprezentare vizuală a jetonului de acțiune care ne ajută să vedem ce jetoane de acțiune are inamicul și ce rang au acestea (@mob-with-tokens).
+În jocul din cadrul aplicației fiecare jeton de acțiune este reprezentat de câtre o iconiță unică care este afișată de către inamic. Aceasta este o reprezentare vizuală a jetonului de acțiune care ne ajută să vedem ce jetoane de acțiune are inamicul și ce rang au acestea (@mob-with-tokens).
 
 #figure(
   image("assets/mob-with-tokens.png", width: 17%),
@@ -982,7 +1008,7 @@ Proiectilele fac parte din mecanismul turnurile active, dar cum pot varia de la 
 - Durată de viață curentă: reprezintă durata de timp rămasă pentru care proiectilul este activ.
 ]
 
-Întrucât în implementarea prototipului nu avem nevoie de proiectile acestea tot vor fi menționate în descrierea sistemului de turnuri de apărare, deoarece acestea sunt o componentă care apar în majoritatea jocurilor de _Tower Defense_.
+Întrucât în implementarea jocului nu avem nevoie de proiectile, acestea tot vor fi menționate în descrierea sistemului de turnuri de apărare, deoarece sunt o componentă care apar în majoritatea jocurilor de _Tower Defense_.
 
 Turnurile pasive au următoarele caracteristici:
 
@@ -1046,7 +1072,7 @@ O problemă care acest algoritm nu o ia in considerare este efectul provocat de 
 
 Dacă nu folosim proiectile și atacul din partea turnului este instant, atunci devine mult mai ușor să stabilim viața inamicului la momentul în turnul este pregătit să tragă prin faptul ca putem verifica instant viața curenta a inamicului. Tot ce trebuie să stabilim e un sistem de priorități în cadrul turnurilor de apărare. Putem folosii o metodă de tip _greedy_ #cite("cormen2022introduction") (aceasta implică selectarea, în fiecare pas, a opțiunii care pare cea mai bună la acel moment, fără a lua în considerare consecințele pe termen lung sau efectele pe care decizia respectivă le-ar putea avea asupra soluției finale) prin care stabilim care sunt turnurile necesare pentru a elimina inamicul folosind un număr minim de turnuri. Astfel, putem stabili o ordine de tragere a turnurilor în funcție de prioritatea lor.
 
-În prototip tunurile vor fi reprezentate de imaginii sugestive aflate pe harta de joc (@towers). În casuța turnului, pe colțul din stânga jos este un simbol care arată dacă turnul este pregătit să tragă sau nu. Dacă nu, va arată timpul rămas până la următorul atac. De asemenea, la selectarea turnului de apărare, raza de atac va fi vizibilă prin schimbarea culorii din căsuțele învecinate turnului (@tower-range).
+În aplicație tunurile vor fi reprezentate de imaginii sugestive aflate pe harta de joc (@towers). În casuța turnului, pe colțul din stânga jos este un simbol care arată dacă turnul este pregătit să tragă sau nu. Dacă nu, va arată timpul rămas până la următorul atac. De asemenea, la selectarea turnului de apărare, raza de atac va fi vizibilă prin schimbarea culorii din căsuțele învecinate turnului (@tower-range).
 
 #figure(
   image("assets/towers.png", width: 35%),
@@ -1109,7 +1135,7 @@ Acest lanț de aprovizionare seamănă foarte mult cu idea noastră de jetoane d
 
 Prin urmare, jocurile de tip _base building_ pot fi considerate repere pentru implementarea sistemului de jetoane de acțiune, având în vedere asimilările.
 
-Prototipul prezintă o variantă simplificată cu o singură resursă numită _monedă_. Prin eliminarea inamicilor, jucătorul primește o recompensă sub formă de monezi. Monezile poate fi folosită pentru a achiziționa turnuri de apărare și îmbunătățiri pentru acestea prin intermediul magazinului. @shop este reprezentarea vizuală a magazinului -- în colțul din dreapta sus avem numărul de monezi pe care le deținem, iar în partea de jos avem turnurile de apărare și îmbunătățirile disponibile pentru achiziționare și fiecare având un cost de achiziție.
+Jocul din cadrul aplicației prezintă o variantă simplificată cu o singură resursă numită _monedă_. Prin eliminarea inamicilor, jucătorul primește o recompensă sub formă de monezi. Monezile poate fi folosită pentru a achiziționa turnuri de apărare și îmbunătățiri pentru acestea prin intermediul magazinului. @shop este reprezentarea vizuală a magazinului -- în colțul din dreapta sus avem numărul de monezi pe care le deținem, iar în partea de jos avem turnurile de apărare și îmbunătățirile disponibile pentru achiziționare și fiecare având un cost de achiziție.
 
 #figure(
   image("assets/shop.png", height: 30%),
@@ -1186,7 +1212,7 @@ O chestie importantă este intervalul de generare al inamicilor în cadrul valul
 
 Jocuri precum _Kingdom Rush_ variază acest interval în cadrul rundei de joc pentru crea grupuri de inamicii mai mici sau mai mari pentru a oferi o provocare jucătorului prin prisma faptului că inamicii mai rezistenți pot distrate turnurile de apărare, iar inamicii mai rapizi pot ajunge la obiectiv înainte ca turnurile de apărare să-i elimine.
 
-În @enemy-wave putem observa implementarea valului de inamicii din prototip. Punctul de start este pătratul verde, iar punctul de final este pătratul roșu. Inamicii sunt reprezentați de imagini care prezintă niște creaturi ficționale de culoare roșie, iar în colțul din dreapta sus este un număr care reprezintă punctele de viață. Inamicii se deplasează de la punctul de start la punctul de final. Inamicii care ajung la punctul de final sunt retrași de pa hartă, iar jucătorul primește o penalizare. Inamicii care sunt eliminați de către turnurile de apărare (@enemy-in-range) oferă o recompensă jucătorului.
+În @enemy-wave putem observa implementarea valului de inamicii din cadrul aplicației. Punctul de start este pătratul verde, iar punctul de final este pătratul roșu. Inamicii sunt reprezentați de imagini care prezintă niște creaturi ficționale de culoare roșie, iar în colțul din dreapta sus este un număr care reprezintă punctele de viață. Inamicii se deplasează de la punctul de start la punctul de final. Inamicii care ajung la punctul de final sunt retrași de pa hartă, iar jucătorul primește o penalizare. Inamicii care sunt eliminați de către turnurile de apărare (@enemy-in-range) oferă o recompensă jucătorului.
 
 #figure(
   image("assets/enemy-wave.png", width: 70%),
@@ -1264,32 +1290,32 @@ Pentru turnurile de apărare active, avem următoarele informații:
 @upgrade-tower-item-ui este schița pentru un astfel de element vizual.
 
 #figure(
-  image("assets/ui-hud.png"),
+  image("assets/ui-hud.png", width: 75%),
   caption: [Schiță pentru interfața de utilizator.]
 ) <hud>
 
 #figure(
-  image("assets/ui-Activ.png"),
+  image("assets/ui-Activ.png", width: 75%),
   caption: [Schiță pentru un element vizual al unui turn activ din magazin.]
 ) <active-tower-item-ui>
 
 #figure(
-  image("assets/ui-Pasiv.png"),
+  image("assets/ui-Pasiv.png", width: 75%),
   caption: [Schiță pentru un element vizual al unui turn pasiv din magazin.]
 ) <passive-tower-item-ui>
 
 #figure(
-  image("assets/ui-Upgrade.png"),
+  image("assets/ui-Upgrade.png", width: 75%),
   caption: [Schiță pentru un element vizual al unui îmbunătățiri din magazin.]
 ) <upgrade-tower-item-ui>
 
 În protip, interfața a fost creată folosind tehnologii _Web_ precum _HTML_, _CSS_ și _Javascript_. Acestea sunt tehnologii care sunt folosite pentru a crea interfețe de utilizator pentru aplicații web. Pe langă acestea, folosim și biblioteca _SolidJs_ care ne ajută să creăm interfețe de utilizator reactive. Aceasta este o bibliotecă care se bazează pe conceptul de _reactive programming_ #cite("xie2014reactive") care ne ajută să creăm interfețe de utilizator care se actualizează automat atunci când datele se schimbă. Aceasta este o bibliotecă care este inspirată de biblioteca _React_ #cite("react") care este foarte populară în comunitatea de dezvoltare de aplicații web.
 
-@overview este o reprezentare vizuală a interfeței de utilizator din prototip.  În partea din stânga avem magazinul, iar în partea din dreapta avem informații despre valul de inamicii și rundă. În partea centrală se află hart de joc reprezentată sub forma unei matrici de căsuțe.
+@overview este o reprezentare vizuală a interfeței de utilizator din cadrul aplicației dezvoltate.  În partea din stânga avem magazinul, iar în partea din dreapta avem informații despre valul de inamicii și rundă. În partea centrală se află hart de joc reprezentată sub forma unei matrici de căsuțe.
 
 #figure(
   image("assets/overview.png"),
-  caption: [Vedere de ansamblu al interfeței de utilizator din prototip.]
+  caption: [Vedere de ansamblu al interfeței de utilizator.]
 ) <overview>
 
 
@@ -1321,17 +1347,18 @@ Căsuța de culoare verde indici punctul de start al valului de inamici, iar că
 
 #figure(
   image("assets/tooltip.png", width: 65%),
-  caption: [Mesaj ajutătoar care explică un elemente din joc.]
+  caption: [Mesaj ajutător care explică un elemente din joc.]
 ) <tooltip>
 
-Un avantaj pe care îl prezintă tehnologiile web este usurința cu care putem crea documente menite să prezinte informația într-un mod clar și concis. Documentația despre mecanica de joc este inclusa în prototip și poate fi accesată cu usurință chiar și în timpul sesiunii de joc (@tokens-tutorial).
+Un avantaj pe care îl prezintă tehnologiile web este usurința cu care putem crea documente menite să prezinte informația într-un mod clar și concis. Documentația despre mecanica de joc este inclusă în aplicație și poate fi accesată cu usurință chiar și în timpul sesiunii de joc (@tokens-tutorial).
+
+
+Un singur dezavantaj la această tehnologie este faptul că nu este ușor să implementăm animații complexe precum într-un motor de joc dededicat pentru crearea de jocuri. Cu toate acestea, această tehnologie este o soluție elegantă pentru crearea de prototipuri care pot fi împărtășite cu usurință în cadrul comunității.
 
 #figure(
   image("assets/tokens-tutorial.png", width: 80%),
   caption: [Instrucțiuni de joc despre mecanismul de jetoane de acțiune.]
 ) <tokens-tutorial>
-
-Un singur dezavantaj la această tehnologie este faptul că nu este ușor să implementăm animații complexe precum într-un motor de joc dededicat pentru crearea de jocuri. Cu toate acestea, această tehnologie este o soluție elegantă pentru crearea de prototipuri care pot fi împărtășite cu usurință în cadrul comunității.
 
 #pagebreak()
 
@@ -1361,7 +1388,7 @@ Crearea de jocuri este un proces creativ care necesită multă experiență și 
 
 Rolul unui prototip este de a ne ajuta să testăm ideile de design de joc într-un mod rapid și ieftin. Acesta ne ajută să ne dăm seama dacă ideile noastre sunt viabile sau nu. De asemenea, ne ajută să ne dăm seama dacă ideile noastre sunt interesante sau nu. Un prototip nu trebuie să fie perfect, ci trebuie să fie suficient de bun pentru a ne ajuta să testăm ideile de design de joc.
 
-Această lucrare este însoțită de un prototip care are rolul de a testa ideea de design de joc prezentată în această lucrare. Acesta este un prototip simplu care nu are o grafică complexă, dar care ne ajută să ne dăm seama dacă ideea de design de joc este viabilă sau nu. Mai mult de atât, acesta poate fi împărtășit în cadrul comunității pentru a primii feedback de la alți designeri de jocuri.
+Această lucrare este însoțită de o aplicație care conține un mic prototip care are rolul de a testa ideea de design de joc prezentată în această lucrare. Acesta este un prototip simplu care nu are o grafică complexă, dar care ne ajută să ne dăm seama dacă ideea de design de joc este viabilă sau nu. Mai mult de atât, acesta poate fi împărtășit în cadrul comunității pentru a primii feedback de la alți designeri de jocuri.
 
 Așa cum a fost prezentat în lucrare, design-ul flexibil oferă o varietate de opțiuni pentru a crea un joc. Dar un dezavantaj este că uneori nu avem nevoie de atât de multe opțiuni întrucât aceste pot complica în mod intenționat experiența de joc. De aceea, este important să avem un scop bine definit pentru jocul pe care îl creăm și să ne concentrăm pe acele aspecte care ne ajută să atingem acel scop.
 
