@@ -110,7 +110,7 @@
 
 #v(5cm)
 #align(center, text(12pt)[
-  *Bucuresti \ 2023*
+  *București \ 2023*
 ])
 
 #pagebreak()
@@ -188,7 +188,7 @@
 
 #v(5cm)
 #align(center, text(12pt)[
-  *Bucuresti \ 2023*
+  *București \ 2023*
 ])
 
 #pagebreak()
@@ -337,10 +337,8 @@ Așadar, această lucrare va descrie un set de specificații pentru un joc de ti
 
 // +------------------- Lucrare -------------------+
 
-#v(1cm)
 = Genul de joc Tower Defense
 
-#v(0.5cm)
 Tower Defense este un gen de joc de strategie în care jucătorii trebuie să-și construiască și să-și îmbunătățească turnuri defensive pentru a împiedica inamicii să ajungă la obiectiv.
 
 Jocurile de Tower Defense se desfășoară de obicei pe o hartă cu un traseu prestabilit pe care inamicii încearcă să avanseze, în timp ce jucătorii plasează și își upgradează turnurile defensive pentru a-i opri. Fiecare turn are caracteristici unice, cum ar fi raza de acțiune și puterea de foc, și trebuie plasat strategic pentru a maximiza efectivitatea sa. Jucătorii trebuie să ia decizii strategice importante în timpul jocului, cum ar fi ce tipuri de turnuri să construiască, când să le construiască și cum să le upgradeze, pentru a se asigura că pot gestiona cu succes amenințările inamice.
@@ -381,12 +379,11 @@ Alte motivații pot fi #cite("tw-principales"):
 ]
 
 
-
-
-
 #pagebreak()
 
 = Design-ul unui joc de Tower Defense
+
+#v(0.5cm)
 
 Design unui joc de Tower Defense este relativ simplu. În general, jocurile de Tower Defense au următoarele elemente:
 
@@ -1430,27 +1427,15 @@ Având în vedere ultime avansuri tehnologice, putem merge și mai departe cu id
 
 #pagebreak()
 
-#align(left, text(22pt)[
+#align(left, upper[ #text(14pt)[
   *Concluzii*
-]) <concluzie>
-
-#v(1cm)
+]]) <concluzie>
 
 #v(1.5cm)
 
 În această lucrare am prezentat o idee de design de joc pentru genul _Tower Defense_. Am încercat să găsim o soluție pentru a rezolva problema repetitivității care apare în acest gen de jocuri. Am propus un sistem de jetoane de acțiune care să aducă o variație în joc prin faptul că jucătorul poate să combine diferite tipuri de turnuri de apărare pentru a crea jetoane de acțiune care să aibă efecte puternice asupra inamicilor.
 
-Creare unui design de joc este o sarcină dificilă întrucât trebuie ținem cont de numeroase aspecte care au rol important în experiența finală de joc. De exemplu, trebuie să ținem cont de:
-
-#left-padding[
-  - mecanică de joc,
-  - interfața de utilizator,
-  - tematica jocului,
-  - publicul țintă,
-  - platforma de lansare,
-  - monetizarea,
-  - etc.
-]
+Creare unui design de joc este o sarcină dificilă întrucât trebuie ținem cont de numeroase aspecte care au rol important în experiența finală de joc. De exemplu, trebuie să ținem cont de: mecanică de joc, interfața de utilizator, tematica jocului, publicul țintă, platforma de lansare, monetizarea, etc.
 
 Crearea de jocuri este un proces creativ care necesită multă experiență și multă muncă. De aceea, este important să avem o metodă de lucru care să ne ajute să ne organizăm și să ne concentrăm pe aspectele importante ale jocului. De aceea este bine să avem cât mai multe referințe pentru a ne inspira și pentru a ne ajuta să ne dezvoltăm abilitățile de design de joc.
 
@@ -1471,9 +1456,9 @@ Atunci când vine vorba de monetizare, trebuie să avem în vedere cât de dispu
 
 #v(2cm)
 
-#align(left, text(24pt)[
-  *Bibliografie*
-]) <bio>
+#align(left, upper[ #text(14pt)[
+ *Bibliografie*
+]]) <bio>
 
 #v(1cm)
 
