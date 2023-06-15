@@ -1471,4 +1471,4 @@ Atunci când vine vorba de monetizare, trebuie să avem în vedere cât de dispu
 
 #v(1cm)
 
-#bibliography("bibliografie.bib", title: none)
+#bibliography("bib.yml", title: none)

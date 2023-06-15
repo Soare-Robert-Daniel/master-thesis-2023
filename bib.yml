@@ -1,0 +1,223 @@
+---
+groeschel2020analysis:
+  type: article
+  date: 2020
+  title: Analysis of mobile app revenue models used in the most popular games of the tower defense genre on google play
+  author:
+    - "Groeschel, Michael"
+    - "Schäfer, Tim"
+  parent:
+    - type: periodical
+      issue: 1
+      volume: 8
+      title:
+        value: "Asian Journal of Computer and Information Systems (ISSN: 2321--5658)"
+        sentence-case: "Asian journal of computer and information systems (issn: 2321--5658)"
+hernandez2015mathematics:
+  type: article
+  date: 2015
+  author:
+    - "Hernández-Sabaté, Aura"
+    - "Joanpere, Meritxell"
+    - "Gorgorió, Núria"
+    - "Albarrac\\in, Llu\\is"
+  title: Mathematics learning opportunities when playing a tower defense game
+  page-range: 57-71
+  parent:
+    - type: periodical
+      title: International Journal of Serious Games
+      issue: 4
+      volume: 2
+avery2011computational:
+  type: article
+  title: Computational intelligence and tower defence games
+  date: 2011
+  page-range: 1084-1091
+  parent:
+    - type: proceedings
+      organization: IEEE
+      title:
+        value: 2011 IEEE Congress of Evolutionary Computation (CEC)
+        sentence-case: 2011 ieee congress of evolutionary computation (cec)
+  author:
+    - "Avery, Phillipa"
+    - "Togelius, Julian"
+    - "Alistar, Elvis"
+    - "Van Leeuwen, Robert Pieter"
+kumalacomparison:
+  type: article
+  author:
+    - "Kumala, Graldy Tirta"
+    - "Istiono, Wirawan"
+  parent:
+    - type: periodical
+  title: Comparison of Flow Field and A-Star Algorithm for Pathfinding in Tower Defense Game
+typescript:
+  type: misc
+  title: Typescript
+  url: "https://www.typescriptlang.org/"
+  note: Last accessed on 2023-06-13
+arknight:
+  type: misc
+  title: Arknight Wiki
+  url: "https://arknights.fandom.com/wiki/Arknights_Wiki"
+  note: Last accessed on 2023-05-19
+best-ui:
+  type: misc
+  url: "https://www.gamesindustry.biz/best-practices-for-designing-an-effective-video-game-ui"
+  title: Best practices for designing an effective user interface
+  note: Last accessed on 2023-05-20
+unity-ui:
+  type: book
+  title: User interface design and implementation in Unity
+  date: 2022
+  url: "https://resources.unity.com/games/user-interface-design-and-implementation-in-unity"
+  publisher: Unity Technologies
+tw-principales:
+  type: misc
+  url: "https://www.reddit.com/r/gamedesign/comments/j70hme/game_design_principles_tower_defense/"
+  title: Game Design Principles - Tower Defense
+  note: Last accessed on 2023-05-27
+unity-so:
+  type: misc
+  url: "https://unity.com/how-to/architect-game-code-scriptable-objects"
+  title: THREE WAYS TO ARCHITECT YOUR GAME WITH SCRIPTABLEOBJECTS
+  note: Last accessed on 2023-05-27
+walcherevent:
+  type: article
+  parent:
+    - type: periodical
+  title: Event-driven Game Engine in Realtime Strategy Games
+  author: "Walcher, Johannes"
+gamma1995design:
+  type: book
+  publisher:
+    value: Pearson Deutschland GmbH
+    sentence-case: Pearson deutschland gmbh
+  author:
+    - "Gamma, Erich"
+    - "Helm, Richard"
+    - "Johnson, Ralph"
+    - "Johnson, Ralph E"
+    - "Vlissides, John"
+  title:
+    value: "Design patterns: elements of reusable object-oriented software"
+    verbatim: true
+  date: 1995
+nystrom2014game:
+  type: book
+  title: Game programming patterns
+  publisher: Genever Benning
+  author: "Nystrom, Robert"
+  date: 2014
+harkonen2019advantages:
+  type: article
+  title: Advantages and Implementation of Entity-Component-Systems
+  author: "Härkönen, Toni"
+  date: 2019
+  parent:
+    - type: periodical
+unity-dots:
+  type: misc
+  url: "https://unity.com/dots"
+  title: UNITY’S DATA-ORIENTED TECHNOLOGY STACK (DOTS)
+  note: Last accessed on 2023-05-28
+tower-history:
+  type: misc
+  url: "https://web.archive.org/web/20140203062250/http://palgn.com.au/11898/tower-defense-bringing-the-genre-back/"
+  title:
+    value: "Tower Defense: Bringing the genre back"
+    sentence-case: "Tower defense: bringing the genre back"
+  author: "Mitchell, Luke"
+  date: 2008
+  note: Last accessed on 2023-06-09
+chess:
+  type: misc
+  title: Chess
+  url: "https://www.chessprogramming.org/Chess"
+  note: Last accessed on 2023-06-09
+merge:
+  type: misc
+  url: "https://www.globalgamesforum.com/merge-games-to-do-or-not-to-do/"
+  title:
+    value: "Merge Games: To Do Or Not To Do? "
+    sentence-case: "Merge games: to do or not to do? "
+  note: Last accessed on 2023-06-10  
+td-design:
+  type: misc
+  author: "Lars, Doucet"
+  title:
+    value: "Optimizing Tower Defense for FOCUS and THINKING - Defender's Quest"
+    sentence-case: "Optimizing tower defense for focus and thinking - defender's quest"
+  url: "https://www.gamedeveloper.com/design/optimizing-tower-defense-for-focus-and-thinking---defender-s-quest"
+  note: Last accessed on 2023-06-10
+kingdom-rush-enemies:
+  type: misc
+  title: Kingom Rush Wiki -Enemies
+  url: "https://kingdomrushtd.fandom.com/wiki/Category:Enemies"
+  note: Last accessed on 2023-06-10
+kingdom-coin:
+  type: misc
+  url: "https://kingdomthegame.fandom.com/wiki/Coin"
+  title: Kingdom Wiki - Coin
+  note: Last accessed on 2023-06-10
+kingdom-coop:
+  type: misc
+  title: Kingdom Wiki - Online Co-Op
+  url: "https://kingdomthegame.fandom.com/wiki/Co-op#Online_co-op"
+  note: Last accessed on 2023-06-10
+solidjs:
+  type: misc
+  title: SolidJS
+  url: "https://www.solidjs.com/"
+  note: Last accessed on 2023-06-10
+cormen2022introduction:
+  type: book
+  title: Introduction to algorithms
+  publisher:
+    value: MIT press
+    sentence-case: Mit press
+  date: 2022
+  author:
+    - "Cormen, Thomas H"
+    - "Leiserson, Charles E"
+    - "Rivest, Ronald L"
+    - "Stein, Clifford"
+xie2014reactive:
+  type: article
+  date: 2014
+  parent:
+    - type: periodical
+      publisher: JSTOR
+      title: Statistical Science
+  author:
+    - "Xie, Yihui"
+    - "Hofmann, Heike"
+    - "Cheng, Xiaoyue"
+  page-range: 201-213
+  title: Reactive programming for interactive graphics
+react:
+  type: misc
+  url: "https://react.dev/"
+  title: React
+  note: Last accessed on 2023-06-12
+kingdom-rush-levels:
+  type: misc
+  title: Kingdom Rush Wiki - Levels
+  url: "https://kingdomrushtd.fandom.com/wiki/Category:Levels"
+  note: Last accessed on 2023-06-12
+algebraic-notation:
+  type: misc
+  title: Chess Notation
+  url: "https://www.chess.com/terms/chess-notation"
+  note: Last accessed on 2023-06-12
+OpenAI2023GPT4TR:
+  type: article
+  parent:
+    - type: periodical
+      title: ArXiv
+  author: OpenAI
+  title:
+    value: GPT-4 Technical Report
+    sentence-case: Gpt-4 technical report
+  date: 2023
