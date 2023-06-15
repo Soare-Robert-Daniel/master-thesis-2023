@@ -435,12 +435,12 @@ Unul din scopurile secundare al noilor idee de design care vor fi discutate în 
 
 #left-padding[
 - Joc de dezvoltarea a unei base (_base building_). Acesta de bazează pe colectarea de resurse și crearea de unui lanț de aprovizionare pentru clădirile de producție. Este o situație destul de comună ca aceste tipuri să jocuri să includă o parte de _Tower Defense_. Accentul se pune pe partea economică, obiectivul jucătorului fiind deplocarea unor clădri speciale care au nevoie de resurse complexe pentru a fi construite. Sistemul de jetoane de acțiunea se folosește aceiași idee, număi că în loc să creăm un lanț de aprovizionare, jucătorii trebuie să creeze un lanț de acțiuni care să fie executate într-o anumită ordine pentru a obține un rezultat dorit.
-- Joc de rol și acțiune (_action role-playing game_). Acestea aduc in prim-plan partea de poveste și acțiune continuă pentru a crea o experiență de joc mai interesantă. Ele se concentrează pe crearea unui univers care să-l captiveze pe jucător. Jocurile de acest tip oferă o varietate de eroi cu abilități și caracteristici unice care se îmbină cu tematica elementara a genului Tower Defense.
-- Puzzle. Acest gen se pliază foarte ușor pe genul Tower Defense, iar introducerea de mici schimbări în mecanica de joc poate duce la crearea unui joc de acest tip. Acestea concentrează pe crearea unui puzzle care să fie rezolvat de către jucător. Acest puzzle poate consta în găsirea unei anumite combinații de structuri defensive care să oprească valul inamic în anumite condiții. Unele jocuri, introduc acest concept sub form de "challenge mode" care poate fi jucat de către jucători după ce au terminat jocul. Acesta consta în adaugarea de noi constrăngeri pentru jucător, cum ar fi: limitarea numărului de turnuri defensive, limitarea numărului de resurse, creșterea numărului de inamici, etc.
+- Joc de rol și acțiune (_action role-playing game_). Acestea aduc in prim-plan partea de poveste și acțiune continuă pentru a crea o experiență de joc mai interesantă. Ele se concentrează pe crearea unui univers care să-l captiveze pe jucător. Jocurile de acest tip oferă o varietate de eroi cu abilități și caracteristici unice care se îmbină cu tematica elementara a genului _Tower Defense_.
+- Puzzle. Acest gen se pliază foarte ușor pe genul Tower Defense, iar introducerea de mici schimbări în mecanica de joc poate duce la crearea unui joc de acest tip. Acestea concentrează pe crearea unui puzzle care să fie rezolvat de către jucător. Acest puzzle poate consta în găsirea unei anumite combinații de structuri defensive care să oprească valul inamic în anumite condiții. Unele jocuri, introduc acest concept sub form de "challenge mode" care poate fi jucat de către jucători după ce au terminat părțile principale. Acesta constă în adaugarea de noi constrăngeri pentru jucător, cum ar fi: limitarea numărului de turnuri defensive, limitarea numărului de resurse, creșterea numărului de inamici, etc.
 - Joc de strategie în timp real (_real-time strategy_). Acest gen se concentrează pe elaborarea și implementarea unei strategii în timp real. De cele mai multe ori, aceste jocuri au un component competitiv bine definit, unde orice greșeală poate fi exploatată. Majoritatea jocurilor din acest gen includ turnuri de apărare ce au rolul de a încetini avansul adversarilor.
 ]
 
-Modelele hibride de Tower Defense îmbogățesc experiența jucatorilor prin combinarea elementelor caracteristice altor genuri de jocuri. Astfel, jucătorii pot descoperi noi abordări strategice, pot experimenta diverse scenarii și sunt provocați să găndeasca în mod creativ pentru a-și asigura victoria. Modelul de jetoane de acțiune nu împiedică implementarea acestor modele hibride, ci dimpotrivă, îi oferă un plus de valoare prin introducerea unui nou element de strategie. Provocarea dezvoltatorilorde jocuri este de a crea un sistem de jetoane de acțiune care să fie flexibil și să poată fi adaptat la orice model hibrid de joc fără a crea redundanță sau conflicte în experiența de joc. 
+Modelele hibride de Tower Defense îmbogățesc experiența jucatorilor prin combinarea elementelor caracteristice altor genuri de jocuri. Astfel, jucătorii pot descoperi noi abordări strategice, pot experimenta diverse scenarii și sunt provocați să găndeasca în mod creativ pentru a-și asigura victoria. Modelul de jetoane de acțiune nu împiedică implementarea acestor modele hibride, ci dimpotrivă, îi oferă un plus de valoare prin introducerea unui nou element de strategie. Provocarea dezvoltatorilor de jocuri este de a crea un sistem de jetoane de acțiune care să fie flexibil și să poată fi adaptat la orice model hibrid de joc fără a crea redundanță sau conflicte în experiența de joc. 
 
 De asemenea, este important de menționat că, în timp ce introducerea de noi elemente și modele hibride poate adăuga un grad de complexitate, acest lucru nu trebuie să fie văzut neapărat ca un dezavantaj. Dimpotrivă, un nivel adecvat de complexitate poate stimula gândirea strategică a jucătorilor și poate asigura o durată de viață mai lungă a jocului. Totuși, este crucial ca acest nivel de complexitate să fie gestionat cu atenție, pentru a evita crearea unui joc care să fie perceput ca fiind prea greu sau confuz.
 
@@ -450,10 +450,10 @@ Așadar trebuie să avem în vedere următoarele aspecte când dorim să integra
   - Echilibrul _gameplay_-ului: Orice element nou trebuie evaluat pentru a preveni perturbarea armoniei în joc. Componente supra sau subevaluate pot dăuna experienței utilizatorului.
   - Progresia jucătorului: Dacă adăugăm elemente noi, acestea ar trebui introduse treptat, permițând jucătorului să învețe și să se adapteze. Evităm să încărcăm jucătorul cu prea multe concepte noi simultan.
   - Testare și _feedback_: Înainte de a finaliza orice nouă implementare, este esențial să testăm intensiv și să solicităm păreri de la jucători. Acest proces ne ajută să identificăm potențialele probleme și să îmbunătățim experiența de joc înainte de lansarea finală.
-  - Coerența în design: Importul elementelor din alte genuri trebuie făcut într-un mod care să păstreze esența originală a jocului de Tower Defense. De pildă, dacă adăugăm componente din jocurile RPG, trebuie să ne asigurăm că acestea nu minimalizează importanța turnurilor de apărare.
+  - Coerență în design: Importul elementelor din alte genuri trebuie făcut într-un mod care să păstreze esența originală a jocului de Tower Defense. De pildă, dacă adăugăm componente din jocurile RPG, trebuie să ne asigurăm că acestea nu minimalizează importanța turnurilor de apărare.
 ]
 
-Tinând cont de aceste idei, putem începe să explorăm posibilitățile de a extinde mecanica de joc a jocurilor de Tower Defense fără a crea piedici în partea creativă și de design.
+Ținând cont de aceste idei exprimate anterior, putem începe să explorăm posibilitățile de a extinde mecanica de joc a jocurilor de Tower Defense fără a crea impedimente în partea creativă și de design.
 
 == O nouă metodă de extindere a mecanicii de joc
 
@@ -489,15 +489,15 @@ Următoarele întrebări apar în urma acestei idei de mecanică de joc:
 - Cum aratăm acest sistem în interfața de utilizator astfel încăt să fie ușor de înțeles?
 - Cum structurăm turnurile de apărare astfel încât să evidențiem acest sistem de jetoane de acțiune?
 - Cum integrăm un sistem de progresie al jocului?
-- Exista problema de conflict cu tematic aleasă? Dacă dezvoltam un joc cu tematică medievală, cum ar putea arată jetoanele de acțiune?
+- Exista problema de conflict cu tematica aleasă? Dacă dezvoltam un joc cu tematică medievală, cum ar putea arată jetoanele de acțiune?
 - Putem adauga un sistem multijucător? Care sunt provocările pe care le ridică acest sistem atunci când avem mai mult de un jucător uman?
 ]
 
-Răspunsurile la aceste întrebări variază de la joc la joc, dar trebuie luate în considerare înainte de a începe dezvoltarea unui joc. Punerea în practică a unui astfel de sistem aduce cu sine o serie de noi întrebări și provocări. De multe or nu vom avea răspunsuri la toate aceste întrebări, dar este important să avem o direcție clară în care să ne îndreptăm.
+Răspunsurile la aceste întrebări variază de la joc la joc, dar trebuie luate în considerare înainte de a începe dezvoltarea unui joc. Punerea în practică a unui astfel de sistem aduce cu sine o serie de noi întrebări și provocări. De multe ori nu vom avea răspunsuri la toate aceste întrebări, dar este important să avem o direcție clară în care să ne îndreptăm.
 
 == Compunerea jetoanelor de acțiune
 
-În acest capitol vom explora ideea de compunere a jetoanelor de acțiune. Aceasta reprezentănd și partea unică a acestei lucrări. Vom descrie cum ideile de mecanii descrise în capitolul anterior (_buff_,_debuff_, _merge_) se pot combina și integra în jocul de _Tower Defense_ sub forma unui sistem de jetoane de acțiune.
+În acest capitol vom explora ideea de compunere a jetoanelor de acțiune. Aceasta reprezentănd și partea unică a acestei lucrări. Vom descrie cum ideile de mecanici de joc descrise în capitolul anterior (_buff_,_debuff_, _merge_) se pot combina și integra în jocul de _Tower Defense_ sub forma unui sistem de jetoane de acțiune.
 
 Presupunem că avem următoarele tipuri de jetoane de bază:
 
@@ -510,7 +510,7 @@ Presupunem că avem următoarele tipuri de jetoane de bază:
 Rangul unui jeton reprezintă numărul de jetoane de același tip pe care un inamic le deține, fiecare jeton are prestabilit un rang maxim. Un jeton de rang mai mare are un efect mai pronunțat decât unul de rang mai mic. Jetoanele pot fi combinate pentru a obține noi tipuri (@compunere). De exemplu, putem avea următoarele tipuri de jetoane compuse:
 
 #left-padding[
-- Jeton de înghețare: inamicii vor fi inghețați (viteză de mișcare 0) atăta timp căt jetonul este activ. Format dintr-un jeton de încetinire de rang 2.
+- Jeton de înghețare: inamicii vor fi inghețați (viteză de mișcare 0) atâta timp căt jetonul este activ. Format dintr-un jeton de încetinire de rang 2.
 - Jeton de daune de-a lungul timpului: inamicii care dețin acest jeton vor primi daune atâta timp cât jetonul este activ. Format dintr-un jeton de bonus atac de rang 3.
 - Jeton de explozie la eliminare: inamicii care dețin acest jeton vor crea o explozie când sunt eliminați. Format dintr-un jeton de explozie de rang 2.
 - Jeton de explozie la încetinire: inamicii care dețin acest jeton vor crea o explozie când sunt încetiniți. Format dintr-un jeton de explozie de rang 2 și un jeton de încetinire de rang 2.
@@ -525,7 +525,7 @@ Putem observa marele avantaj al acestui sistem de jetoane de acțiune, și anume
 ) <compunere>
 
 #figure(
-  image("assets/ui-jetoane-cerc.png", width: 80%),
+  image("assets/ui-jetoane-cerc.png", width: 70%),
   caption: "Extinderea jetoanelor de bază în cele compuse.",
 ) <compunere-cerc>
 
@@ -534,13 +534,13 @@ Așadar, un joc care urmează acest design poate fi extins foarte ușor fără s
 Însă, acest sistem de jetoane de acțiune nu este fără dezavantaje. Următoarele probleme pot apărea:
 #left-padding[
 - Conflicte la compunere: presupunem ca inamicul se află în raza a doua turnuri care folosesc același tip de jeton (@conflict). Se pune problema care dintre cele două va avea prioritate la procesarea jetonului. 
-- Redundanță: este destul de dificil să avem o multitudine de jetoane fără să existe unele care fac aproximativ același lucru preacum altele.
+- Redundanță: este destul de dificil să avem o multitudine de jetoane fără să existe unele care fac aproximativ același lucru precum altele.
 - Logică complexă: toate aceste interacțiunii au nevoie să fie procesate iar construirea unui sistem care să facă acest lucru poate fi destul de dificilă avănd în vedere că efectele trebuie să fie aplicate într-o anumită ordine.
 - Compatibilitate: dacă dezvoltăm o extensie de joc care aduce noi tipuri de jetoane, acestea trebuie să fie compatibile cu cele existente. 
 - Monotonie: mereu sunt alese aceleași jetoanre întrucât celelalte nu sunt suficient de puternice, eficiente sau nu se potrivesc cu strategia de joc.
 - Lipsa unei experiențe graduale: curba de dificultate este destul de abruptă întrucât noțiunile despre teoria jetoanelor de acțiune nu este bine explicată.
 - Balansarea și ajustarea constantă: Pentru a menține echilibrul și a asigura o experiență de joc corectă, este important să se efectueze ajustări și balansări periodice. Acest proces este destul de dificil și consumă mult timp.
-- Moduri de joc alternative: uneori de dorim să avem și mici provocări care să ne testeze abilitățile de joc. Acestea pot fi introduse sub forma unor moduri de joc alternative care să ofere o experiență de joc diferită. Ca acest lucru să fie posibil trebuie să revaluam din nou sistemul implementat.
+- Moduri de joc alternative: uneori de dorim să avem și mici provocări care să ne testeze abilitățile de joc. Acestea pot fi introduse sub forma unor moduri de joc alternative care să ofere o experiență de joc diferită. Ca acest lucru să fie posibil trebuie să reevaluăm din nou sistemul implementat.
 ]
 
 Toate aceste probleme trebuie abordate înainte de a începe dezvoltarea unui joc. O planificare atentă și o analiză aprofundată a acestor probleme ne poate ajuta să evităm multe probleme pe parcursul dezvoltării jocului. O metodă bună a sesiza aceste problem este construirea o aplicație interactivă care să evidențieze mecanica de joc și să ne ajute să înțelegem mai bine cum funcționează acest sistem de jetoane de acțiune.
@@ -574,7 +574,7 @@ Turnurile active se aseamână cu turnurile clasice de apărare, acestea având 
 #left-padding[
 - Turn activ cu proiectil simplu: acesta crează un proiectil simplu care aplică pagube primului inamic cu care intră în contact. Acesta atacă la o rată medie și aplică pagube medii.
 - Turn activ de tip mortar: acesta crează un proiectil care explodează la impact și aplică pagube tuturor inamicilor din raza de acțiune a exploziei. Proiectilul explodează cănd ajunge la destiniție, acesta ignorănd inamicii din cale.
-- Turn activ cu atac rapid: acesta crează un proiectil simplu care aplică pagube primului inamic cu care intră în contact. Acesta are o rată de atac ridicată, dar care provoaacă pagube mici.
+- Turn activ cu atac rapid: acesta crează un proiectil simplu care aplică pagube primului inamic cu care intră în contact. Acesta are o rată de atac ridicată, dar care provoacă pagube mici.
 - Turn activ cu proiectil inteligent: acesta crează un proiectil simplu care urmărește inamicul cel mai apropiat din raza sa de acțiune.
 - Turn activ cu proiectil penetrant: Acest tip de turn creează proiectile care pot străpunge inamicii și pot atinge și dauna mai mulți inamici în linie. Proiectilele penetranți sunt deosebit de eficiente împotriva inamicilor cu armură sau a grupurilor de inamici care avansează într-o linie.
 ]
@@ -709,7 +709,7 @@ Alte sugestii pentru a stabili costul resurselor pentru turnurile de apărare:
 
 Un alt mod în care poate fi folosit acest sistem este cel în generarea de valuri inamice. În loc ca tipurile de inamici să fie prestabilite, acestea pot fi alese în funcție de valoarea valului de inamici. Fiecare inamic având o valoarea, inamicii pot fi aleși aleatoriu până ajungem la valoarea totală de resurse pe care dorim s-o avem pentru valul respectiv.
 
-Presupunem că avem următoare costuri pentru turnurile de apărare din @cost-turnuri-tabel și următoarele recompense pentru eliminarea inamicilor din @recompensa-inamici-tabel.
+Presupunem că avem următoarele costuri pentru turnurile de apărare din @cost-turnuri-tabel și recompense pentru eliminarea inamicilor din @recompensa-inamici-tabel.
 
 #figure(
   table(
@@ -739,9 +739,9 @@ Presupunem că avem următoare costuri pentru turnurile de apărare din @cost-tu
   supplement: "Tabelul",
 ) <recompensa-inamici-tabel>
 
-Daca valul 1 de inamici conține următoarea compoziție: 7 inamicii simpli, 2 rapizi și un durabil, atunci costul total al valului este de 7 \* 10 + 2 \* 5 + 1 \* 30 \= 115. Dacă jucătorul elimină acest val de inamici, atunci va primi 115 resurse. Cu suma aceast el si-ar permite să construiască un turn pasiv de tipul _Atac bonus_ sau două turnnuri pasive de tipul _Încetinire_. Pentru a construi un turn de tipul _Îngheț_ ar mai avea nevoie de 185 resurse. Aceastea pot fi obținute din următoarele două valuri.
+Daca valul 1 de inamici conține următoarea compoziție: 7 inamicii simpli, 2 rapizi și unul durabil, atunci costul total al valului este de 7 \* 10 + 2 \* 5 + 1 \* 30 \= 115. Dacă jucătorul elimină acest val de inamici, atunci va primi 115 resurse. Cu această suma el și-ar permite să construiască un turn pasiv de tipul _Atac bonus_ sau două turnnuri pasive de tipul _Încetinire_. Pentru a construi un turn de tipul _Îngheț_ ar mai avea nevoie de 185 resurse. Aceastea pot fi obținute din următoarele două valuri.
 
-Un joc care prezintă o sistem simplu de economie și care stă la baza mecanicii de joc este _Kingdom: Clasic_ #cite("kingdom-coin") -- în care singura sarcină a jucătorului este distribuirea resurselor între clădirile de apărare și cele de producție. Chiar și cu această sarcină singulară, jocul oferă o experiență de joc foarte bună. Iar în versiunea de _Kingdom: Two Crowns_ se adaugă și partea de colaborare cu un alt jucător -- fapt ce arată versatilitatea design-ului de joc #cite("kingdom-coop").
+Un joc care prezintă o sistem simplu de economie și în jurul căruia este contruită toate mecanica de joc este _Kingdom: Clasic_ #cite("kingdom-coin") -- în care singura sarcină a jucătorului este distribuirea resurselor între clădirile de apărare și cele de producție. Chiar și cu această sarcină singulară, jocul oferă o experiență de joc foarte bună. Iar în versiunea de _Kingdom: Two Crowns_ se adaugă și partea de colaborare cu un alt jucător -- fapt ce arată versatilitatea design-ului de joc #cite("kingdom-coop").
 
 #pagebreak()
 
@@ -772,9 +772,9 @@ Acestea funcționează astfel: un inamic cu eticheta `e-1` trece pe langă un tu
 
 Dupa cum putem observa, avem multe indirecții. Entitățile nu comunică direct între ele, ci prin intermediul sistemelor centrale. Acesta se aseamănă cu un sistem de evenimente unde entitățile sunt emițători de evenimente, iar sistemele centrale sunt ascultători de evenimente  #cite("walcherevent"). Acest lucru ne permite să avem o arhitectură modulară, unde sistemele centrale pot fi schimbate fără a afecta entitățile.
 
-Dacă folosim un motor de joc precum Unity, avem la dispoziție obiectele de tip `ScriptableObjects` #cite("unity-so") care ne permite schimbarea de module și sistem într-un mod foarte convenabil întrucât nu necesită recompilarea codului și totul poate fi făcut din interfața de utilizator a motorului de joc.
+Dacă folosim un motor de joc precum Unity, avem la dispoziție obiectele de tip `ScriptableObjects` #cite("unity-so") care ne permite schimbarea de module și sisteme într-un mod foarte convenabil întrucât nu necesită recompilarea codului și totul poate fi făcut din interfața de utilizator a motorului de joc.
 
-Problema integrării componetelor (din punct de vedere al codului) poate fi rezolvată prin folosirea de _design patterns_ -- aceastea sunt o serie recomandări pentru structura codului astfel încât să fie ușor de înțeles și de extins. De exemplu, în cazul nostru, vom folosii _design pattern_-ul _Observer_ #cite("gamma1995design") pentru a implementa sistemul de evenimente. Inamicii, proiectilele și turnurile vor fi subiecte, iar sistemele centrale vor fi observatori.
+Problema integrării componetelor (din punct de vedere al codului) poate fi rezolvată prin folosirea de _design patterns_ -- aceastea sunt o serie recomandări pentru a structura codul astfel încât să fie ușor de înțeles și de extins. De exemplu, în cazul nostru, vom folosii _design pattern_-ul _Observer_ #cite("gamma1995design") pentru a implementa sistemul de evenimente. Inamicii, proiectilele și turnurile vor fi subiecte, iar sistemele centrale vor fi observatori.
 
 Alte astfel de _design patterns_ #cite("gamma1995design") #cite("nystrom2014game") care pot fi folosite în implementarea jocului sunt:
 
@@ -789,9 +789,6 @@ Alte astfel de _design patterns_ #cite("gamma1995design") #cite("nystrom2014game
     - _Decorator_: pentru a adăuga noi comportamente entităților;
     - _Flyweight_: pentru a reduce memoria folosită de entități;
     - _Prototype_: pentru a clona entități;
-
-    #colbreak()
-
     - _Adapter_: pentru a adapta interfețe;
     - _Facade_: pentru a ascunde detalii de implementare;
     - _Mediator_: pentru a gestiona comunicarea între entități;
@@ -799,15 +796,16 @@ Alte astfel de _design patterns_ #cite("gamma1995design") #cite("nystrom2014game
     - _Proxy_: pentru a gestiona accesul la entități;
     - _Iterator_: pentru a itera prin entități;
     - _Visitor_: pentru a itera prin entități și a le modifica;
+    #colbreak()
     - _Composite_: pentru a crea structuri de date complexe;
     - _Observer_: pentru a gestiona evenimente;
     - _Chain of responsibility_: pentru a gestiona evenimente;
   ]
 
 
-Toate tehniciile enumerate anterior ne ajută la pastrarea unui cod curat și ușor de înțeles. Dar acestea nu rezolvă și problema performanței.
+Toate tehnicile enumerate anterior ne ajută să păstrăm un cod curat și ușor de înțeles. Însă acestea nu rezolvă problema performanței.
 
-Performanța depinde foarte mult de modul cum gestionăm memoria și procesorul. Mereu vom dorii să minimizăm memoria folosită și să reducem timpul de procesare. În funcție de problema întâmpinată, uneori este mai bine să folosim mai multe memorie pentru a salva timp de procesare (unele calcule se pot memora și refolosii pe viitor), alteori este mai bine să folosim mai puțină memorie și să folosim mai mult timp de procesare (unele structuri de date pot ocupa foarte mult spațiu și este mai eficient să calculăm de fiecare dată).
+Performanța depinde foarte mult de modul cum gestionăm memoria și procesorul. Mereu vom dori să minimizăm memoria folosită și să reducem timpul de procesare. În funcție de problema întâmpinată, uneori este mai bine să folosim mai multe memorie pentru a salva timp de procesare (unele calcule se pot memora și refolosii pe viitor), alteori este mai bine să folosim mai puțină memorie și să folosim mai mult timp de procesare (unele structuri de date pot ocupa foarte mult spațiu și este mai eficient să calculăm de fiecare dată).
 
 O arhitectură recomandată pentru acest gen de jocuri este cea bazată pe _Entity Component System_ (ECS) #cite("harkonen2019advantages"). Aceasta este o arhitectură care se bazează pe următoarele principii:
 
@@ -837,7 +835,7 @@ Un dezavantaj la această arhitectură este că este destul de dificil de înțe
 
 La o primă vedere acest sistem pare a fi foarte complex, dar trebuie să avem în vedere că sistemul de jetoane de acțiune este un sistem cu multe entități și reguli de transformare. Pentru joc de anvergură mică sau medie, nu ar fi necesară folosirea acestui sistem. Dar pentru jocuri de buget mare, acest sistem este foarte util întrucât ne permite să salvam resurse care ar putea fi folosite pentru animații și efecte speciale, acestea fiind mari consumatoare de resurse.
 
-Pentru aplicația de demonstrație vom folosii tehnologiile WEB pentru a crea un document interactivi care să prezinte sistemul de jetoane de acțiune. Pentru partea de implementare vom folosii limbajul de programare Typescript și biblioteca _SolidJs_ pentru implementarea interfeței #cite("solidjs"). Aceasta ne permite să creăm vizualizări complexe și interactive într-un mod foarte ușor.
+Pentru aplicația de demonstrație vom folosii tehnologiile WEB pentru a crea un document interactivi care să prezinte sistemul de jetoane de acțiune. Pentru partea de implementare vom folosii limbajul de programare Typescript și biblioteca SolidJs pentru implementarea interfeței #cite("solidjs"). Aceasta ne permite să creăm vizualizări complexe și interactive într-un mod foarte ușor.
 
 == Primele minute de joc
 
@@ -1045,6 +1043,9 @@ Turnurile pasive au următoarele caracteristici:
 ]
 
 Tipurile de date ale structurii pentru un turn de apărare activ și proiectil sunt următoarele:
+
+#v(1cm)
+
 #left-padding[
   #columns(2)[
       ```typescript
@@ -1082,7 +1083,7 @@ type PassiveTower = {
 ```
 ]
 
-Acest sistem este simplu de implementat, cea mai complicată partea find partea de țintire a turnurile active. In mod ideal, am dorii să trimitem către inamic un număr minim de proiectile care să-l elimine. Astfel, turnul devine mai eficient prin faptul ca nu pierde timp pentru a elimina un inamic care oricum va fi eliminat de către alt turn sau de proiectilele create precedent.
+Acest sistem este simplu de implementat, cea mai complicată partea find partea de țintire a turnurile active. In mod ideal, am dori să trimitem către inamic un număr minim de proiectile care să-l elimine. Astfel, turnul devine mai eficient prin faptul ca nu pierde timp pentru a elimina un inamic care oricum va fi eliminat de către alt turn sau de proiectilele create precedent.
 
 O exemplu de algoritm de țintire ar fi următorul:
 
@@ -1168,6 +1169,10 @@ Jocul din cadrul aplicației prezintă o variantă simplificată cu o singură r
   caption: [Reprezentarea vizuală a unui magazin pentru achiziționarea de turnuri de apărare și îmbunătățiri.]
 ) <shop>
 
+Utilitatea turnurilor este reflectată și in prețul lor. In @shop, un turn de arcași (_Archer Tower_) are o rază mai mică de atac decât un turn de arbaletiști (_Crossbow Tower_), cea cel face mai puțin ideal întrucât nu are posibilitatea să atace inamicii de mai multe în părțile sinoase ale traseului. De aici și ideea de a avea un preț mai mic decât cel al turnului de arbaletiști.
+
+Un alt truc pe care îl mai putem face să variem alegerea de turnuri este prin modifcare dinamică a prețului. Un exemplu ar fi dacă după fiecare achiziție prețul ar crește de 5 ori pe tipul respectiv de turn. Însă trebuie să avem grijă cu această idee întrucât se poate crea un dezechilibru prin faptul ca unele turnuri nu vor fi folosite niciodată din cauza prețului lor mare în raport cu valoarea adusă.
+
 == Sistemul de inamicii 
 
 Inamicii reprezintă entitățile care trebuie să ajungă la obiectivul pe care jucătorul încearcă să-l protejeze. Pentru a ajunge la destinație, acesta trebuie să supraviețuiască atacurilor turnurilor de apărare. Inamicii au o viață și o viteză de mișcare. Viața reprezintă numărul de pagube pe care un inamic le poate suporta înainte de a fi eliminat. Viteza de mișcare reprezintă cât de repede se deplasează inamicul pe traseu.
@@ -1250,6 +1255,8 @@ Jocuri precum _Kingdom Rush_ variază acest interval în cadrul rundei de joc pe
   caption: [Inamic în raza de acțiune a unui turn de apărare.]
 ) <enemy-in-range>
 
+Cum inamicii sunt într-o matrice cu o mișcare de o celulă, noțiunea de încetinire nu are prea mult sens. De aceea, am ales să implementăm doar jetoanele de înghețare care îngheață inamicul pentru o perioadă de timp. Inamicii înghețați nu se pot mișca, iar cei din spatele lor nu pot să treacă prin ei -- fapt care creează un abuteiaj. Făță de o implementare clasică, această alegere de mișcare a inamicilor într-o matrice cu o celulă pare să fie foarte limitată în privința designului de inamicii. Dar nu este un impediment major, se pot găsi soluții creative pentru trece peste această limitare.
+
 == Interfața de utilizator
 
 Interfața de utilizator joacă un rol critic în experiența de joc, deoarcere sistemul de jetoane de acțiune este un sistem complex, iar jucătorul trebuie să aibă o interfață intuitivă pentru a putea interacționa cu acesta.
@@ -1315,6 +1322,8 @@ Pentru turnurile de apărare active, avem următoarele informații:
 
 @upgrade-tower-item-ui este schița pentru un astfel de element vizual.
 
+În aplicație, interfața a fost creată folosind tehnologii WEB precum _HTML_, _CSS_ și _Javascript_. Acestea sunt tehnologii care sunt folosite pentru a crea interfețe de utilizator pentru aplicații web. Pe langă acestea, folosim și biblioteca SolidJs care ne ajută să creăm interfețe de utilizator reactive. Aceasta este o bibliotecă care se bazează pe conceptul de _reactive programming_ #cite("xie2014reactive") care ne ajută să creăm interfețe de utilizator care se actualizează automat atunci când datele se schimbă. Aceasta este o bibliotecă care este inspirată de biblioteca _React_ #cite("react") care este foarte populară în comunitatea de dezvoltare a aplicațiilor WEB.
+
 #figure(
   image("assets/ui-hud.png", width: 75%),
   caption: [Schiță pentru interfața de utilizator.]
@@ -1335,7 +1344,7 @@ Pentru turnurile de apărare active, avem următoarele informații:
   caption: [Schiță pentru un element vizual al unui îmbunătățiri din magazin.]
 ) <upgrade-tower-item-ui>
 
-În protip, interfața a fost creată folosind tehnologii _Web_ precum _HTML_, _CSS_ și _Javascript_. Acestea sunt tehnologii care sunt folosite pentru a crea interfețe de utilizator pentru aplicații web. Pe langă acestea, folosim și biblioteca _SolidJs_ care ne ajută să creăm interfețe de utilizator reactive. Aceasta este o bibliotecă care se bazează pe conceptul de _reactive programming_ #cite("xie2014reactive") care ne ajută să creăm interfețe de utilizator care se actualizează automat atunci când datele se schimbă. Aceasta este o bibliotecă care este inspirată de biblioteca _React_ #cite("react") care este foarte populară în comunitatea de dezvoltare de aplicații web.
+
 
 @overview este o reprezentare vizuală a interfeței de utilizator din cadrul aplicației dezvoltate.  În partea din stânga avem magazinul, iar în partea din dreapta avem informații despre valul de inamicii și rundă. În partea centrală se află hart de joc reprezentată sub forma unei matrici de căsuțe.
 
@@ -1378,7 +1387,7 @@ Căsuța de culoare verde indici punctul de start al valului de inamici, iar că
 
 Un avantaj pe care îl prezintă tehnologiile web este usurința cu care putem crea documente menite să prezinte informația într-un mod clar și concis. Documentația despre mecanica de joc este inclusă în aplicație și poate fi accesată cu usurință chiar și în timpul sesiunii de joc (@tokens-tutorial).
 
-Un singur dezavantaj la această tehnologie este faptul că nu este ușor să implementăm animații complexe precum într-un motor de joc dededicat pentru crearea de jocuri. Cu toate acestea, această tehnologie este o soluție elegantă pentru crearea de prototipuri care pot fi împărtășite cu usurință în cadrul comunității.
+Un singur dezavantaj la această tehnologie este faptul că nu este ușor să implementăm animații complexe precum într-un motor de joc dedicat pentru crearea de jocuri. Cu toate acestea, această tehnologie este o soluție elegantă pentru crearea de prototipuri care pot fi împărtășite cu usurință în cadrul comunității.
 
 #figure(
   image("assets/tokens-tutorial.png", width: 80%),
@@ -1387,7 +1396,7 @@ Un singur dezavantaj la această tehnologie este faptul că nu este ușor să im
 
 == Unelte pentru analiza jocului
 
-Datorită faptului ca mediul interactiv din cadrul aplicației este modelat ca un automat finit, putem analiza jocul prin schimbările de stare al acestuia. Fiecare turn cumpărat sau mutat, fiecare îmbunătățire achiziționată este înregistrat sub forma unui eveniment. Aceste evenimente pot fi folosite pentru a analiza jocul și pentru a crea statistici despre acesta.
+Datorită faptului ca mediul interactiv din cadrul aplicației este modelat ca un automat finit, putem analiza jocul prin schimbările de stare al acestuia. Fiecare turn cumpărat sau mutat, fiecare îmbunătățire achiziționată este înregistrată sub forma unui eveniment. Aceste evenimente pot fi folosite pentru a analiza jocul și pentru a crea statistici despre acesta.
 
 Precum în șah, jocul este descris de o secvență de mutări. Mutările sunt codate folosind un sistem de notații algebrice #cite("algebraic-notation") care ne ajută să descriem o mutare într-un mod concis. De exemplu, mutarea de start _Nf3_ descrie mutarea unui cal de pe poziția _g1_ pe poziția _f3_. Mutarea _Bb5_ descrie mutarea unui nebun de pe poziția _c1_ pe poziția _b5_ (fiind prima mutare a piesei). 
 
