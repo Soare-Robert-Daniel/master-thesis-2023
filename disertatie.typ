@@ -402,7 +402,7 @@ O reprezentare simplificată poate fi observată în @tw-1. Toate aceste compone
   caption: [Schiță pentru un element vizual al unui îmbunătățiri din magazin.]
 ) <tw-1>
 
-Alte aspecte care pot fi luate în considerare în design-ul unui joc de Tower Defense sunt #cite("tw-principales")#cite("td-design"):
+Alte aspecte care pot fi luate în considerare în design-ul unui joc de Tower Defense sunt #cite("tw-principales")#cite("td-design")#cite("rogers2014level"):
 
 #left-padding[
   - Pagubele cauzate de turnuri asupra inamicilor - fiecare inamic are un anumit număr de puncte de viață, iar turnurile au un anumit număr de proiectile care sunt create într-un interval de timp. Atunci când un inamic este atacat de un turn, acesta pierde puncte de viață. Atunci când punctele de viață ale unui inamic ajung la 0, acesta este eliminat din joc. Trebuie să avem în vedere acest lucru atunci când proiectăm turnurile de apărare, deoarece acestea trebuie să fie suficient de capabile să elimine inamicii înainte ca aceștia să ajungă la obiectiv.
