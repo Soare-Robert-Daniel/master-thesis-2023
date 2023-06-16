@@ -221,3 +221,30 @@ OpenAI2023GPT4TR:
     value: GPT-4 Technical Report
     sentence-case: Gpt-4 technical report
   date: 2023
+adams2012game:
+  type: book
+  title: "Game mechanics: advanced game design"
+  publisher: New Riders
+  author:
+    - "Adams, Ernest"
+    - "Dormans, Joris"
+  date: 2012  
+evolutionaryGameDesign:
+  type: article
+  title: Evolutionary Game Design
+  year: 2010
+  page-range: 1-16
+  publisher: IEEE
+  doi: "10.1109/TCIAIG.2010.2045292"
+  author:
+    - "Browne, Cameron"
+    - "Maire, Frederic"
+  parent:
+    - title: "IEEE Transactions on Computational Intelligence and AI in Games"
+    - volume: 2
+    - issue: 1
+rogers2014level:
+  type: book
+  title: Level Up! The Guide to Great Video Game Design
+  publisher: John Wiley & Sons
+  author: "Rogers, Scott"   
