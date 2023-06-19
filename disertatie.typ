@@ -365,18 +365,21 @@ Alte motivații pot fi #cite("tw-principales"):
 
 #left-padding[
 
-- Plants vs. Zombies - În acest joc, jucătorii trebuie să își planteze flori și alte plante pentru a împiedica zombii să ajungă la casa lor. Plantele au rol de turn de apărare, iar fiecare are moduri unice de a ataca. Jucătorii trebuie să le plaseze strategic pentru a opri zombii înainte ca aceștia să ajungă la obiectiv. Inamicii vin de la dreapta la stănga pe 5 rănduri. Fiecare rănd reprezintă traseul unui zombi, iar o plantă poate ataca doar zombii de pe același rând cu aceasta. Acest a fost dezvoltat de către PopCap Games și a fost lansat în anul 2009.
+- Plants vs. Zombies -- În acest joc, jucătorii trebuie să își planteze flori și alte plante pentru a împiedica zombii să ajungă la casa lor. Plantele au rol de turn de apărare, iar fiecare are moduri unice de a ataca. Jucătorii trebuie să le plaseze strategic pentru a opri zombii înainte ca aceștia să ajungă la obiectiv. Inamicii vin de la dreapta la stănga pe 5 rănduri. Fiecare rănd reprezintă traseul unui zombi, iar o plantă poate ataca doar zombii de pe același rând cu aceasta. Acest a fost dezvoltat de către PopCap Games și a fost lansat în anul 2009.
 
-- Kingdom Rush - Acest joc strategic în timp real plasează jucătorii într-o lume de basm unde aceștia își construiesc și își organizează turnurile defensive și trupele pentru a opune rezistență și a învinge hoardele de creaturi mitice. Fiecare turn și trupă dispune de abilități și caracteristici unice, creând o gamă variată de strategii pe care jucătorii le pot utiliza. De asemenea, jucătorii au la dispoziție o serie de abilități speciale, care pot fi folosite pentru a influența în mod direct desfășurarea luptei. Jocul oferă o varietate de niveluri, fiecare cu propriile provocări și scenarii, cerând astfel o adaptare continuă a strategiilor de joc. Acesta este unul dintre cele mai emblematice jocuri ale genului de joc Tower Defense. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Ironhide Game Studio. Au mai fost lansate și alte versiuni ale jocului, cum ar fi _Kingdom Rush: Frontiers_, _Kingdom Rush: Origins_ și _Kingdom Rush: Vengeance_ care s-au bucurat de un succes imens.
+- Kingdom Rush -- Acest joc strategic în timp real plasează jucătorii într-o lume de basm unde aceștia își construiesc și își organizează turnurile defensive și trupele pentru a opune rezistență și a învinge hoardele de creaturi mitice. Fiecare turn și trupă dispune de abilități și caracteristici unice, creând o gamă variată de strategii pe care jucătorii le pot utiliza. De asemenea, jucătorii au la dispoziție o serie de abilități speciale, care pot fi folosite pentru a influența în mod direct desfășurarea luptei. Jocul oferă o varietate de niveluri, fiecare cu propriile provocări și scenarii, cerând astfel o adaptare continuă a strategiilor de joc. Acesta este unul dintre cele mai emblematice jocuri ale genului de joc Tower Defense. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Ironhide Game Studio. Au mai fost lansate și alte versiuni ale jocului, cum ar fi _Kingdom Rush: Frontiers_, _Kingdom Rush: Origins_ și _Kingdom Rush: Vengeance_ care s-au bucurat de un succes imens.
 
-- Bloons TD 6 - Jocul este centrat pe o tematica simplă in care trebuie sa apare baza de baloane, jucătorii trebuie să își plaseze turnurile defensive (care au forma unor maimuțe) și să își upgradeze abilitățile pentru a împiedica baloanele să ajungă la final. Acesta dispune de un număr mare de hărți de joc care prezintă diverse provocări prin prisma formei lor. Acest a fost dezvoltat de către Ninja Kiwi și a fost lansat în anul 2018.
+- Bloons TD 6 -- Jocul este centrat pe o tematica simplă in care trebuie sa apare baza de baloane, jucătorii trebuie să își plaseze turnurile defensive (care au forma unor maimuțe) și să își upgradeze abilitățile pentru a împiedica baloanele să ajungă la final. Acesta dispune de un număr mare de hărți de joc care prezintă diverse provocări prin prisma formei lor. Acest a fost dezvoltat de către Ninja Kiwi și a fost lansat în anul 2018.
 
-- Orcs Must Die! - O combinație interesantă între jocuri de strategie și jocuri de acțiune. Jucatorul are posibilitatea să participe în mod activ la oprirea valului de inamici prin intermediul unui personaj. Acesta oferă o gamă largă de arme și abilități pentru personaje, iar jucătorii trebuie să le folosească strategic pentru a supraviețui nivelelor și a învinge inamicii. Harta de joc se aseamană unui tunel, iar partea creativă constă în faptul că turnurile de aparare (care apar sub forma unor capcane) pot fi poziționate pe podea, pereți și tavan. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Robot Entertainment.
+- Orcs Must Die! -- O combinație interesantă între jocuri de strategie și jocuri de acțiune. Jucatorul are posibilitatea să participe în mod activ la oprirea valului de inamici prin intermediul unui personaj. Acesta oferă o gamă largă de arme și abilități pentru personaje, iar jucătorii trebuie să le folosească strategic pentru a supraviețui nivelelor și a învinge inamicii. Harta de joc se aseamană unui tunel, iar partea creativă constă în faptul că turnurile de aparare (care apar sub forma unor capcane) pot fi poziționate pe podea, pereți și tavan. Jocul a fost lansat în anul 2011 și a fost dezvoltat de către Robot Entertainment.
 
-- Dungeon Defenders -În acest joc hibrid de tipul Tower Defense și RPG (_Role-playing game_), jucătorii trebuie să își asume roluri de diferite clase de caractere, fiecare cu abilități și puncte forte unice, pentru a proteja cristalul Eternia de hoardele de inamici. Fiecare clasă de personaj poate construi și îmbunătăți turnuri de apărare, capcane și bariere, pentru a opri inamicii înainte ca aceștia să ajungă la cristal. De asemenea, jocul permite și implicarea directă a personajelor în luptă. Acesta oferă o gamă largă de niveluri și moduri de joc, având o componentă de progresie puternică care permite îmbunătățirea și personalizarea abilităților personajelor și a echipamentelor. _Dungeon Defenders_ poate fi jucat atât în mod _single player_ (un singur jucător) cât și _multiplayer_ (mai mulți jucători), introducând astfel un element de colaborare și strategie de echipă. . Jocul a fost lansat în anul 2010 și a fost dezvoltat de către Trendy Entertainment.
+- Dungeon Defenders -- În acest joc hibrid de tipul Tower Defense și RPG (_Role-playing game_), jucătorii trebuie să își asume roluri de diferite clase de caractere, fiecare cu abilități și puncte forte unice, pentru a proteja cristalul Eternia de hoardele de inamici. Fiecare clasă de personaj poate construi și îmbunătăți turnuri de apărare, capcane și bariere, pentru a opri inamicii înainte ca aceștia să ajungă la cristal. De asemenea, jocul permite și implicarea directă a personajelor în luptă. Acesta oferă o gamă largă de niveluri și moduri de joc, având o componentă de progresie puternică care permite îmbunătățirea și personalizarea abilităților personajelor și a echipamentelor. _Dungeon Defenders_ poate fi jucat atât în mod _single player_ (un singur jucător) cât și _multiplayer_ (mai mulți jucători), introducând astfel un element de colaborare și strategie de echipă. Jocul a fost lansat în anul 2010 și a fost dezvoltat de către Trendy Entertainment.
 
-- Factorio - Joc de strategie în timp real, jucătorii trebuie să construiască și să mențină automate industriale într-o planetă extraterestră. Resursele sunt esențiale și jucătorii trebuie să colecteze și să le proceseze pentru a construi mașinării industriale complexe și eficiente. Un alt element central al jocului este rețeaua logistică sofisticată, în care fiecare piesă este interconectată și trebuie să fie bine gândită pentru a fi eficientă. Jucătorii trebuie, de asemenea, să se apere de creaturile ostile ale planetei. Jocul a fost lansat în anul 2016 și a fost dezvoltat de către Wube Software.
+- Factorio -- Joc de strategie în timp real, jucătorii trebuie să construiască și să mențină automate industriale într-o planetă extraterestră. Resursele sunt esențiale și jucătorii trebuie să colecteze și să le proceseze pentru a construi mașinării industriale complexe într-un mod eficient. Un alt element central al jocului este rețeaua logistică sofisticată, în care lanțul de aprovizionare al clădirlor trebuie atent planificat pentru a obține maximul de resurse. Jucătorii trebuie, de asemenea, să se apere de creaturile ostile ale planetei. Jocul a fost lansat în anul 2016 și a fost dezvoltat de către Wube Software.
 ]
+
+Fiecare joc de Tower Defense are propriile sale particularități care le dau unicitate. Aceste particularități pot fi observate în diferite aspecte ale jocului, cum ar fi: grafica, povestea, mecanica de joc, modul de progresie, modul de joc, etc. 
+
 
 
 #pagebreak()
@@ -493,7 +496,7 @@ Următoarele întrebări apar în urma acestei idei de mecanică de joc:
 - Putem adauga un sistem multijucător? Care sunt provocările pe care le ridică acest sistem atunci când avem mai mult de un jucător uman?
 ]
 
-Răspunsurile la aceste întrebări variază de la joc la joc, dar trebuie luate în considerare înainte de a începe dezvoltarea unui joc. Punerea în practică a unui astfel de sistem aduce cu sine o serie de noi întrebări și provocări. De multe ori nu vom avea răspunsuri la toate aceste întrebări, dar este important să avem o direcție clară în care să ne îndreptăm.
+Răspunsurile la aceste întrebări variază de la joc la joc, dar trebuie luate în considerare înainte de a începe dezvoltarea unui joc. Punerea în practică a unui astfel de sistem aduce cu sine o serie de noi întrebări și provocări. De multe ori nu vom avea răspunsuri la toate aceste întrebări, dar este important să avem o direcție clară în care să ne îndreptăm. Cea mai bună soluție e construirea unui mic prototip care să ne ajute să răspundem la aceste întrebări prin testare și experimentare înainte de a începe dezvoltarea jocului.
 
 == Compunerea jetoanelor de acțiune
 
@@ -543,7 +546,7 @@ Așadar, un joc care urmează acest design poate fi extins foarte ușor fără s
 - Moduri de joc alternative: uneori de dorim să avem și mici provocări care să ne testeze abilitățile de joc. Acestea pot fi introduse sub forma unor moduri de joc alternative care să ofere o experiență de joc diferită. Ca acest lucru să fie posibil trebuie să reevaluăm din nou sistemul implementat.
 ]
 
-Toate aceste probleme trebuie abordate înainte de a începe dezvoltarea unui joc. O planificare atentă și o analiză aprofundată a acestor probleme ne poate ajuta să evităm multe probleme pe parcursul dezvoltării jocului. O metodă bună a sesiza aceste problem este construirea o aplicație interactivă care să evidențieze mecanica de joc și să ne ajute să înțelegem mai bine cum funcționează acest sistem de jetoane de acțiune.
+Toate aceste probleme trebuie abordate înainte de a începe dezvoltarea unui joc. O planificare atentă și o analiză profundată a acestor probleme ne poate ajuta să evităm multe probleme pe parcursul dezvoltării jocului. Rolul unei prototip care să testeze și să verifice aceste probleme este esențial în dezvoltarea unui joc de calitate.
 
 
 #figure(
@@ -587,8 +590,6 @@ Având în vedere exemple de mai sus, putem observa cum fiecare turn îl complet
 - Turnul cu proiectil inteligent nu ar avea probleme cu țintirea inamicilor așă că ar beneficia mai mult dacă inamicii ar avea un jeton de explozie pulsantă care să le reducă viața cât mai repede.
 ]
 
-
-
 #figure(
   table(
     columns: (auto, auto, auto),
@@ -623,6 +624,10 @@ Este important ca aceste valori să fie echilibrate și in baza lor să facem di
 ]
 
 De menționat este faptul că nu toate turnurile pot avea îmbunătățiri pentru toate caracteristicile în cele mai multe cazuri, lucru care depinde și de design-ul jocului per total. Dacă avem o hartă mare, am putea mării raza de acțiune a turnurilor, dar dacă avem o hartă mică, trebuie să fim consecvenți întrucât am putea crea un dezechilibru în joc din cauză ca spațiul este foarte limitat.
+
+Iar în privința îmbunătățirilor, acestea pot fi progresive sau unice. Cele progresive sunt îmbunătățiri care pot fi aplicate de mai multe ori (puterea turnurilor crește puterea gradual de-a lungul sesiunii de joc), iar cele unice sunt îmbunătățiri care pot fi aplicate o singură dată (acestea includ avantaje semnificative care schimbă radical valoarea turnului). 
+
+Echilibrarea turnurilor este un proces meticulos care necesită multă atenție, iar dacă punem și în considerare îmbunătățirile și jetoanele de acțiune, acest proces devine și mai dificil. Stabilirea unor valori inițiale pentru caracteristicile turnurilor este un prim pas, iar apoi putem face ajustări pe parcursul dezvoltării jocului. O functionalitate care ne poate ajuta în acest sens este cea de a înregistra sesiunile de joc și de a analiza datele colectate. Aceste date ne pot ajuta să identificăm problemele și să le rezolvăm.
 
 == Valul de inamici
 
@@ -678,6 +683,12 @@ De asemenea, într-o rundă putem mai multe tipuri de inamicii. De exemplul, val
 ]
 
 Un exemplu de astfel de joc care dispune de o vastă varietate de inamicii este _Kingdom Rush_ #cite("kingdom-rush-enemies") -- acesta poate fi considerat ca find un punct de referință în ceea ce privește design-ul inamicilor. 
+
+Una din limitele sistemului de jetoane este design inamicilor. Având un număr mare de inamicii unici putem crea diverse jetoane care să acopere o gamă largă de posibilități. Dar trebuie sa avem grijă cu reduntanța, întrucât putem crea jetoane care să facă același lucru într-un mod puțin diferit.
+
+Un mod popular de diversificare este introducerea unui sistem de armură care să contracareze anumite tipuri de atac. Astfel, putem avea inamicii cu armură de foc, armură de gheață, armură de magie, etc. Aceste tipuri de armură pot fi contracarate de jetoanele de acțiune care oferă un bonus de atac pentru un anumit tip de armură. Se poate observa cum putea multe tipuri de jetoane care se aseamănă la scop. Cu puțină creativitate putem crea niște turnuri care se folosesc în mod unic de aceste jetoane pentru a crea o nouă experiență de joc. 
+
+O altă idee creativă este crearea de inamici care reacționează la jetoanele de acțiune. Dacă un inamic primește un jeton de atac bonus, își crește mișcare ca să poată că să scape mai repede din raza inamicilor. Dacă este înghețat din cauza jetonului de îngheț, își poate crește nivelul de armură pentru a reduce pagubele primite. Acestă nouă perspectivă poate fi folosită pentru a crea inamicii care să fie mai dinamici și mai imprevizibili. O idee care merită explorată.
 
 == Economia de joc
 
@@ -1360,7 +1371,7 @@ Căsuța de culoare verde indici punctul de start al valului de inamici, iar că
 
 În panoul din dreaptă avem mici opțiuni precum _Hide Tooltip_  -- care activează sau dezactivează mesajele ajutătoare (@tooltip) -- și _Start wave after 10s_ care pornește automat următorul val de inamicii după 10 secunde de la terminarea valului precedent.
 
-În @games-stats avem informații despre statusul jocului. Avem următoarele informații:
+În @games-stats avem informații despre statusul jocului, cu următoarele elemente vizuale:
 
 #left-padding[
 - numărul valului de inamici curent (_Wave_);  
@@ -1442,7 +1453,7 @@ Având în vedere ultime avansuri tehnologice, putem merge și mai departe cu id
 
 #v(1.5cm)
 
-În această lucrare am prezentat o idee de design de joc pentru genul _Tower Defense_. Am încercat să găsim o soluție pentru a rezolva problema repetitivității care apare în acest gen de jocuri. Am propus un sistem de jetoane de acțiune care să aducă o variație în joc prin faptul că jucătorul poate să combine diferite tipuri de turnuri de apărare pentru a crea jetoane de acțiune care să aibă efecte puternice asupra inamicilor.
+În această lucrare am prezentat o idee de design de joc pentru genul _Tower Defense_. Am încercat să găsim o soluție pentru a rezolva problema repetitivității care apare în acest gen de jocuri. Am propus un sistem de jetoane de acțiune care să aducă o variație în joc prin faptul că jucătorul poate să combine diferite tipuri de turnuri de apărare pentru a crea jetoane de acțiune care să aibă efecte puternice asupra inamicilor. Iar acest sistem poate fi extins și asupra inamicilor prin faptul că aceștia pot reacționa diferit la anumite tipuri de jetoane de acțiune -- fapt care oferă o nouă provocare jucătorului.
 
 Creare unui design de joc este o sarcină dificilă întrucât trebuie ținem cont de numeroase aspecte care au rol important în experiența finală de joc. De exemplu, trebuie să ținem cont de: mecanică de joc, interfața de utilizator, tematica jocului, publicul țintă, platforma de lansare, monetizarea, etc.
 
