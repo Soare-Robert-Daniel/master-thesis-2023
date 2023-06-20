@@ -1223,11 +1223,14 @@ type Enemy = {
   speed: number,
   tokens: Array<Token>,
   reward: Reward,
+  traits: Array<string>,
 }
 ```
 ]
 
-Un val de inamicii este o listă de inamicii care trebuie să ajungă la obiectivul care trebuie protejat de-a lungul unui runde joc. Această listă variază în funcție de progresului jucătorului în joc. De exemplu, la începutul jocului avem un val de 10 inamicii, iar la finalul jocului avem un val de 100 inamicii. Tipurile de inamicii variază de asemenea de val la val. De exemplu, la începutul jocului avem 10 inamicii normali, iar la finalul jocului avem 20 inamicii rezistenți, 30 rapizi și 50 normali.
+Unde _traits_ reprezintă abilitățile/trăsăturile speciale pe care le poate avea inamicul. Acestea pot fi reprezentate prin simple șiruri de caractere, precum: ”rezistență la foc” (_fire resistance_), ”regenerare” (_regeneration_), etc.
+
+Un val de inamicii este o listă de inamicii care trebuie să ajungă la obiectivul care trebuie protejat de-a lungul unui runde joc. Această listă variază în funcție de progresului jucătorului în joc. De exemplu, la începutul sesiunii de joc avem un val de 10 inamicii, iar la finalul ei avem un val de 100 inamicii. Tipurile de inamicii variază de asemenea de val la val. De exemplu, la începutul jocului avem 10 inamicii normali, iar la finalul jocului avem 20 inamicii rezistenți, 30 rapizi și 50 normali.
 
 Un val (_wave_) poate fi descris de următoarea structură:
 
@@ -1252,9 +1255,9 @@ Un val (_wave_) poate fi descris de următoarea structură:
 
 O chestie importantă este intervalul de generare al inamicilor în cadrul valului. Dacă intervalul este mic se poate crea un grup de inamicii care să ajungă la obiectiv înainte ca turnurile de apărare să poată să-i elimine. Dacă intervalul este mare, atunci turnurile de apărare pot să elimine inamicii înainte ca aceștia să ajungă la obiectiv. Deci, trebuie să găsim un echilibru între aceste două extreme. 
 
-Jocuri precum _Kingdom Rush_ variază acest interval în cadrul rundei de joc pentru crea grupuri de inamicii mai mici sau mai mari pentru a oferi o provocare jucătorului prin prisma faptului că inamicii mai rezistenți pot distrate turnurile de apărare, iar inamicii mai rapizi pot ajunge la obiectiv înainte ca turnurile de apărare să-i elimine.
+Jocuri precum _Kingdom Rush_ variază acest interval în cadrul rundei de joc pentru a crea grupuri de inamicii mai mici sau mai mari pentru a oferi o provocare jucătorului prin prisma faptului că inamicii mai rezistenți pot distrage turnurile de apărare, iar cei mai rapizi pot ajunge la obiectiv înainte ca turnurile de apărare să-i elimine.
 
-În @enemy-wave putem observa implementarea valului de inamicii din cadrul aplicației. Punctul de start este pătratul verde, iar punctul de final este pătratul roșu. Inamicii sunt reprezentați de imagini care prezintă niște creaturi ficționale de culoare roșie, iar în colțul din dreapta sus este un număr care reprezintă punctele de viață. Inamicii se deplasează de la punctul de start la punctul de final. Inamicii care ajung la punctul de final sunt retrași de pa hartă, iar jucătorul primește o penalizare. Inamicii care sunt eliminați de către turnurile de apărare (@enemy-in-range) oferă o recompensă jucătorului.
+În @enemy-wave putem observa implementarea valului de inamicii din cadrul aplicației. Punctul de start este pătratul verde, iar punctul de final este pătratul roșu. Inamicii sunt reprezentați de imagini care prezintă niște creaturi ficționale de culoare roșie, iar în colțul din dreapta sus este un număr care reprezintă punctele de viață. Inamicii se deplasează de la punctul de start la punctul de final. Cei care ajung la punctul de final sunt retrași de pe hartă, iar jucătorul primește o penalizare. Iar cei care sunt eliminați de către turnurile de apărare (@enemy-in-range) oferă o recompensă jucătorului.
 
 #figure(
   image("assets/enemy-wave.png", width: 70%),
@@ -1333,7 +1336,7 @@ Pentru turnurile de apărare active, avem următoarele informații:
 
 @upgrade-tower-item-ui este schița pentru un astfel de element vizual.
 
-În aplicație, interfața a fost creată folosind tehnologii WEB precum _HTML_, _CSS_ și _Javascript_. Acestea sunt tehnologii care sunt folosite pentru a crea interfețe de utilizator pentru aplicații web. Pe langă acestea, folosim și biblioteca SolidJs care ne ajută să creăm interfețe de utilizator reactive. Aceasta este o bibliotecă care se bazează pe conceptul de _reactive programming_ #cite("xie2014reactive") care ne ajută să creăm interfețe de utilizator care se actualizează automat atunci când datele se schimbă. Aceasta este o bibliotecă care este inspirată de biblioteca _React_ #cite("react") care este foarte populară în comunitatea de dezvoltare a aplicațiilor WEB.
+În aplicație, interfața a fost creată folosind tehnologii WEB precum _HTML_, _CSS_ și _Javascript_. Acestea sunt tehnologii care sunt folosite pentru a crea interfețe de utilizator pentru aplicații web. Pe langă acestea, folosim și biblioteca SolidJs care ne ajută să creăm interfețe de utilizator într-un ritm rapid și ușor. Aceasta se bazează pe conceptul de _reactive programming_ #cite("xie2014reactive") care ne ajută să creăm documente WEB care se actualizează automat atunci când starea internă a aplicației se schimbă în urma interacțiunilor cu utilizatorul. Aceasta este o bibliotecă care este inspirată de biblioteca _React_ #cite("react") care este foarte populară în comunitatea de dezvoltare a aplicațiilor WEB.
 
 #figure(
   image("assets/ui-hud.png", width: 75%),
@@ -1357,7 +1360,7 @@ Pentru turnurile de apărare active, avem următoarele informații:
 
 
 
-@overview este o reprezentare vizuală a interfeței de utilizator din cadrul aplicației dezvoltate.  În partea din stânga avem magazinul, iar în partea din dreapta avem informații despre valul de inamicii și rundă. În partea centrală se află hart de joc reprezentată sub forma unei matrici de căsuțe.
+@overview este o reprezentare vizuală a interfeței de utilizator din cadrul aplicației dezvoltate.  În partea din stânga avem magazinul, iar în partea din dreapta avem informații despre câți inamicii au rămas și numărul valului curent. În partea centrală se află hart de joc reprezentată sub forma unei matrici de căsuțe.
 
 #figure(
   image("assets/overview.png"),
@@ -1365,7 +1368,7 @@ Pentru turnurile de apărare active, avem următoarele informații:
 ) <overview>
 
 
-Căsuța de culoare verde indici punctul de start al valului de inamici, iar căsuța de culoare roșie este obiectivul la care aceștie trebuie să ajungă. Căsuțele de culoare asemănatoare turcuazului reprezintă calea pe care inamicii trebuie să meargă. Căsuțele de culoarea asemănătoare verdului închis reprezintă zonele în care putem construi turnuri de apărare.
+Căsuța de culoare verde indică punctul de start al valului de inamici, iar căsuța de culoare roșie este obiectivul la care aceștie trebuie să ajungă. Căsuțele de culoare asemănatoare turcuazului reprezintă calea pe care inamicii trebuie să meargă. Căsuțele de culoarea asemănătoare verdului închis reprezintă zonele în care putem construi turnuri de apărare.
 
 În partea de jos avem controale pentru sesiunea de joc. Pe partea stăngă avem controlul pentru redarea pașilor pe care îl putem folosii să analizăm mai în detaliu modul cum a decurs runda de joc. Pe partea dreaptă avem controlul pentru pauză care ne ajută să oprim jocul și opțiunile de viteză în caz că dorim ca desfășurarea rundei să fie mai rapidă.
 
