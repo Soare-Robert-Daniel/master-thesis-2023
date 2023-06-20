@@ -128,84 +128,84 @@
 
 
 
-#upper[
-  #align(center, text(18pt)[
-    POLITECHNICA UNIVERSITY OF BUCHAREST \
-FACULTY OF AUTOMATIC CONTROL AND COMPUTERS \
-COMPUTER SCIENCE DEPARTMENT
+// #upper[
+//   #align(center, text(18pt)[
+//     POLITECHNICA UNIVERSITY OF BUCHAREST \
+// FACULTY OF AUTOMATIC CONTROL AND COMPUTERS \
+// COMPUTER SCIENCE DEPARTMENT
 
-  ])
-]
+//   ])
+// ]
 
 
-#v(0.5cm)
+// #v(0.5cm)
 
+// // #align(center, text(12pt)[
+// //   Grafică, Multimedia și Realitate Virtuală
+// // ])
+
+// #v(1.5cm)
+
+// // #align(right, text(12pt)[
+// //  Aprobat Decan \
+// //  Prof. Dr. Ing. Mihnea Alexandru Moisescu
+// // ])
+
+// #align(center)[
+//   #columns(2)[
+//     #image("assets/upb-logo.jpg", width: 40%)
+
+//     #colbreak()
+//     #v(0.5cm)
+//     #image("assets/cs-logo.png", width: 60%)
+//   ]
+// ]
+
+// #v(3cm)
+
+// #upper[
+//   #align(center, text(24pt)[
+//     *MASTER THESIS*
+//   ])
+// ]
+
+// #v(0.5cm)
+
+// #align(center, text(16pt)[
+//   Game Design for the Tower Defense Genre
+// ])
+
+// #v(0.5cm)
+
+// #align(center, text(18pt)[
+//   Soare Robert Daniel
+// ])
+
+// #v(2cm)
+
+// #grid(
+//   columns: (1fr, 1fr),
+//    align(center)[
+//     #box(width: 1fr)
+//   ],
+//   align(center)[
+//     #align(right)[
+//       #text(14pt)[
+//         *Thesis advisor:* \
+//         Prof. Dr. Ing. Moldoveanu Alin
+//       ]
+//     ]
+//   ],
+// )
+
+// #v(5cm)
 // #align(center, text(12pt)[
-//   Grafică, Multimedia și Realitate Virtuală
+//   #upper[
+//     *BUCHAREST \ 2023*
+//   ]
 // ])
 
-#v(1.5cm)
-
-// #align(right, text(12pt)[
-//  Aprobat Decan \
-//  Prof. Dr. Ing. Mihnea Alexandru Moisescu
-// ])
-
-#align(center)[
-  #columns(2)[
-    #image("assets/upb-logo.jpg", width: 40%)
-
-    #colbreak()
-    #v(0.5cm)
-    #image("assets/cs-logo.png", width: 60%)
-  ]
-]
-
-#v(3cm)
-
-#upper[
-  #align(center, text(24pt)[
-    *MASTER THESIS*
-  ])
-]
-
-#v(0.5cm)
-
-#align(center, text(16pt)[
-  Game Design for the Tower Defense Genre
-])
-
-#v(0.5cm)
-
-#align(center, text(18pt)[
-  Soare Robert Daniel
-])
-
-#v(2cm)
-
-#grid(
-  columns: (1fr, 1fr),
-   align(center)[
-    #box(width: 1fr)
-  ],
-  align(center)[
-    #align(right)[
-      #text(14pt)[
-        *Thesis advisor:* \
-        Prof. Dr. Ing. Moldoveanu Alin
-      ]
-    ]
-  ],
-)
-
-#v(5cm)
-#align(center, text(12pt)[
-  #upper[
-    *BUCHAREST \ 2023*
-  ]
-])
-
-#pagebreak()
+// #pagebreak()
 
 // +------------------- Cuprins -------------------+
 
