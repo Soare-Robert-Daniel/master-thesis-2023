@@ -172,7 +172,7 @@ COMPUTER SCIENCE DEPARTMENT
 #v(0.5cm)
 
 #align(center, text(16pt)[
-  Design pentru genul de joc Tower Defense
+  Game Design for the Tower Defense Genre
 ])
 
 #v(0.5cm)
