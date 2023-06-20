@@ -307,9 +307,9 @@ Genul _Tower Defense_ (sau "apărare prin turnuri") este un gen de joc video din
 
 Jocurile moderne de _Tower Defense_ au început să apară în anii 1990, iar popularitatea lor a crescut odată cu apariția modurilor de joc pentru jocul _Warcraft 3: The Frozen Throne_ #cite("tower-history"). Perioada 2007-2012 a fost perioada de aur a acestui gen de joc, în care au fost lansate multe jocuri de succes, cum ar fi: _Plants vs. Zombies_, _Kingdom Rush_, _Bloons TD 6_, _Orcs Must Die!_, _Dungeon Defenders_ și _Factorio_. Aceste jocuri au fost lansate pe diferite platforme: calculatoare personale, console și dispozitive mobile.
 
-De-a lungul anilor, genul de joc Tower Defense a evoluat și a rămas unul dintre cele mai populare genuri de jocuri în rândul jucătorilor din întreaga lume. Cu toate acestea, odată cu creșterea continuă a pieței jocurilor video, există nevoia de a inova și de a oferi jucătorilor o experiență de joc nouă și interesantă. Această experiență poate varia de la o valoarea educativă #cite("hernandez2015mathematics") la una pur distractivă.
+Odată cu creșterea continuă a pieței jocurilor video, există nevoia de a inova și de a oferi jucătorilor o experiență de joc nouă și interesantă. Această experiență poate varia de la o valoarea educativă #cite("hernandez2015mathematics") la una pur distractivă.
 
-Acest gen de joc este tot mai întâlnit pe platformele de jocuri mobile, precum _Google Play_ și _App Store_. Punctele forte care îl fac să fie atât de popular sunt:
+Acest gen de joc este tot mai întâlnit pe platformele de jocuri mobile, precum _Google Play_ și _App Store_, unde generează venituri substanțiale  #cite("mobileIncome"). Punctele forte sunt:
 
 #left-padding[
 - Sesiuni de joc scurte care pot fi jucate oricând și oriunde.
@@ -341,9 +341,9 @@ Așadar, această lucrare va descrie un set de specificații pentru un joc de ti
 
 Tower Defense este un gen de joc de strategie în care jucătorii trebuie să-și construiască și să-și îmbunătățească turnuri defensive pentru a împiedica inamicii să ajungă la obiectiv.
 
-Jocurile de Tower Defense se desfășoară de obicei pe o hartă cu un traseu prestabilit pe care inamicii încearcă să avanseze, în timp ce jucătorii plasează și își upgradează turnurile defensive pentru a-i opri. Fiecare turn are caracteristici unice, cum ar fi raza de acțiune și puterea de foc, și trebuie plasat strategic pentru a maximiza efectivitatea sa. Jucătorii trebuie să ia decizii strategice importante în timpul jocului, cum ar fi ce tipuri de turnuri să construiască, când să le construiască și cum să le upgradeze, pentru a se asigura că pot gestiona cu succes amenințările inamice.
+Jocurile de Tower Defense se desfășoară de obicei pe o hartă cu un traseu prestabilit pe care inamicii încearcă să avanseze, în timp ce jucătorii plasează și își îmbunătățească turnurile defensive pentru a-i opri. Fiecare turn are caracteristici unice, cum ar fi raza de acțiune și puterea de foc, și trebuie plasat strategic pentru a maximiza efectivitatea sa. Jucătorii trebuie să ia decizii strategice importante în timpul jocului, cum ar fi ce tipuri de turnuri să construiască, când să le construiască și cum să le îmbunătățească, pentru a se asigura că pot gestiona cu succes amenințările inamicilor.
 
-Genul de joc Tower Defense își are rădăcinile într-un mod popular de joc numit "Maze Games" care a început să fie jucat în anii 1980. În aceste jocuri, jucătorii trebuiau să-și construiască un traseu labirintic pentru a împiedica inamicii să ajungă la destinație. Aceste jocuri au fost inspirația pentru dezvoltarea jocurilor de Tower Defense, care au început să apară în anii 1990, în special în Japonia. Prin intermediul modurilor create pentru jocul _Warcraft 3: The Frozon Throne_, popularitatea acestui gen a fost sporită și acestea au deservit ca sursă de inspirație pentru viitoarele titluri care urmau să apară #cite("avery2011computational").
+Genul de joc Tower Defense își are rădăcinile într-un joc numit "Maze Games" care a început să fie jucat în anii 1980. În aceste jocuri, jucătorii trebuiau să-și construiască un traseu de tip labirint pentru a împiedica inamicii să ajungă la destinație. Aceste jocuri au fost inspirația pentru dezvoltarea jocurilor de Tower Defense, care au început să apară în anii 1990, în special în Japonia. Prin intermediul modurilor create pentru jocul _Warcraft 3: The Frozon Throne_, popularitatea acestui gen a fost sporită și acestea au deservit ca sursă de inspirație pentru viitoarele titluri care urmau să apară #cite("avery2011computational").
 
 Punctele puternice ale acestui gen de joc sunt:
 
@@ -361,7 +361,7 @@ Alte motivații pot fi #cite("tw-principales"):
 - Bucuria procesului - Procesul de rezolvarea a jocului este satisfăcător în sine.
 ]
 
-În următoarea listă avem exemple de jocuri populare și emblematice ale acestui gen de joc care au aparut de-a lung timpului:
+În următoarea listă avem exemple de jocuri ale acestui gen de joc care au aparut de-a lungul timpului:
 
 #left-padding[
 
@@ -416,7 +416,7 @@ Alte aspecte care pot fi luate în considerare în design-ul unui joc de Tower D
   - Armura inamiciilor - un sistem prin care inamicii pot diminua efectele produse de la anumite tipuri de atacuri. De exemplu, un inamic poate fi rezistent la atacurile de foc, dar poate fi vulnerabil la atacurile de gheață. Acest sistem este de multe ori introdus pentru a încuraja jucătorii să își construiască turnuri defensive de diferite tipuri.
 ]
 
-În timp ce conceptul de bază al jocurilor de _Tower Defense_ rămâne relativ simplu, există o mulțime de direcții și evoluții posibile în ceea ce privește designul acestor jocuri. Acest lucru le face să fie atrăgătoare atât pentru dezvoltatori, cât și pentru jucători, care se pot bucura de o varietate de abordări și mecanici în această categorie de jocuri. Design-ul jocurilor de _Tower Defense_ a evoluat semnificativ în ultimii ani. Iată câteva exemple de evoluție a design-ului pentru jocurile de _Tower Defense_:
+În timp ce conceptul de bază al jocurilor de _Tower Defense_ rămâne relativ simplu, există o mulțime de direcții și evoluții posibile în ceea ce privește designul acestor jocuri. Acest lucru le face să fie atrăgătoare atât pentru dezvoltatori, cât și pentru jucători, care se pot bucura de o varietate de abordări și mecanici în această categorie de jocuri. Design-ul jocurilor de _Tower Defense_ a evoluat semnificativ în ultimii ani. Iată câteva exemple de arii de evoluție a design-ului pentru jocurile de _Tower Defense_:
 
 #left-padding[
 - Varietate în tipurile de structuri defensive. Creativitatea dezvoltatorilor a fost foarte inovatoare pentru acest aspect. Multe jocuri asemănand turnurile de apărare cu alte structuri, cum ar fi: capcane, arme, aparate sau chiar personaje. Acest lucru a oferit o flexibilitate în dezvoltarea jocurile hibride care se îmbină cu alte genuri de jocuri.
@@ -432,14 +432,14 @@ Evoluțiile menționate reprezintă doar câteva din direcțiile în care acest 
 
 == Modele hibride de jocuri
 
-Cele mai bune jocuri sunt de multe ori cele care reușesc să îmbine elemente din mai multe genuri de jocuri pentru a crea o experiență de joc unică. Dar acest nu este un lucru ușor de realizat, deoarece trebuie să avem în vedere proporțile în care sunt combinate elementele din fiecare gen de joc. În multe jocuri populare din ultimii ani, _Tower Defense_ este prezent în proporții destul de mici, deoarece este folosit ca un element de _gameplay_ secundar. Design-ul simplist și ușor de înțeles face ca integrarea să fie relativ ușoară, iar jucătorii pot fi atrași de acest element de _gameplay_ fără a fi nevoie să depună un efort considerabil în a învăța aceste elemente.
+Cele mai bune jocuri sunt de multe ori cele care reușesc să îmbine elemente din mai multe genuri de jocuri pentru a crea o experiență de joc unică. Dar acest nu este un lucru ușor de realizat, deoarece trebuie să avem în vedere proporțile în care sunt combinate elementele din fiecare gen de joc. În multe jocuri populare din ultimii ani #cite("forbesTop")#cite("mobileTop"), _Tower Defense_ este prezent în proporții destul de mici, deoarece este folosit ca un element de _gameplay_ secundar. Design-ul simplist și ușor de înțeles face ca integrarea să fie relativ ușoară, iar jucătorii pot fi atrași de acest element de _gameplay_ fără a fi nevoie să depună un efort considerabil în a învăța aceste elemente.
 
-Unul din scopurile secundare al noilor idee de design care vor fi discutate în această lucrare este de a oferi oportunități și nu piedici în a crește prezența genulul _Tower Defense_ în modele hibride de jocuri. Iată câteva exemple populare de genuri de joc care sunt îmbinate de multe ori cu _Tower Defense_:
+Unul din scopurile secundare al noilor idei de design care vor fi discutate în această lucrare este de a oferi oportunități și nu piedici în a crește prezența genulul _Tower Defense_ în modele hibride de jocuri. Iată câteva exemple de genuri de joc care sunt îmbinate de multe ori cu _Tower Defense_:
 
 #left-padding[
 - Joc de dezvoltarea a unei base (_base building_). Acesta de bazează pe colectarea de resurse și crearea de unui lanț de aprovizionare pentru clădirile de producție. Este o situație destul de comună ca aceste tipuri să jocuri să includă o parte de _Tower Defense_. Accentul se pune pe partea economică, obiectivul jucătorului fiind deplocarea unor clădri speciale care au nevoie de resurse complexe pentru a fi construite. Sistemul de jetoane de acțiunea se folosește aceiași idee, număi că în loc să creăm un lanț de aprovizionare, jucătorii trebuie să creeze un lanț de acțiuni care să fie executate într-o anumită ordine pentru a obține un rezultat dorit.
 - Joc de rol și acțiune (_action role-playing game_). Acestea aduc in prim-plan partea de poveste și acțiune continuă pentru a crea o experiență de joc mai interesantă. Ele se concentrează pe crearea unui univers care să-l captiveze pe jucător. Jocurile de acest tip oferă o varietate de eroi cu abilități și caracteristici unice care se îmbină cu tematica elementara a genului _Tower Defense_.
-- Puzzle. Acest gen se pliază foarte ușor pe genul Tower Defense, iar introducerea de mici schimbări în mecanica de joc poate duce la crearea unui joc de acest tip. Acestea concentrează pe crearea unui puzzle care să fie rezolvat de către jucător. Acest puzzle poate consta în găsirea unei anumite combinații de structuri defensive care să oprească valul inamic în anumite condiții. Unele jocuri, introduc acest concept sub form de "challenge mode" care poate fi jucat de către jucători după ce au terminat părțile principale. Acesta constă în adaugarea de noi constrăngeri pentru jucător, cum ar fi: limitarea numărului de turnuri defensive, limitarea numărului de resurse, creșterea numărului de inamici, etc.
+- Puzzle. Acest gen se pliază foarte ușor pe genul Tower Defense, iar introducerea de mici schimbări în mecanica de joc poate duce la crearea unui joc de acest tip. Acestea concentrează pe crearea unui puzzle care să fie rezolvat de către jucător. Acest puzzle poate consta în găsirea unei anumite combinații de structuri defensive care să oprească valul inamic în anumite condiții. Unele jocuri, introduc acest concept sub forma unei provocări (_challenge mode_) care poate fi jucate de către jucători după ce au terminat părțile principale. Aceasta constă în adaugarea de noi constrăngeri pentru jucător, cum ar fi: limitarea numărului de turnuri defensive, limitarea numărului de resurse, creșterea numărului de inamici, etc.
 - Joc de strategie în timp real (_real-time strategy_). Acest gen se concentrează pe elaborarea și implementarea unei strategii în timp real. De cele mai multe ori, aceste jocuri au un component competitiv bine definit, unde orice greșeală poate fi exploatată. Majoritatea jocurilor din acest gen includ turnuri de apărare ce au rolul de a încetini avansul adversarilor.
 ]
 
@@ -958,9 +958,9 @@ Rangul maxim reprezintă numărul maxim de jetoane de acțiune de același tip p
 
 Rangul curent reprezintă rangul curent pe care îl are jetonul de acțiune. Acesta poate fi mai mic sau egal cu rangul maxim. Rangul curent crește atunci când un inamic este expus de mai mult ori atacului unui turn de apărare asociat cu jetonul respectiv.
 
-Durata reprezintă durata de timp pentru care jetonul de acțiune este activ. Aceasta poate fi un număr real. De exemplu, un jeton de acțiune care scade viteza de mișcare a inamicilor cu 50% pentru 5 secunde are o durată de 5 secunde. Această valoare poate fi constantă sau calculată prin intermediul unor funcții sau formule matematice.
+Durata reprezintă timpul pentru care jetonul de acțiune este activ. Aceasta poate fi un număr real. De exemplu, un jeton de acțiune care scade viteza de mișcare a inamicilor cu 50% pentru 5 secunde are o durată de 5 secunde. Această valoare poate fi constantă sau calculată prin intermediul unor funcții sau formule matematice.
 
-Durata curentă reprezintă durata de timp rămasă pentru care jetonul de acțiune este activ. Aceasta este un număr real care este actualizat la un interval de timp dat. Când durata curentă ajunge la 0, jetonul de acțiune este eliminat.
+Durata curentă reprezintă timpul rămasă pentru care jetonul de acțiune este activ. Aceasta este un număr real care este actualizat la un interval de timp dat. Când durata curentă ajunge la 0, jetonul de acțiune este eliminat.
 
 Condiții de creere reprezintă condițiile care trebuie îndeplinite pentru a crea un jeton de acțiune. Aceste condiții iau considerare următoarele aspecte: tipul de effect și rangul său curent. De exemplu, un jeton de înghețare poate fi creat doar dacă inamicul are un jeton de încetinire de rang 2.
 
@@ -1108,7 +1108,7 @@ O exemplu de algoritm de țintire ar fi următorul:
 
 O problemă care acest algoritm nu o ia in considerare este efectul provocat de jetoanele de acțiune asupra inamicilor. Și anume ca inamicul nu va avea o viteză de mișcare constantă pe traseu, iar acesta poate primii pagube de la inamicii învecinații care au asupra lor jetoane de explozie care îl pot elimina înainte ca proiectilele să ajungă la el. Și rezolvarea acestei problemă necesită să facem o simulare a jocului în timp pentru a determina viața inamicului la momentul dorit.
 
-Dacă nu folosim proiectile și atacul din partea turnului este instant, atunci devine mult mai ușor să stabilim viața inamicului la momentul în turnul este pregătit să tragă prin faptul ca putem verifica instant viața curenta a inamicului. Tot ce trebuie să stabilim e un sistem de priorități în cadrul turnurilor de apărare. Putem folosii o metodă de tip _greedy_ #cite("cormen2022introduction") (aceasta implică selectarea, în fiecare pas, a opțiunii care pare cea mai bună la acel moment, fără a lua în considerare consecințele pe termen lung sau efectele pe care decizia respectivă le-ar putea avea asupra soluției finale) prin care stabilim care sunt turnurile necesare pentru a elimina inamicul folosind un număr minim de turnuri. Astfel, putem stabili o ordine de tragere a turnurilor în funcție de prioritatea lor.
+Dacă nu folosim proiectile și atacul din partea turnului este instant, atunci devine mult mai ușor să stabilim viața inamicului la momentul în turnul este pregătit să tragă prin faptul ca putem verifica instant viața curenta a inamicului. Tot ce trebuie să stabilim e un sistem de priorități în cadrul turnurilor de apărare. Putem folosii o metodă de tip _greedy_ #cite("cormen2022introduction") (aceasta implică selectarea, la fiecare pas, a opțiunii care pare cea mai bună la acel moment, fără a lua în considerare consecințele pe termen lung sau efectele pe care decizia respectivă le-ar putea avea asupra soluției finale) prin care stabilim care sunt turnurile necesare pentru a elimina inamicul folosind un număr minim de turnuri. Astfel, putem stabili o ordine de tragere a turnurilor în funcție de prioritatea lor.
 
 În aplicație tunurile vor fi reprezentate de imaginii sugestive aflate pe harta de joc (@towers). În casuța turnului, pe colțul din stânga jos este un simbol care arată dacă turnul este pregătit să tragă sau nu. Dacă nu, va arată timpul rămas până la următorul atac. De asemenea, la selectarea turnului de apărare, raza de atac va fi vizibilă prin schimbarea culorii din căsuțele învecinate turnului (@tower-range).
 
@@ -1140,7 +1140,7 @@ Acest sistem se ocupă de gestionarea resurselor. Resursele sunt folosite pentru
 
 În jocuri, acestea au denumiri generice precum: _gold_ (aur), _coins_ (monede), _gems_ (nestemate), etc. Numărul lor variază în funcție de joc, iar unele jocuri pun mai mare accent pe gestionarea resurselor decât altele.
 
-În principal, acest sistem nu are un impact prea mare asupra mecanii de joc la un joc Tower Defense clasic, dar prin combinarea mai multor genuri de jocuri, se poate crea ceva unic. De exemplu, în jocuri populare care se combină cu _Role Play Game_ (RPG), această parte devine fundamentală pentru joc. Un astfel de joc este _Arknight_#cite("arknight") care combină genul Tower Defense cu RPG, unde jucătorul trebuie să colecteze o varietate de resurse pentru a avansa în joc. Si cum este un proces încet, se pot folosii bani reali pentru a cumpăra resurse -- aceasta find și principala sursă de monetizare a jocului.
+În principal, acest sistem nu are un impact prea mare asupra mecanii de joc la un joc Tower Defense clasic, dar prin combinarea mai multor genuri de jocuri, se poate crea ceva unic. De exemplu, în jocurile care se combină cu _Role Play Game_ (RPG), această parte devine fundamentală pentru joc. Un astfel de joc este _Arknight_#cite("arknight") care combină genul Tower Defense cu RPG, unde jucătorul trebuie să colecteze o varietate de resurse pentru a avansa în joc. Si cum este un proces încet, se pot folosii bani reali pentru a cumpăra resurse -- aceasta find și principala sursă de monetizare a jocului.
 
 Atunci când eliminăm un inamic, primim o recompensă sub formă de resurse. Această recompensă compusă din tipul de resursă și suma. De exemplu, un inamic poate să ofere 10 aur, 5 lemn și 2 piatră când este eliminat. Exemple de structuri pentru tipul de resursă și recompensă sunt următoarele:
 
@@ -1167,7 +1167,7 @@ Atunci când eliminăm un inamic, primim o recompensă sub formă de resurse. Ac
 
 Știind câți inamicii avem într-un val și care este valoarea lor totală, putem calcula recompensa totală pentru valul respectiv. De exemplu, dacă avem 10 inamicii care oferă 10 aur, 5 lemn și 2 piatră, recompensa totală pentru valul respectiv este de 100 aur, 50 lemn și 20 piatră. Cu această informație putem stabilii costul resurselor pentru turnurile de apărare. De exemplu, un turn de apărare poate costa 20 aur, 10 lemn și 4 piatră. Deci cu resursele pe un întreg val putem achiziționa 5 turnuri de apărare.
 
-În ultimii ani au devenit din în ce mai populare jocurile de tip _base building_, în care scopul jocului e să construiești clădiri care au nevoie de un lanț de aprovizionare complex. Acestea constau dintr-un mare de resurse care trebuie să fie colectate și gestionate. Multe dintre aceste fiind combinații de alte resurse, exemplu: pentru a produce o căramidă avem nevoie o fabrică și o mină de clei care să extraga resursa de bază, și anume cleiul. Practic, avem nevoie de două fabrici și o resursă de bază pentru a produce resursa compusă.
+În ultimii ani au devenit din în ce mai prezente jocurile de tip _base building_, în care scopul jocului e să construiești clădiri care au nevoie de un lanț de aprovizionare complex. Acestea constau dintr-un mare de resurse care trebuie să fie colectate și gestionate. Multe dintre aceste fiind combinații de alte resurse, exemplu: pentru a produce o căramidă avem nevoie o fabrică și o mină de clei care să extragă resursa de bază, și anume cleiul. Practic, avem nevoie de două fabrici și o resursă de bază pentru a produce resursa compusă.
 
 Acest lanț de aprovizionare seamănă foarte mult cu idea noastră de jetoane de acțiune. Pentru a produce un jeton de îngheț trebuie să avem un turn pasiv de înghețare care trebuie să primească un jeton de încetinire de rang 2, produs la rândul său de un turn pasiv de încetinire.
 
@@ -1253,7 +1253,7 @@ Un val (_wave_) poate fi descris de următoarea structură:
   ]
 ]
 
-O chestie importantă este intervalul de generare al inamicilor în cadrul valului. Dacă intervalul este mic se poate crea un grup de inamicii care să ajungă la obiectiv înainte ca turnurile de apărare să poată să-i elimine. Dacă intervalul este mare, atunci turnurile de apărare pot să elimine inamicii înainte ca aceștia să ajungă la obiectiv. Deci, trebuie să găsim un echilibru între aceste două extreme. 
+O chestie importantă este intervalul de generare al inamicilor în cadrul valului. Dacă intervalul este mic se poate crea un grup de inamicii care să ajungă la obiectiv înainte ca turnurile de apărare să poată să-i elimine. Dacă intervalul este mare, atunci turnurile de apărare pot să elimine inamicii fără prea mult efort sau strategie din parte jucătorului. Deci, trebuie să găsim un echilibru între aceste două extreme. 
 
 Jocuri precum _Kingdom Rush_ variază acest interval în cadrul rundei de joc pentru a crea grupuri de inamicii mai mici sau mai mari pentru a oferi o provocare jucătorului prin prisma faptului că inamicii mai rezistenți pot distrage turnurile de apărare, iar cei mai rapizi pot ajunge la obiectiv înainte ca turnurile de apărare să-i elimine.
 
@@ -1269,7 +1269,7 @@ Jocuri precum _Kingdom Rush_ variază acest interval în cadrul rundei de joc pe
   caption: [Inamic în raza de acțiune a unui turn de apărare.]
 ) <enemy-in-range>
 
-Cum inamicii se alflă într-o hartă de joc de tip matrice și cu o viteză de mișcare egală cu o celulă, noțiunea de încetinire nu are prea mult sens întrucât nu avem diviziunii în cadrul celulei. De aceea, am ales să implementăm doar jetoanele de înghețare care îngheață inamicul pentru o perioadă de timp. Inamicii înghețați nu se pot mișca, iar cei din spatele lor nu pot să treacă prin ei -- fapt care creează un ambuteiaj. Făță de o implementare clasică, această alegere de mișcare a inamicilor într-o matrice cu o celulă pare să fie foarte limitată în privința designului de inamicii. Dar nu este un impediment major, se pot găsi soluții creative pentru a trece peste această limitare.
+Cum inamicii se află într-o hartă de joc de tip matrice și cu o viteză de mișcare egală cu o celulă, noțiunea de încetinire nu are prea mult sens întrucât nu avem diviziunii în cadrul celulei. De aceea, am ales să implementăm doar jetoanele de înghețare care îngheață inamicul pentru o perioadă de timp. Inamicii înghețați nu se pot mișca, iar cei din spatele lor nu pot să treacă prin ei -- fapt care creează un ambuteiaj. Făță de o implementare clasică, această alegere de mișcare a inamicilor într-o matrice cu o celulă pare să fie foarte limitată în privința designului de inamicii. Dar nu este un impediment major, se pot găsi soluții creative pentru a trece peste această limitare.
 
 == Interfața de utilizator
 

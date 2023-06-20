@@ -53,17 +53,17 @@ kumalacomparison:
     - type: periodical
   title: Comparison of Flow Field and A-Star Algorithm for Pathfinding in Tower Defense Game
 typescript:
-  type: misc
+  type: Web
   title: Typescript
   url: "https://www.typescriptlang.org/"
   note: Last accessed on 2023-06-13
 arknight:
-  type: misc
+  type: Web
   title: Arknight Wiki
   url: "https://arknights.fandom.com/wiki/Arknights_Wiki"
   note: Last accessed on 2023-05-19
 best-ui:
-  type: misc
+  type: Web
   url: "https://www.gamesindustry.biz/best-practices-for-designing-an-effective-video-game-ui"
   title: Best practices for designing an effective user interface
   note: Last accessed on 2023-05-20
@@ -74,12 +74,12 @@ unity-ui:
   url: "https://resources.unity.com/games/user-interface-design-and-implementation-in-unity"
   publisher: Unity Technologies
 tw-principales:
-  type: misc
+  type: Web
   url: "https://www.reddit.com/r/gamedesign/comments/j70hme/game_design_principles_tower_defense/"
   title: Game Design Principles - Tower Defense
   note: Last accessed on 2023-05-27
 unity-so:
-  type: misc
+  type: Web
   url: "https://unity.com/how-to/architect-game-code-scriptable-objects"
   title: THREE WAYS TO ARCHITECT YOUR GAME WITH SCRIPTABLEOBJECTS
   note: Last accessed on 2023-05-27
@@ -118,12 +118,12 @@ harkonen2019advantages:
   parent:
     - type: periodical
 unity-dots:
-  type: misc
+  type: Web
   url: "https://unity.com/dots"
   title: UNITY’S DATA-ORIENTED TECHNOLOGY STACK (DOTS)
   note: Last accessed on 2023-05-28
 tower-history:
-  type: misc
+  type: Web
   url: "https://web.archive.org/web/20140203062250/http://palgn.com.au/11898/tower-defense-bringing-the-genre-back/"
   title:
     value: "Tower Defense: Bringing the genre back"
@@ -132,19 +132,19 @@ tower-history:
   date: 2008
   note: Last accessed on 2023-06-09
 chess:
-  type: misc
+  type: Web
   title: Chess
   url: "https://www.chessprogramming.org/Chess"
   note: Last accessed on 2023-06-09
 merge:
-  type: misc
+  type: Web
   url: "https://www.globalgamesforum.com/merge-games-to-do-or-not-to-do/"
   title:
     value: "Merge Games: To Do Or Not To Do? "
     sentence-case: "Merge games: to do or not to do? "
   note: Last accessed on 2023-06-10  
 td-design:
-  type: misc
+  type: Web
   author: "Lars, Doucet"
   title:
     value: "Optimizing Tower Defense for FOCUS and THINKING - Defender's Quest"
@@ -152,22 +152,22 @@ td-design:
   url: "https://www.gamedeveloper.com/design/optimizing-tower-defense-for-focus-and-thinking---defender-s-quest"
   note: Last accessed on 2023-06-10
 kingdom-rush-enemies:
-  type: misc
+  type: Web
   title: Kingom Rush Wiki -Enemies
   url: "https://kingdomrushtd.fandom.com/wiki/Category:Enemies"
   note: Last accessed on 2023-06-10
 kingdom-coin:
-  type: misc
+  type: Web
   url: "https://kingdomthegame.fandom.com/wiki/Coin"
   title: Kingdom Wiki - Coin
   note: Last accessed on 2023-06-10
 kingdom-coop:
-  type: misc
+  type: Web
   title: Kingdom Wiki - Online Co-Op
   url: "https://kingdomthegame.fandom.com/wiki/Co-op#Online_co-op"
   note: Last accessed on 2023-06-10
 solidjs:
-  type: misc
+  type: Web
   title: SolidJS
   url: "https://www.solidjs.com/"
   note: Last accessed on 2023-06-10
@@ -197,17 +197,17 @@ xie2014reactive:
   page-range: 201-213
   title: Reactive programming for interactive graphics
 react:
-  type: misc
+  type: Web
   url: "https://react.dev/"
   title: React
   note: Last accessed on 2023-06-12
 kingdom-rush-levels:
-  type: misc
+  type: Web
   title: Kingdom Rush Wiki - Levels
   url: "https://kingdomrushtd.fandom.com/wiki/Category:Levels"
   note: Last accessed on 2023-06-12
 algebraic-notation:
-  type: misc
+  type: Web
   title: Chess Notation
   url: "https://www.chess.com/terms/chess-notation"
   note: Last accessed on 2023-06-12
@@ -247,4 +247,22 @@ rogers2014level:
   type: book
   title: Level Up! The Guide to Great Video Game Design
   publisher: John Wiley & Sons
-  author: "Rogers, Scott"   
+  author: "Rogers, Scott"
+forbesTop:
+  type: web
+  title: "Steam Reveals Its Highest-Grossing, Most Played Games Of 2022"
+  author: "Tassi, Paul"
+  url: "https://www.forbes.com/sites/paultassi/2022/12/30/steam-reveals-its-highest-grossing-most-played-games-of-2022/"
+  note: Last accessed on 2023-06-20
+mobileTop:
+  type: Web
+  url: "https://mobilegamer.biz/2022s-top-grossing-mobile-games-honor-of-kings-pubg-mobile-genshin-impact-and-more/"
+  title: "2022’s top grossing mobile games: Honor of Kings, PUBG Mobile, Genshin Impact and more"
+  author: "Long, Neil"
+  note: Last accessed on 2023-06-20
+mobileIncome:
+  type: Web
+  url: "https://www.pocketgamer.biz/news/79629/tower-defence-games-to-reach-23-billion-in-revenue-by-2030/"
+  title: "Tower Defence games to reach $2.3 billion in revenue by 2030"
+  author: "Lewis, Rees"
+  note: Last accessed on 2023-06-20
