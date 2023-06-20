@@ -52,7 +52,7 @@
 #v(1cm)
 
 #upper[
-  #align(center, text(16pt)[
+  #align(center, text(18pt)[
     Universitatea Politehnica din București \
     Facultatea de Automatică și Calculatoare \
     DEPARTAMENTUL DE CALCULATOARE 
@@ -78,39 +78,48 @@
 //   Grafică, Multimedia și Realitate Virtuală
 // ])
 
-#v(4cm)
+#v(3cm)
 
 #upper[
   #align(center, text(24pt)[
-    *Proiect de disertație*
+    *PROIECT DE DIZERTAŢIE*
   ])
 ]
 
-#v(4cm)
+#v(0.5cm)
+
+#align(center, text(16pt)[
+  Design pentru genul de joc Tower Defense
+])
+
+#v(0.5cm)
+
+#align(center, text(18pt)[
+  Soare Robert Daniel
+])
+
+#v(2cm)
 
 #grid(
   columns: (1fr, 1fr),
-  align(center)[
-    #align(left)[
-      #upper[
-        Întrumător Ștințific
-      ] \
-      Prof. Dr. Ing. Moldoveanu Alin
-    ]
+   align(center)[
+    #box(width: 1fr)
   ],
   align(center)[
-     #align(right)[
-      #upper[
-        Absolvent
-      ] \
-      Soare Robert Daniel
+    #align(right)[
+      #text(14pt)[
+        *Coordonator Ștințific:* \
+        Prof. Dr. Ing. Moldoveanu Alin
+      ]
     ]
-  ]
+  ],
 )
 
 #v(5cm)
 #align(center, text(12pt)[
-  *București \ 2023*
+  #upper[
+    *București \ 2023*
+  ]
 ])
 
 #pagebreak()
@@ -120,9 +129,11 @@
 
 
 #upper[
-  #align(center, text(16pt)[
-    Universitatea Politehnica din București \
-    Facultatea de Automatică și Calculatoare
+  #align(center, text(18pt)[
+    POLITECHNICA UNIVERSITY OF BUCHAREST \
+FACULTY OF AUTOMATIC CONTROL AND COMPUTERS \
+COMPUTER SCIENCE DEPARTMENT
+
   ])
 ]
 
@@ -154,41 +165,44 @@
 
 #upper[
   #align(center, text(24pt)[
-    *Proiect de disertație*
+    *MASTER THESIS*
   ])
 ]
 
-#v(1cm)
+#v(0.5cm)
 
-#align(center, text(17pt)[
-  *Design pentru genul de joc Tower Defense*
+#align(center, text(16pt)[
+  Design pentru genul de joc Tower Defense
 ])
 
-#v(4cm)
+#v(0.5cm)
+
+#align(center, text(18pt)[
+  Soare Robert Daniel
+])
+
+#v(2cm)
 
 #grid(
   columns: (1fr, 1fr),
-  align(center)[
-    #align(left)[
-      #upper[
-        Întrumător Ștințific
-      ] \
-      Prof. Dr. Ing. Moldoveanu Alin
-    ]
+   align(center)[
+    #box(width: 1fr)
   ],
   align(center)[
-     #align(right)[
-      #upper[
-        Absolvent
-      ] \
-      Soare Robert Daniel
+    #align(right)[
+      #text(14pt)[
+        *Thesis advisor:* \
+        Prof. Dr. Ing. Moldoveanu Alin
+      ]
     ]
-  ]
+  ],
 )
 
 #v(5cm)
 #align(center, text(12pt)[
-  *București \ 2023*
+  #upper[
+    *BUCHAREST \ 2023*
+  ]
 ])
 
 #pagebreak()
