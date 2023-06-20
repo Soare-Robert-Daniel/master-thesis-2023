@@ -906,7 +906,7 @@ Harta de joc este o zonă în care se desfășoară acțiunea jocului. În jocur
 
 În multe jocuri harta cu traseu prestabilit este preferată întrucât permite posibilitatea de a creea mai multe nivele de joc întrucât mici diferențe în traseu pot duce la strategii diferite. Un alt avantaj este integrarea mai mult rute de atac, ceea ce poate duce la o experiență de joc mai variată.
 
-Harta liberă are un avantaj prin faptul ca partea de plasare a turnurilor joacă un rol și mai important în special ca ele vor dicta treaseul inamicilor. Un mic impendiment la acest tip de design este faptul că jucătorul va incerca mereu să obțina forma optima a treaseului pentru inamicii, iar această formă nu are multe variații cea ce face ca jucătorul să construiască aceeași hartă de fiecare dată. Acest impediment poate fi rezolvat prin adăugarea de elemente de decor care să dicteze o anumită formă a traseului.
+Harta liberă are un avantaj prin faptul ca partea de plasare a turnurilor joacă un rol și mai important în special ca ele vor dicta treaseul inamicilor. Un mic impendiment la acest tip de design este faptul că jucătorul va incerca mereu să obțina forma optima a treaseului pentru inamicii, iar această formă nu are multe variații cea ce face ca jucătorul să construiască aceeași formă de fiecare dată. Acest impediment poate fi rezolvat prin adăugarea de elemente de decor care să dicteze o anumită formă a traseului.
 
 Unele jocuri, precum _Kingdom Rush_ #cite("kingdom-rush-levels"), folosesc o combinație între cele două tipuri de hărți. Acestea au un traseu prestabilit, dar în același timp au și elemente de decor care dispar în timpul jocului pentru a crea rute de atac adiționale astfel mărind dificultatea nivelului.
 
@@ -914,7 +914,7 @@ Unele jocuri, precum _Kingdom Rush_ #cite("kingdom-rush-levels"), folosesc o com
 
 Traseul este dat de căsuțele de culoarea asemănătoare turcoazului. Inamicii vor urma acest traseu de la punctul de start până la obiectiv. În cazul în care un inamic ajunge la obiectiv, viața obiectivului va scădea. Dacă viața obiectivului ajunge la 0, jocul se va termina. Turnurile de apărare pot fi construire doar în afara traseului, și anume pe căsuțele de culoarea asemănătoare a verdelui închis.
 
-Mai mult de atât, forma traseului va influența puternic eficiența turnurilor de apărare. De exemplu, dacă traseul este foarte îndreptat și fără obstacole, turnurile cu raza lungă de acțiune, cum ar fi cele de tip artilerie, vor fi extrem de eficiente. Acestea pot lovi țintele de la distanțe mari și pot cauza daune semnificative înainte ca inamicii să se apropie prea mult. Turnurile care încetinesc inamicii pot fi foarte valoroase, deoarece permit altor turnuri să lanseze mai multe atacuri înainte ca inamicii să treacă.
+Mai mult de atât, forma traseului va influența puternic eficiența turnurilor de apărare. De exemplu, dacă traseul este foarte îndreptat și fără obstacole, turnurile cu raza lungă de acțiune, cum ar fi cele de tip artilerie, vor fi extrem de eficiente. Acestea pot lovi țintele de la distanțe mari și pot cauza daune semnificative înainte ca inamicii să se apropie prea mult. Turnurile care încetinesc inamicii pot fi foarte valoroase, deoarece permit altor turnuri să lanseze mai multe atacuri înainte ca inamicii să scape din raza de acțiune.
 
 Pe de altă parte, pe traseele sinuoase sau cu multe curbe, turnurile de scurtă rază de acțiune care pot ataca mai multe ținte simultan vor fi mai eficiente. De asemenea, pe aceste trasee, amplasarea strategică a turnurilor care pot ataca în mai multe direcții va fi esențială. De exemplu, turnuri care pot lansa flăcări sau explozii preferă zone cu curbe strânse, unde inamicii tind să se adune.
 
@@ -1269,24 +1269,24 @@ Jocuri precum _Kingdom Rush_ variază acest interval în cadrul rundei de joc pe
   caption: [Inamic în raza de acțiune a unui turn de apărare.]
 ) <enemy-in-range>
 
-Cum inamicii sunt într-o matrice cu o mișcare de o celulă, noțiunea de încetinire nu are prea mult sens. De aceea, am ales să implementăm doar jetoanele de înghețare care îngheață inamicul pentru o perioadă de timp. Inamicii înghețați nu se pot mișca, iar cei din spatele lor nu pot să treacă prin ei -- fapt care creează un abuteiaj. Făță de o implementare clasică, această alegere de mișcare a inamicilor într-o matrice cu o celulă pare să fie foarte limitată în privința designului de inamicii. Dar nu este un impediment major, se pot găsi soluții creative pentru trece peste această limitare.
+Cum inamicii se alflă într-o hartă de joc de tip matrice și cu o viteză de mișcare egală cu o celulă, noțiunea de încetinire nu are prea mult sens întrucât nu avem diviziunii în cadrul celulei. De aceea, am ales să implementăm doar jetoanele de înghețare care îngheață inamicul pentru o perioadă de timp. Inamicii înghețați nu se pot mișca, iar cei din spatele lor nu pot să treacă prin ei -- fapt care creează un ambuteiaj. Făță de o implementare clasică, această alegere de mișcare a inamicilor într-o matrice cu o celulă pare să fie foarte limitată în privința designului de inamicii. Dar nu este un impediment major, se pot găsi soluții creative pentru a trece peste această limitare.
 
 == Interfața de utilizator
 
 Interfața de utilizator joacă un rol critic în experiența de joc, deoarcere sistemul de jetoane de acțiune este un sistem complex, iar jucătorul trebuie să aibă o interfață intuitivă pentru a putea interacționa cu acesta.
 
-Avem următoarele elemente de interfața de utilizator trebuie să le afișeze:
+Avem următoarele informații pe care elementele vizuale din interfața de utilizator trebuie să le afișeze:
 
 #left-padding[
-- informații despre turnurile de apărare.
-- informații despre inamicii care se află pe hartă.
-- informații despre statusul jucătorului.
-- informații despre statusul inamicilor.
-- informații despre resursele jucătorului.
-- informații despre obiectivul care trebuie protejat.
-- informații despre valul de inamicii.
-- informații despre timpul rămas până la următorul val de inamicii.
-- informații despre turnurile de apărare care se află pe hartă.
+- turnurile de apărare.
+- inamicii care se află pe hartă.
+- statusul jucătorului.
+- statusul inamicilor.
+- resursele jucătorului.
+- obiectivul care trebuie protejat.
+- valul de inamicii.
+- timpul rămas până la următorul val de inamicii.
+- turnurile de apărare care se află pe hartă.
 ]
 
 În @hud putem obsera un exemplu pentru creearea unor zone în care putem pune elementele vizuale pentru afișarea informațiilor.
@@ -1434,11 +1434,11 @@ Exemplu 2: ```#90 move-tower a-crossbow@1 (2,1)``` -- la pasul 90, jucătorul a 
 
 Exemplu 3: ```#150 buy-upgrade slow1``` -- la pasul 100, jucătorul a cumpărat îmbunătățirea pentru jetonul de încetinire (_slow_). Sufixul _\@1_ este identificatorul unic al îmbunătățirii în cadrul tipului de jeton.
 
-Pe langă funcția de afișare avem și posibilitatea de a descărca jurnalul de joc în format _CSV (comma-separated values)_ sau text simplu pentru a putea fi analizat în afara aplicației. Iar această analiză poate fi realizată și cu tehnicii moderne de analiză a datelor precum _Python_ sau _R_.
+Pe langă funcția de afișare avem și posibilitatea de a descărca jurnalul de joc în format _CSV (comma-separated values)_ sau text simplu pentru a putea fi procesat în afara aplicației. Iar această evaluare a comenzilor poate fi realizată și cu tehnicii moderne de analiză a datelor precum _Python_ sau _R_.
 
 O funcționalitate care ar putea schimba complet modul cum abordăm echilibrarea mecanicii de joc este folosirea de tehnici de învățare automată pentru a crea modele predictive care să dezvolte strategii de joc. Aceste modele pot fi folosite pentru a crea agenți inteligenți care să joace jocul în locul jucătorului. Acești agenți pot fi folosiți pentru a testa echilibrarea mecanicii de joc de câtre designerul jocului. Mai mult de atât, acești agenți pot fi folosiți pentru a crea un sistem de asistență pentru jucători care să-i ajute să ia decizii mai bune în cadrul jocului -- precum în șah prin intermediul unui motor de șah.
 
-Având în vedere ultime avansuri tehnologice, putem merge și mai departe cu ideea prin crearea unui asistent virtual care să poată fi folosit pentru a înțelege mai bine mecanica de joc implementată. Folosind tehnologii precum _GTP-4_ #cite("OpenAI2023GPT4TR") putem crea un asistent virtual care să poată răspunde la întrebări despre joc. De exemplu, putem întreba asistentul virtual despre cea mai bună strategie de joc pentru un anumit nivel, sau putem întreba despre cea mai bună strategie de joc pentru un anumit tip de inamic.
+Având în vedere ultime avansuri tehnologice, putem merge și mai departe cu ideea prin crearea unui asistent virtual care să poată fi folosit pentru a înțelege mai bine mecanica de joc implementată. Folosind tehnologii precum _GTP-4_ #cite("OpenAI2023GPT4TR") putem crea un asistent virtual care să poată răspunde la întrebări despre joc. De exemplu, putem întreba asistentul virtual care este cea mai bună strategie de joc pentru un anumit nivel, sau cum să contracarăm un anumit tip de inamic. Puterea care ne oferă această tehnologie este impresionantă și cu siguranța va fi foarte explorată în viitorul apropiat. 
 
 Într-un joc posibilitățile sunt nelimitate și depind doar de creativitatea creatorului, iar prin aceste unelte putem explora mai multe posibilități și a alege cea mai bună soluție pentru jocul nostru. 
 
