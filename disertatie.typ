@@ -398,7 +398,7 @@ Fiecare joc de Tower Defense are propriile sale particularități care le dau un
 
 #pagebreak()
 
-= Design-ul unui joc de Tower Defense
+= Design-ul unui joc nou de Tower Defense
 
 #v(0.5cm)
 
@@ -1461,6 +1461,55 @@ Având în vedere ultime avansuri tehnologice, putem merge și mai departe cu id
   caption: [Jurnal e joc.]
 ) <game-log>
 
+= Evaluare
+
+Aplicația prezintă toate functionalitățile necesare descrise în capitolele anterioare și poate fi folosită pentru a testa mecanica de joc.
+
+Aceasta poate fi hostată pe un server web sau poate fi rulată local pe calculatorul personal. Prin hostare web o putem face disponibilă pentru oricine are acces la internet, iar prin rularea locală o putem folosi pentru a testa înainte de a-l publica. Vom măsura niște metrici pentru a vedea dacă aplicația este performantă ca aplicație web.
+
+Vom folosii programul _Ligthouse_ pentru o obține aceste metrici. Vom folosii măsurile pentru _Performance_ (Performanță), _Accessibility_ (Accesibilitate), _Best Practices_ (Bune practici). Aplicația va fi hostată pe platforma Vercel prin intermediul funcționalității de publicare al aplicaților realizate în _SolidJs_ #cite("vercel") care ne oferă un domeniu gratuit și un certificat _SSL_ pentru a putea folosii protocolul _HTTPS_.
+
+În urma testului am obținut următoarele rezultate:
+
+#left-padding[
+  - Performanță: 100
+  - Accesibilitate: 90
+  - Bune practici: 92
+]
+
+Alte metrici:
+
+#left-padding[
+  - _First Contentful Paint_ (încărcarea primului paragraf de text sau imagine ): 0,4 s
+  - _Speed Index_ (viteza de încărcare a conținutului): 0 s
+  - _Largest Contentful Paint_ (timpul de încărcare al celui mai mare element vizibil): 0,4 s
+  - _Time to Interactive_ (timpul de încărcare al interfeței): 0,4 s
+  - _Total Blocking Time_ (timpul de blocare al interfeței la încărcare): 0 ms
+  - _Cumulative Layout Shift_ (mișcarea elementor vizibile în fereastra browserului): 0,001 
+]
+
+Pe langă metrici, programul ne oferă și recomandări pentru îmbunătățiri, precum:
+
+#left-padding[
+  - Folosirea explicită a valorilor _width_ și _height_ pentru elementele de tip _img_.
+  - Utilizare atributului _alt_ pentru a descrie imaginile pentru persoanele cu deficiențe de vedere.
+  - Imaginile folosite au o dimensiune prea mică (32x32 pixeli) față de cea recomandată (40x40 pixeli).
+  - Hostarea locală a fonturilor folosite pentru a reduce timpul de încărcare.
+]
+
+Folosind funcția de măsura a timpului _performance.now_, am calculat timpul de procesare al funcției principale de procesare al unui pas de joc. Am obținut următoarele rezultate din analiza a 382 de pași de joc:
+
+#left-padding[
+  - Timp minim:  2,90 ms
+  - Timp maxim: 14,11 ms
+  - Timp mediu:  8,27 ms
+]
+
+Timpul de procesare este foarte bun pentru nevoile aplicației, întrucât aceste nu va introduce un blocaj în timpul rulării pentru biblioteca _SolidJs_ în actualizarea interfeței. _SolidJs_ folosește o tehnică de actualizare incrementală a interfeței, iar acest timp de procesare nu va afecta performanța aplicației #cite("solid-rendering"). Acesta are o eficiență bună în comparație cu alte biblioteci de _UI_ precum _React_ sau _Vue_ #cite("benchmark").
+
+Cum nu avem procese grele de calcul precum calcule de rezolvarea coliziunilor sau de fizică, nu suntem nevoiți să folosim tehnici de optimizare a performanței precum _Web Workers_ #cite("web-worker") sau _Web Assembly_ #cite("web-assembly").
+
+Așadar, aplicația poate fi utilizată fără a întâmpina probleme de performanță.
 
 #pagebreak()
 

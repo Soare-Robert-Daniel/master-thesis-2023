@@ -142,7 +142,7 @@ merge:
   title:
     value: "Merge Games: To Do Or Not To Do? "
     sentence-case: "Merge games: to do or not to do? "
-  note: Last accessed on 2023-06-10  
+  note: Last accessed on 2023-06-10
 td-design:
   type: Web
   author: "Lars, Doucet"
@@ -228,7 +228,7 @@ adams2012game:
   author:
     - "Adams, Ernest"
     - "Dormans, Joris"
-  date: 2012  
+  date: 2012
 evolutionaryGameDesign:
   type: article
   title: Evolutionary Game Design
@@ -265,4 +265,31 @@ mobileIncome:
   url: "https://www.pocketgamer.biz/news/79629/tower-defence-games-to-reach-23-billion-in-revenue-by-2030/"
   title: "Tower Defence games to reach $2.3 billion in revenue by 2030"
   author: "Lewis, Rees"
+  note: Last accessed on 2023-06-20
+vercel:
+  type: Web
+  url: "https://vercel.com/guides/deploying-solid-with-vercel"
+  title: "How to Deploy a Solid App with Vercel"
+  note: Last accessed on 2023-06-20
+benchmark:
+  type: Web
+  url: "https://krausest.github.io/js-framework-benchmark/2023/table_chrome_114.0.5735.90.html"
+  title: "Results for js web frameworks benchmark"
+  note: Last accessed on 2023-06-20
+  author: "Krause, Stefan"
+solid-rendering:
+  type: Web
+  url: "https://ryansolid.medium.com/b-y-o-f-part-4-rendering-the-dom-753657689647"
+  title: "B.Y.O.F. — Part 4: Rendering the DOM"
+  note: Last accessed on 2023-06-20
+  author: "Carniato, Ryan"
+web-worker:
+  type: Web
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
+  title: "Using Web Workers"
+  note: Last accessed on 2023-06-20
+web-assembly:
+  type: Web
+  url: "https://developer.mozilla.org/en-US/docs/WebAssembly"
+  title: "Web Assembly"
   note: Last accessed on 2023-06-20
