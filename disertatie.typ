@@ -909,6 +909,13 @@ Odată terminat valul, e timpul să ne folosim de resursele acumulate pentru a a
 
 Deoarece folosim un automat finit în implementarea sistemului de joc din cadrul aplicației putem avea opțiunea de a relua sesiunea de joc. Acest lucru ne permite să analizăm modul cum am jucat și să încercăm să găsim o strategie mai bună. De asemenea, putem să relua runda și să încercăm o nouă tactică, să vedem dacă aceasta este mai bună sau nu.
 
+În @game-run putem observa cum arăta o sesiune de joc în aplicația noastră, funcționalitățile fiecărui element vor descrise în secțiunile următoare.
+
+#figure(
+  image("assets/game-run.png", width: 100%),
+  caption: [Reprezentarea unei sesiuni de joc.]
+) <game-run>
+
 == Harta de joc
 
 Harta de joc este o zonă în care se desfășoară acțiunea jocului. În jocurile de _Tower Defense_ harta este împărțită în doua tipuri:
